@@ -19,9 +19,9 @@
 ```python
 import jsonpickle
 
-from restapi.models.agent_think_models_v_1_response import AgentThinkModelsV1Response
-from restapi.models.agent_think_models_v_1_response_models_items_0 import AgentThinkModelsV1ResponseModelsItems0
-from restapi.models.agent_think_models_v_1_response_models_items_one_of_0_id import AgentThinkModelsV1ResponseModelsItemsOneOf0Id
+from deepgram.models.agent_think_models_v_1_response import AgentThinkModelsV1Response
+from deepgram.models.agent_think_models_v_1_response_models_items_0 import AgentThinkModelsV1ResponseModelsItems0
+from deepgram.models.agent_think_models_v_1_response_models_items_one_of_0_id import AgentThinkModelsV1ResponseModelsItemsOneOf0Id
 
 agent_think_models_v_1_response = AgentThinkModelsV1Response(
     models=[

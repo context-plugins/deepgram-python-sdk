@@ -23,7 +23,7 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.list_project_keys_v_1_response_api_keys_items_api_key import ListProjectKeysV1ResponseApiKeysItemsApiKey
+from deepgram.models.list_project_keys_v_1_response_api_keys_items_api_key import ListProjectKeysV1ResponseApiKeysItemsApiKey
 
 list_project_keys_v_1_response_api_keys_items_api_key = ListProjectKeysV1ResponseApiKeysItemsApiKey(
     api_key_id='api_key_id8',

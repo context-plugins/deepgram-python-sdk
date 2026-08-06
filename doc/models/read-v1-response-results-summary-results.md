@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from restapi.models.read_v_1_response_results_summary_results import ReadV1ResponseResultsSummaryResults
-from restapi.models.read_v_1_response_results_summary_results_summary import ReadV1ResponseResultsSummaryResultsSummary
+from deepgram.models.read_v_1_response_results_summary_results import ReadV1ResponseResultsSummaryResults
+from deepgram.models.read_v_1_response_results_summary_results_summary import ReadV1ResponseResultsSummaryResultsSummary
 
 read_v_1_response_results_summary_results = ReadV1ResponseResultsSummaryResults(
     summary=ReadV1ResponseResultsSummaryResultsSummary(

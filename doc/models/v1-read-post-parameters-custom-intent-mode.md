@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_read_post_parameters_custom_intent_mode import V1ReadPostParametersCustomIntentMode
+from deepgram.models.v_1_read_post_parameters_custom_intent_mode import V1ReadPostParametersCustomIntentMode
 
 v_1_read_post_parameters_custom_intent_mode = V1ReadPostParametersCustomIntentMode.EXTENDED
 ```

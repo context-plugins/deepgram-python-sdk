@@ -22,8 +22,8 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.usage_v_1_response import UsageV1Response
-from restapi.models.usage_v_1_response_resolution import UsageV1ResponseResolution
+from deepgram.models.usage_v_1_response import UsageV1Response
+from deepgram.models.usage_v_1_response_resolution import UsageV1ResponseResolution
 
 usage_v_1_response = UsageV1Response(
     start=dateutil.parser.parse('2016-03-13').date(),

@@ -18,19 +18,19 @@ manage_v_1_models_api = client.manage_v_1_models
 
 Returns metadata on all the latest public models. To retrieve custom models, use Get Project Models.
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
-        authorization,
         include_outdated=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `include_outdated` | `bool` | Query, Optional | returns non-latest versions of models |
 
 ## Response Type
@@ -42,9 +42,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```python
-authorization = 'Authorization8'
-
-result = manage_v_1_models_api.list(authorization)
+result = manage_v_1_models_api.list()
 
 if result.is_success():
     print(result.body)
@@ -63,20 +61,20 @@ elif result.is_error():
 
 Returns metadata for a specific public model
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
-       model_id,
-       authorization)
+       model_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `model_id` | `str` | Template, Required | The specific UUID of the model |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -89,12 +87,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 model_id = 'model_id0'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_models_api.get(
-    model_id,
-    authorization
-)
+result = manage_v_1_models_api.get(model_id)
 
 if result.is_success():
     print(result.body)

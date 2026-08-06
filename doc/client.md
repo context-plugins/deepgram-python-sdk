@@ -26,15 +26,15 @@ The API client can be initialized as follows:
 ```python
 import logging
 
-from restapi.configuration import Environment
-from restapi.http.auth.api_key_auth import ApiKeyAuthCredentials
-from restapi.http.auth.jwt_auth import JwtAuthCredentials
-from restapi.logging.configuration.api_logging_configuration import LoggingConfiguration
-from restapi.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
-from restapi.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
-from restapi.restapi_client import RestapiClient
+from deepgram.configuration import Environment
+from deepgram.deepgram_client import DeepgramClient
+from deepgram.http.auth.api_key_auth import ApiKeyAuthCredentials
+from deepgram.http.auth.jwt_auth import JwtAuthCredentials
+from deepgram.logging.configuration.api_logging_configuration import LoggingConfiguration
+from deepgram.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
+from deepgram.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
 
-client = RestapiClient(
+client = DeepgramClient(
     api_key_auth_credentials=ApiKeyAuthCredentials(
         authorization='Authorization'
     ),
@@ -57,10 +57,10 @@ client = RestapiClient(
 ## Environment-Based Client Initialization
 
 ```python
-from restapi.restapi_client import RestapiClient
+from deepgram.deepgram_client import DeepgramClient
 
 # Specify the path to your .env file if it’s located outside the project’s root directory.
-client = RestapiClient.from_environment(dotenv_path='/path/to/.env')
+client = DeepgramClient.from_environment(dotenv_path='/path/to/.env')
 ```
 
 See the [Environment-Based Client Initialization](../doc/environment-based-client-initialization.md) section for details.

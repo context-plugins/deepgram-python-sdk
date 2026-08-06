@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_read_post_parameters_callback_method import V1ReadPostParametersCallbackMethod
+from deepgram.models.v_1_read_post_parameters_callback_method import V1ReadPostParametersCallbackMethod
 
 v_1_read_post_parameters_callback_method = V1ReadPostParametersCallbackMethod.POST
 ```

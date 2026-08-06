@@ -20,20 +20,20 @@ self_hosted_v_1_distribution_credentials_api = client.self_hosted_v_1_distributi
 
 Lists sets of distribution credentials for the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
-        project_id,
-        authorization)
+        project_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -46,12 +46,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = self_hosted_v_1_distribution_credentials_api.list(
-    project_id,
-    authorization
-)
+result = self_hosted_v_1_distribution_credentials_api.list(project_id)
 
 if result.is_success():
     print(result.body)
@@ -70,23 +65,23 @@ elif result.is_error():
 
 Creates a set of distribution credentials for the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def create(self,
           project_id,
-          authorization,
           scopes=None,
           provider="quay",
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `scopes` | [`List[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItems]`](../../doc/models/v1-projects-project-id-self-hosted-distribution-credentials-post-parameters-scopes-schema-items.md) | Query, Optional | List of permission scopes for the credentials |
 | `provider` | [`V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider`](../../doc/models/v1-projects-project-id-self-hosted-distribution-credentials-post-parameters-provider.md) | Query, Optional | The provider of the distribution service<br><br>**Default**: `"quay"` |
 | `body` | [`CreateProjectDistributionCredentialsV1Request`](../../doc/models/create-project-distribution-credentials-v1-request.md) | Body, Optional | The set of distribution credentials to create |
@@ -102,13 +97,10 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
 provider = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY
 
 result = self_hosted_v_1_distribution_credentials_api.create(
     project_id,
-    authorization,
     provider=provider
 )
 
@@ -129,14 +121,15 @@ elif result.is_error():
 
 Returns a set of distribution credentials for the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
        project_id,
-       distribution_credentials_id,
-       authorization)
+       distribution_credentials_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -144,7 +137,6 @@ def get(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `distribution_credentials_id` | `str` | Template, Required | The UUID of the distribution credentials |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -159,12 +151,9 @@ project_id = 'project_id6'
 
 distribution_credentials_id = 'distribution_credentials_id0'
 
-authorization = 'Authorization8'
-
 result = self_hosted_v_1_distribution_credentials_api.get(
     project_id,
-    distribution_credentials_id,
-    authorization
+    distribution_credentials_id
 )
 
 if result.is_success():
@@ -184,14 +173,15 @@ elif result.is_error():
 
 Deletes a set of distribution credentials for the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def delete(self,
           project_id,
-          distribution_credentials_id,
-          authorization)
+          distribution_credentials_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -199,7 +189,6 @@ def delete(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `distribution_credentials_id` | `str` | Template, Required | The UUID of the distribution credentials |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -214,12 +203,9 @@ project_id = 'project_id6'
 
 distribution_credentials_id = 'distribution_credentials_id0'
 
-authorization = 'Authorization8'
-
 result = self_hosted_v_1_distribution_credentials_api.delete(
     project_id,
-    distribution_credentials_id,
-    authorization
+    distribution_credentials_id
 )
 
 if result.is_success():

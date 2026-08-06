@@ -21,7 +21,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.listen_v_1_response_metadata_summary_info import ListenV1ResponseMetadataSummaryInfo
+from deepgram.models.listen_v_1_response_metadata_summary_info import ListenV1ResponseMetadataSummaryInfo
 
 listen_v_1_response_metadata_summary_info = ListenV1ResponseMetadataSummaryInfo(
     model_uuid='model_uuid0',

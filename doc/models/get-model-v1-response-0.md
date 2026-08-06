@@ -27,7 +27,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.get_model_v_1_response_0 import GetModelV1Response0
+from deepgram.models.get_model_v_1_response_0 import GetModelV1Response0
 
 get_model_v_1_response_0 = GetModelV1Response0(
     name='name8',

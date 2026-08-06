@@ -16,7 +16,7 @@ Encoding - opus. Sample rate is fixed at 48000 Hz.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_sample_rate_4 import V1SpeakPostParametersSampleRate4
+from deepgram.models.v_1_speak_post_parameters_sample_rate_4 import V1SpeakPostParametersSampleRate4
 
 v_1_speak_post_parameters_sample_rate_4 = V1SpeakPostParametersSampleRate4.ENUM_48000
 ```

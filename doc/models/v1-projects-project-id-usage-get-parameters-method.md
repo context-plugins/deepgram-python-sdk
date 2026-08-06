@@ -18,7 +18,7 @@ Method type for the request
 ## Example
 
 ```python
-from restapi.models.v_1_projects_project_id_usage_get_parameters_method import V1ProjectsProjectIdUsageGetParametersMethod
+from deepgram.models.v_1_projects_project_id_usage_get_parameters_method import V1ProjectsProjectIdUsageGetParametersMethod
 
 v_1_projects_project_id_usage_get_parameters_method = V1ProjectsProjectIdUsageGetParametersMethod.SYNC
 ```

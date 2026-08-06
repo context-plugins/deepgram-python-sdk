@@ -22,8 +22,8 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.list_project_requests_v_1_response import ListProjectRequestsV1Response
-from restapi.models.project_request_response import ProjectRequestResponse
+from deepgram.models.list_project_requests_v_1_response import ListProjectRequestsV1Response
+from deepgram.models.project_request_response import ProjectRequestResponse
 
 list_project_requests_v_1_response = ListProjectRequestsV1Response(
     page=104.54,

@@ -16,7 +16,7 @@ The unique identifier of the Groq model
 ## Example
 
 ```python
-from restapi.models.agent_think_models_v_1_response_models_items_one_of_3_id import AgentThinkModelsV1ResponseModelsItemsOneOf3Id
+from deepgram.models.agent_think_models_v_1_response_models_items_one_of_3_id import AgentThinkModelsV1ResponseModelsItemsOneOf3Id
 
 agent_think_models_v_1_response_models_items_one_of_3_id = AgentThinkModelsV1ResponseModelsItemsOneOf3Id.ENUM_OPENAIGPTOSS20B
 ```

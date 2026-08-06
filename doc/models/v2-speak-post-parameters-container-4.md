@@ -16,7 +16,7 @@ Encoding - opus. Supported container - ogg (default).
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_container_4 import V2SpeakPostParametersContainer4
+from deepgram.models.v_2_speak_post_parameters_container_4 import V2SpeakPostParametersContainer4
 
 v_2_speak_post_parameters_container_4 = V2SpeakPostParametersContainer4.OGG
 ```

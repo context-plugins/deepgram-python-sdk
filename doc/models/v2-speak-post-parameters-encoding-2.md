@@ -16,7 +16,7 @@ Encoding - mulaw. Compressed audio format commonly used in telephony.
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_encoding_2 import V2SpeakPostParametersEncoding2
+from deepgram.models.v_2_speak_post_parameters_encoding_2 import V2SpeakPostParametersEncoding2
 
 v_2_speak_post_parameters_encoding_2 = V2SpeakPostParametersEncoding2.MULAW
 ```

@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.get_project_distribution_credentials_v_1_response_member import GetProjectDistributionCredentialsV1ResponseMember
+from deepgram.models.get_project_distribution_credentials_v_1_response_member import GetProjectDistributionCredentialsV1ResponseMember
 
 get_project_distribution_credentials_v_1_response_member = GetProjectDistributionCredentialsV1ResponseMember(
     member_id='00000f3a-0000-0000-0000-000000000000',

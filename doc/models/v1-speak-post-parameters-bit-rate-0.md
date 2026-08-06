@@ -17,7 +17,7 @@ Encoding - mp3(default). Supported bitrates - 32000, 48000(default) bps.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_bit_rate_0 import V1SpeakPostParametersBitRate0
+from deepgram.models.v_1_speak_post_parameters_bit_rate_0 import V1SpeakPostParametersBitRate0
 
 v_1_speak_post_parameters_bit_rate_0 = V1SpeakPostParametersBitRate0.ENUM_32000
 ```

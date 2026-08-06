@@ -16,7 +16,7 @@ Encoding - opus. High-compression audio format optimized for real-time communica
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_encoding_5 import V1SpeakPostParametersEncoding5
+from deepgram.models.v_1_speak_post_parameters_encoding_5 import V1SpeakPostParametersEncoding5
 
 v_1_speak_post_parameters_encoding_5 = V1SpeakPostParametersEncoding5.OPUS
 ```

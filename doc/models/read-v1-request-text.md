@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.read_v_1_request_text import ReadV1RequestText
+from deepgram.models.read_v_1_request_text import ReadV1RequestText
 
 read_v_1_request_text = ReadV1RequestText(
     text='text6',

@@ -16,7 +16,7 @@ No container.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_container_0 import V1SpeakPostParametersContainer0
+from deepgram.models.v_1_speak_post_parameters_container_0 import V1SpeakPostParametersContainer0
 
 v_1_speak_post_parameters_container_0 = V1SpeakPostParametersContainer0.NONE
 ```

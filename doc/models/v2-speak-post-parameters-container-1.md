@@ -16,7 +16,7 @@ Encoding - linear16. Supported container - wav (default), or no container.
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_container_1 import V2SpeakPostParametersContainer1
+from deepgram.models.v_2_speak_post_parameters_container_1 import V2SpeakPostParametersContainer1
 
 v_2_speak_post_parameters_container_1 = V2SpeakPostParametersContainer1.WAV
 ```

@@ -18,14 +18,15 @@ manage_v_1_projects_members_scopes_api = client.manage_v_1_projects_members_scop
 
 Retrieves a list of scopes for a specific member
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
         project_id,
-        member_id,
-        authorization)
+        member_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -33,7 +34,6 @@ def list(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `member_id` | `str` | Template, Required | The unique identifier of the Member |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -48,12 +48,9 @@ project_id = 'project_id6'
 
 member_id = 'member_id0'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_members_scopes_api.list(
     project_id,
-    member_id,
-    authorization
+    member_id
 )
 
 if result.is_success():
@@ -73,15 +70,16 @@ elif result.is_error():
 
 Updates the scopes for a specific member
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def update(self,
           project_id,
           member_id,
-          authorization,
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -89,7 +87,6 @@ def update(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `member_id` | `str` | Template, Required | The unique identifier of the Member |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `body` | [`UpdateProjectMemberScopesV1Request`](../../doc/models/update-project-member-scopes-v1-request.md) | Body, Optional | A scope to update |
 
 ## Response Type
@@ -105,12 +102,9 @@ project_id = 'project_id6'
 
 member_id = 'member_id0'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_members_scopes_api.update(
     project_id,
-    member_id,
-    authorization
+    member_id
 )
 
 if result.is_success():

@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.delete_project_member_v_1_response import DeleteProjectMemberV1Response
+from deepgram.models.delete_project_member_v_1_response import DeleteProjectMemberV1Response
 
 delete_project_member_v_1_response = DeleteProjectMemberV1Response(
     message='message8',

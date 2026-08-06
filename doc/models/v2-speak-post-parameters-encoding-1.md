@@ -16,7 +16,7 @@ Encoding - flac. Lossless audio format for high-quality compression.
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_encoding_1 import V2SpeakPostParametersEncoding1
+from deepgram.models.v_2_speak_post_parameters_encoding_1 import V2SpeakPostParametersEncoding1
 
 v_2_speak_post_parameters_encoding_1 = V2SpeakPostParametersEncoding1.FLAC
 ```

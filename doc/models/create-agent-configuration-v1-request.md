@@ -23,7 +23,7 @@ Request body for creating an agent configuration
 ```python
 import jsonpickle
 
-from restapi.models.create_agent_configuration_v_1_request import CreateAgentConfigurationV1Request
+from deepgram.models.create_agent_configuration_v_1_request import CreateAgentConfigurationV1Request
 
 create_agent_configuration_v_1_request = CreateAgentConfigurationV1Request(
     config='config8',

@@ -25,7 +25,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.listen_v_1_response_results_utterances_items_words_items import ListenV1ResponseResultsUtterancesItemsWordsItems
+from deepgram.models.listen_v_1_response_results_utterances_items_words_items import ListenV1ResponseResultsUtterancesItemsWordsItems
 
 listen_v_1_response_results_utterances_items_words_items = ListenV1ResponseResultsUtterancesItemsWordsItems(
     word='word6',

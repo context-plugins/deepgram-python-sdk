@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_listen_post_parameters_summarize_0 import V1ListenPostParametersSummarize0
+from deepgram.models.v_1_listen_post_parameters_summarize_0 import V1ListenPostParametersSummarize0
 
 v_1_listen_post_parameters_summarize_0 = V1ListenPostParametersSummarize0.V2
 ```

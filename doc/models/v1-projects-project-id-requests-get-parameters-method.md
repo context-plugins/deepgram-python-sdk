@@ -18,7 +18,7 @@ Method type for the request
 ## Example
 
 ```python
-from restapi.models.v_1_projects_project_id_requests_get_parameters_method import V1ProjectsProjectIdRequestsGetParametersMethod
+from deepgram.models.v_1_projects_project_id_requests_get_parameters_method import V1ProjectsProjectIdRequestsGetParametersMethod
 
 v_1_projects_project_id_requests_get_parameters_method = V1ProjectsProjectIdRequestsGetParametersMethod.ENUM_ASYNC
 ```

@@ -21,21 +21,21 @@ voice_agent_variables_api = client.voice_agent_variables
 
 Creates a new template variable. Variables follow the `DG_<VARIABLE_NAME>` naming format and can substitute any JSON value in an agent configuration.
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def create(self,
           project_id,
-          authorization,
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `body` | [`CreateAgentVariableV1Request`](../../doc/models/create-agent-variable-v1-request.md) | Body, Optional | Agent variable details |
 
 ## Response Type
@@ -49,8 +49,6 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
 body = CreateAgentVariableV1Request(
     key='key6',
     value=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),
@@ -59,7 +57,6 @@ body = CreateAgentVariableV1Request(
 
 result = voice_agent_variables_api.create(
     project_id,
-    authorization,
     body=body
 )
 
@@ -80,20 +77,20 @@ elif result.is_error():
 
 Returns all template variables for the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
-        project_id,
-        authorization)
+        project_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -106,12 +103,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = voice_agent_variables_api.list(
-    project_id,
-    authorization
-)
+result = voice_agent_variables_api.list(project_id)
 
 if result.is_success():
     print(result.body)
@@ -130,14 +122,15 @@ elif result.is_error():
 
 Returns the specified template variable
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
        project_id,
-       variable_id,
-       authorization)
+       variable_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -145,7 +138,6 @@ def get(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `variable_id` | `str` | Template, Required | The unique identifier of the agent variable |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -160,12 +152,9 @@ project_id = 'project_id6'
 
 variable_id = 'variable_id8'
 
-authorization = 'Authorization8'
-
 result = voice_agent_variables_api.get(
     project_id,
-    variable_id,
-    authorization
+    variable_id
 )
 
 if result.is_success():
@@ -185,15 +174,16 @@ elif result.is_error():
 
 Updates the value of an existing template variable
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def update(self,
           project_id,
           variable_id,
-          authorization,
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -201,7 +191,6 @@ def update(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `variable_id` | `str` | Template, Required | The unique identifier of the agent variable |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `body` | [`UpdateAgentVariableV1Request`](../../doc/models/update-agent-variable-v1-request.md) | Body, Optional | Updated value for the agent variable |
 
 ## Response Type
@@ -217,12 +206,9 @@ project_id = 'project_id6'
 
 variable_id = 'variable_id8'
 
-authorization = 'Authorization8'
-
 result = voice_agent_variables_api.update(
     project_id,
-    variable_id,
-    authorization
+    variable_id
 )
 
 if result.is_success():
@@ -242,14 +228,15 @@ elif result.is_error():
 
 Deletes the specified template variable
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def delete(self,
           project_id,
-          variable_id,
-          authorization)
+          variable_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -257,7 +244,6 @@ def delete(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `variable_id` | `str` | Template, Required | The unique identifier of the agent variable |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -272,12 +258,9 @@ project_id = 'project_id6'
 
 variable_id = 'variable_id8'
 
-authorization = 'Authorization8'
-
 result = voice_agent_variables_api.delete(
     project_id,
-    variable_id,
-    authorization
+    variable_id
 )
 
 if result.is_success():

@@ -18,7 +18,7 @@ Deployment type for the requests
 ## Example
 
 ```python
-from restapi.models.v_1_projects_project_id_billing_breakdown_get_parameters_deployment import V1ProjectsProjectIdBillingBreakdownGetParametersDeployment
+from deepgram.models.v_1_projects_project_id_billing_breakdown_get_parameters_deployment import V1ProjectsProjectIdBillingBreakdownGetParametersDeployment
 
 v_1_projects_project_id_billing_breakdown_get_parameters_deployment = V1ProjectsProjectIdBillingBreakdownGetParametersDeployment.SELFHOSTED
 ```

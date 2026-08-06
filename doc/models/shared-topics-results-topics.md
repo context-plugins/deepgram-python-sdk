@@ -19,9 +19,9 @@
 ```python
 import jsonpickle
 
-from restapi.models.shared_topics_results_topics import SharedTopicsResultsTopics
-from restapi.models.shared_topics_results_topics_segments_items import SharedTopicsResultsTopicsSegmentsItems
-from restapi.models.shared_topics_results_topics_segments_items_topics_items import SharedTopicsResultsTopicsSegmentsItemsTopicsItems
+from deepgram.models.shared_topics_results_topics import SharedTopicsResultsTopics
+from deepgram.models.shared_topics_results_topics_segments_items import SharedTopicsResultsTopicsSegmentsItems
+from deepgram.models.shared_topics_results_topics_segments_items_topics_items import SharedTopicsResultsTopicsSegmentsItemsTopicsItems
 
 shared_topics_results_topics = SharedTopicsResultsTopics(
     segments=[

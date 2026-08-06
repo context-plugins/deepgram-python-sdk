@@ -18,20 +18,20 @@ manage_v_1_projects_members_api = client.manage_v_1_projects_members
 
 Retrieves a list of members for a given project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
-        project_id,
-        authorization)
+        project_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -44,12 +44,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_members_api.list(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_members_api.list(project_id)
 
 if result.is_success():
     print(result.body)
@@ -68,14 +63,15 @@ elif result.is_error():
 
 Removes a member from the project using their unique member ID
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def delete(self,
           project_id,
-          member_id,
-          authorization)
+          member_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -83,7 +79,6 @@ def delete(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `member_id` | `str` | Template, Required | The unique identifier of the Member |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -98,12 +93,9 @@ project_id = 'project_id6'
 
 member_id = 'member_id0'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_members_api.delete(
     project_id,
-    member_id,
-    authorization
+    member_id
 )
 
 if result.is_success():

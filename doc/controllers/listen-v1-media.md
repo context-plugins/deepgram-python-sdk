@@ -13,11 +13,8 @@ listen_v_1_media_api = client.listen_v_1_media
 
 Transcribe audio and video using Deepgram's speech-to-text REST API
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def transcribe(self,
-              authorization,
               callback=None,
               callback_method="POST",
               extra=None,
@@ -58,11 +55,14 @@ def transcribe(self,
               body=None)
 ```
 
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `callback` | `str` | Query, Optional | URL to which we'll make the callback request |
 | `callback_method` | [`V1ListenPostParametersCallbackMethod`](../../doc/models/v1-listen-post-parameters-callback-method.md) | Query, Optional | HTTP method by which the callback request will be made<br><br>**Default**: `"POST"` |
 | `extra` | str \| List[str] \| None | Query, Optional | Arbitrary key-value pairs that are attached to the API response for usage in downstream processing |
@@ -111,8 +111,6 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```python
-authorization = 'Authorization8'
-
 callback_method = V1ListenPostParametersCallbackMethod.POST
 
 sentiment = False
@@ -160,7 +158,6 @@ utt_split = 0.8
 mip_opt_out = False
 
 result = listen_v_1_media_api.transcribe(
-    authorization,
     callback_method=callback_method,
     sentiment=sentiment,
     summarize=summarize,

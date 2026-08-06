@@ -16,7 +16,7 @@ Encoding - mp3. Sample rate is fixed and not configurable (22050 Hz).
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_sample_rate_3 import V1SpeakPostParametersSampleRate3
+from deepgram.models.v_1_speak_post_parameters_sample_rate_3 import V1SpeakPostParametersSampleRate3
 
 v_1_speak_post_parameters_sample_rate_3 = V1SpeakPostParametersSampleRate3.ENUM_22050
 ```

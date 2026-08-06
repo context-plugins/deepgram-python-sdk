@@ -21,7 +21,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.create_agent_configuration_v_1_response import CreateAgentConfigurationV1Response
+from deepgram.models.create_agent_configuration_v_1_response import CreateAgentConfigurationV1Response
 
 create_agent_configuration_v_1_response = CreateAgentConfigurationV1Response(
     agent_id='agent_id8',

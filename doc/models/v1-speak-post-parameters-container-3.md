@@ -16,7 +16,7 @@ Encoding - alaw. Supported container - wav (default), or no container.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_container_3 import V1SpeakPostParametersContainer3
+from deepgram.models.v_1_speak_post_parameters_container_3 import V1SpeakPostParametersContainer3
 
 v_1_speak_post_parameters_container_3 = V1SpeakPostParametersContainer3.WAV
 ```

@@ -17,7 +17,7 @@ Encoding - mulaw. Supported sample rates - 8000, 16000 Hz.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_sample_rate_1 import V1SpeakPostParametersSampleRate1
+from deepgram.models.v_1_speak_post_parameters_sample_rate_1 import V1SpeakPostParametersSampleRate1
 
 v_1_speak_post_parameters_sample_rate_1 = V1SpeakPostParametersSampleRate1.ENUM_8000
 ```

@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.listen_v_1_response_results_summary import ListenV1ResponseResultsSummary
+from deepgram.models.listen_v_1_response_results_summary import ListenV1ResponseResultsSummary
 
 listen_v_1_response_results_summary = ListenV1ResponseResultsSummary(
     result='result0',

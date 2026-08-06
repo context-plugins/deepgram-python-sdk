@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.grant_v_1_response import GrantV1Response
+from deepgram.models.grant_v_1_response import GrantV1Response
 
 grant_v_1_response = GrantV1Response(
     access_token='access_token0',

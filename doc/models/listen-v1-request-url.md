@@ -21,7 +21,7 @@ Audio file URL to transcribe
 ```python
 import jsonpickle
 
-from restapi.models.listen_v_1_request_url import ListenV1RequestUrl
+from deepgram.models.listen_v_1_request_url import ListenV1RequestUrl
 
 listen_v_1_request_url = ListenV1RequestUrl(
     url='url2',

@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.read_v_1_response_results_summary_results_summary import ReadV1ResponseResultsSummaryResultsSummary
+from deepgram.models.read_v_1_response_results_summary_results_summary import ReadV1ResponseResultsSummaryResultsSummary
 
 read_v_1_response_results_summary_results_summary = ReadV1ResponseResultsSummaryResultsSummary(
     text='text6',

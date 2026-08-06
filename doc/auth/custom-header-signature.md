@@ -22,10 +22,10 @@ Documentation for accessing and setting credentials for ApiKeyAuth.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```python
-from restapi.http.auth.api_key_auth import ApiKeyAuthCredentials
-from restapi.restapi_client import RestapiClient
+from deepgram.deepgram_client import DeepgramClient
+from deepgram.http.auth.api_key_auth import ApiKeyAuthCredentials
 
-client = RestapiClient(
+client = DeepgramClient(
     api_key_auth_credentials=ApiKeyAuthCredentials(
         authorization='Authorization'
     )

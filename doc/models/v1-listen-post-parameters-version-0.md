@@ -16,7 +16,7 @@ Use the latest version of a model
 ## Example
 
 ```python
-from restapi.models.v_1_listen_post_parameters_version_0 import V1ListenPostParametersVersion0
+from deepgram.models.v_1_listen_post_parameters_version_0 import V1ListenPostParametersVersion0
 
 v_1_listen_post_parameters_version_0 = V1ListenPostParametersVersion0.LATEST
 ```

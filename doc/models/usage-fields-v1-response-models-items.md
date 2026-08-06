@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.usage_fields_v_1_response_models_items import UsageFieldsV1ResponseModelsItems
+from deepgram.models.usage_fields_v_1_response_models_items import UsageFieldsV1ResponseModelsItems
 
 usage_fields_v_1_response_models_items = UsageFieldsV1ResponseModelsItems(
     name='name8',

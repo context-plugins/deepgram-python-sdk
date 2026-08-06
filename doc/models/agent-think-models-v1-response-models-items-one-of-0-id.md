@@ -23,7 +23,7 @@ The unique identifier of the OpenAI model
 ## Example
 
 ```python
-from restapi.models.agent_think_models_v_1_response_models_items_one_of_0_id import AgentThinkModelsV1ResponseModelsItemsOneOf0Id
+from deepgram.models.agent_think_models_v_1_response_models_items_one_of_0_id import AgentThinkModelsV1ResponseModelsItemsOneOf0Id
 
 agent_think_models_v_1_response_models_items_one_of_0_id = AgentThinkModelsV1ResponseModelsItemsOneOf0Id.GPT5NANO
 ```

@@ -44,7 +44,7 @@ Our public models available to all accounts
 ## Example
 
 ```python
-from restapi.models.v_1_listen_post_parameters_model_0 import V1ListenPostParametersModel0
+from deepgram.models.v_1_listen_post_parameters_model_0 import V1ListenPostParametersModel0
 
 v_1_listen_post_parameters_model_0 = V1ListenPostParametersModel0.ENHANCEDFINANCE
 ```

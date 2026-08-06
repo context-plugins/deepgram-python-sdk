@@ -16,7 +16,7 @@ Encoding - mulaw. Supported container - wav (default), or no container.
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_container_2 import V2SpeakPostParametersContainer2
+from deepgram.models.v_2_speak_post_parameters_container_2 import V2SpeakPostParametersContainer2
 
 v_2_speak_post_parameters_container_2 = V2SpeakPostParametersContainer2.WAV
 ```

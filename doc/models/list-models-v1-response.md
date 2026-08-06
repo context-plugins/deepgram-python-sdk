@@ -20,9 +20,9 @@
 ```python
 import jsonpickle
 
-from restapi.models.list_models_v_1_response import ListModelsV1Response
-from restapi.models.list_models_v_1_response_stt_models import ListModelsV1ResponseSttModels
-from restapi.models.list_models_v_1_response_tts_models import ListModelsV1ResponseTtsModels
+from deepgram.models.list_models_v_1_response import ListModelsV1Response
+from deepgram.models.list_models_v_1_response_stt_models import ListModelsV1ResponseSttModels
+from deepgram.models.list_models_v_1_response_tts_models import ListModelsV1ResponseTtsModels
 
 list_models_v_1_response = ListModelsV1Response(
     stt=[

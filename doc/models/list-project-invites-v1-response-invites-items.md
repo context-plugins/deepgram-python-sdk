@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.list_project_invites_v_1_response_invites_items import ListProjectInvitesV1ResponseInvitesItems
+from deepgram.models.list_project_invites_v_1_response_invites_items import ListProjectInvitesV1ResponseInvitesItems
 
 list_project_invites_v_1_response_invites_items = ListProjectInvitesV1ResponseInvitesItems(
     email='email6',

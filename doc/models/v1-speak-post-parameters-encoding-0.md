@@ -16,7 +16,7 @@ Encoding - linear16. Uncompressed, high-quality audio format often used for tele
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_encoding_0 import V1SpeakPostParametersEncoding0
+from deepgram.models.v_1_speak_post_parameters_encoding_0 import V1SpeakPostParametersEncoding0
 
 v_1_speak_post_parameters_encoding_0 = V1SpeakPostParametersEncoding0.LINEAR16
 ```

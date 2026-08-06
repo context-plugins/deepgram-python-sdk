@@ -10,51 +10,51 @@ Python and PIP executables should be defined in your PATH. Open command prompt a
 * Using command line, navigate to the directory containing the generated files (including `requirements.txt`) for the SDK.
 * Run the command `pip install -r requirements.txt`. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&step=installDependencies)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&step=installDependencies)
 
 ## Installation
 
-The following section explains how to use the restapi library in a new project.
+The following section explains how to use the deepgram library in a new project.
 
 ### 1. Open Project in an IDE
 
 Open up a Python IDE like PyCharm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-![Open project in PyCharm - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&step=pyCharm)
+![Open project in PyCharm - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&step=pyCharm)
 
 Click on `Open` in PyCharm to browse to your generated SDK directory and then click `OK`.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&step=openProject0)
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&step=openProject0)
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&projectName=restapi&step=openProject1)
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&projectName=deepgram&step=openProject1)
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&projectName=restapi&step=createDirectory)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&projectName=deepgram&step=createDirectory)
 
 Name the directory as "test".
 
-![Add a new project in PyCharm - Step 2](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&step=nameDirectory)
+![Add a new project in PyCharm - Step 2](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&step=nameDirectory)
 
 Add a python file to this project.
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&projectName=restapi&step=createFile)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&projectName=deepgram&step=createFile)
 
 Name it "testSDK".
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&projectName=restapi&step=nameFile)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&projectName=deepgram&step=nameFile)
 
 In your python file you will be required to import the generated python library using the following code lines
 
 ```python
-from restapi.restapi_client import RestapiClient
+from deepgram.deepgram_client import DeepgramClient
 ```
 
-![Add a new project in PyCharm - Step 5](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&projectName=restapi&libraryName=restapi.restapi_client&className=RestapiClient&step=projectFiles)
+![Add a new project in PyCharm - Step 5](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&projectName=deepgram&libraryName=deepgram.deepgram_client&className=DeepgramClient&step=projectFiles)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -62,7 +62,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on `Run`
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Restapi-Python&projectName=restapi&libraryName=restapi.restapi_client&className=RestapiClient&step=runProject)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?workspaceFolder=Deepgram-Python&projectName=deepgram&libraryName=deepgram.deepgram_client&className=DeepgramClient&step=runProject)
 
 ## Initialize the API Client
 
@@ -93,15 +93,15 @@ The API client can be initialized as follows:
 ```python
 import logging
 
-from restapi.configuration import Environment
-from restapi.http.auth.api_key_auth import ApiKeyAuthCredentials
-from restapi.http.auth.jwt_auth import JwtAuthCredentials
-from restapi.logging.configuration.api_logging_configuration import LoggingConfiguration
-from restapi.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
-from restapi.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
-from restapi.restapi_client import RestapiClient
+from deepgram.configuration import Environment
+from deepgram.deepgram_client import DeepgramClient
+from deepgram.http.auth.api_key_auth import ApiKeyAuthCredentials
+from deepgram.http.auth.jwt_auth import JwtAuthCredentials
+from deepgram.logging.configuration.api_logging_configuration import LoggingConfiguration
+from deepgram.logging.configuration.api_logging_configuration import RequestLoggingConfiguration
+from deepgram.logging.configuration.api_logging_configuration import ResponseLoggingConfiguration
 
-client = RestapiClient(
+client = DeepgramClient(
     api_key_auth_credentials=ApiKeyAuthCredentials(
         authorization='Authorization'
     ),
@@ -124,10 +124,10 @@ client = RestapiClient(
 ### Environment-Based Client Initialization
 
 ```python
-from restapi.restapi_client import RestapiClient
+from deepgram.deepgram_client import DeepgramClient
 
 # Specify the path to your .env file if it’s located outside the project’s root directory.
-client = RestapiClient.from_environment(dotenv_path='/path/to/.env')
+client = DeepgramClient.from_environment(dotenv_path='/path/to/.env')
 ```
 
 See the [Environment-Based Client Initialization](doc/environment-based-client-initialization.md) section for details.

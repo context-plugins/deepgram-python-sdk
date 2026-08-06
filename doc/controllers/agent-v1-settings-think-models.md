@@ -13,11 +13,13 @@ agent_v_1_settings_think_models_api = client.agent_v_1_settings_think_models
 
 Retrieves the available think models that can be used for AI agent processing
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Response Type
 

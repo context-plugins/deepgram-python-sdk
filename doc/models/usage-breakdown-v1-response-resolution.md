@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.usage_breakdown_v_1_response_resolution import UsageBreakdownV1ResponseResolution
+from deepgram.models.usage_breakdown_v_1_response_resolution import UsageBreakdownV1ResponseResolution
 
 usage_breakdown_v_1_response_resolution = UsageBreakdownV1ResponseResolution(
     units='units2',

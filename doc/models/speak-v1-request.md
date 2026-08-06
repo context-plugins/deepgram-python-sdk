@@ -21,7 +21,7 @@ Request body for text-to-speech conversion
 ```python
 import jsonpickle
 
-from restapi.models.speak_v_1_request import SpeakV1Request
+from deepgram.models.speak_v_1_request import SpeakV1Request
 
 speak_v_1_request = SpeakV1Request(
     text='text2',

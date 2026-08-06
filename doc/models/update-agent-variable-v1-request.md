@@ -21,7 +21,7 @@ Request body for updating an agent variable
 ```python
 import jsonpickle
 
-from restapi.models.update_agent_variable_v_1_request import UpdateAgentVariableV1Request
+from deepgram.models.update_agent_variable_v_1_request import UpdateAgentVariableV1Request
 
 update_agent_variable_v_1_request = UpdateAgentVariableV1Request(
     value=jsonpickle.decode('{"key1":"val1","key2":"val2"}'),

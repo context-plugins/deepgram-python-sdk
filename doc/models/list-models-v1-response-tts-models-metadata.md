@@ -25,7 +25,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.list_models_v_1_response_tts_models_metadata import ListModelsV1ResponseTtsModelsMetadata
+from deepgram.models.list_models_v_1_response_tts_models_metadata import ListModelsV1ResponseTtsModelsMetadata
 
 list_models_v_1_response_tts_models_metadata = ListModelsV1ResponseTtsModelsMetadata(
     accent='accent0',

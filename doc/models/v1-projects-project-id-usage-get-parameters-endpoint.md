@@ -17,7 +17,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_projects_project_id_usage_get_parameters_endpoint import V1ProjectsProjectIdUsageGetParametersEndpoint
+from deepgram.models.v_1_projects_project_id_usage_get_parameters_endpoint import V1ProjectsProjectIdUsageGetParametersEndpoint
 
 v_1_projects_project_id_usage_get_parameters_endpoint = V1ProjectsProjectIdUsageGetParametersEndpoint.LISTEN
 ```

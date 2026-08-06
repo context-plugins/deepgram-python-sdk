@@ -14,7 +14,7 @@
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_priority import V2SpeakPostParametersPriority
+from deepgram.models.v_2_speak_post_parameters_priority import V2SpeakPostParametersPriority
 
 v_2_speak_post_parameters_priority = V2SpeakPostParametersPriority.LOW
 ```

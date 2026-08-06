@@ -23,7 +23,7 @@ Request body for creating an agent variable
 ```python
 import jsonpickle
 
-from restapi.models.create_agent_variable_v_1_request import CreateAgentVariableV1Request
+from deepgram.models.create_agent_variable_v_1_request import CreateAgentVariableV1Request
 
 create_agent_variable_v_1_request = CreateAgentVariableV1Request(
     key='key4',

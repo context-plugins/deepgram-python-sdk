@@ -13,11 +13,8 @@ read_v_1_text_api = client.read_v_1_text
 
 Analyze text content using Deepgrams text analysis API
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def analyze(self,
-           authorization,
            callback=None,
            callback_method="POST",
            sentiment=False,
@@ -33,11 +30,14 @@ def analyze(self,
            body=None)
 ```
 
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `callback` | `str` | Query, Optional | URL to which we'll make the callback request |
 | `callback_method` | [`V1ListenPostParametersCallbackMethod`](../../doc/models/v1-listen-post-parameters-callback-method.md) | Query, Optional | HTTP method by which the callback request will be made<br><br>**Default**: `"POST"` |
 | `sentiment` | `bool` | Query, Optional | Recognizes the sentiment throughout a transcript or text<br><br>**Default**: `False` |
@@ -61,8 +61,6 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```python
-authorization = 'Authorization8'
-
 callback_method = V1ListenPostParametersCallbackMethod.POST
 
 sentiment = False
@@ -80,7 +78,6 @@ custom_intent_mode = V1ListenPostParametersCustomTopicMode.EXTENDED
 language = 'en'
 
 result = read_v_1_text_api.analyze(
-    authorization,
     callback_method=callback_method,
     sentiment=sentiment,
     summarize=summarize,

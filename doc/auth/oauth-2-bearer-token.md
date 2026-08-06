@@ -22,10 +22,10 @@ Documentation for accessing and setting credentials for JwtAuth.
 You must provide credentials in the client as shown in the following code snippet.
 
 ```python
-from restapi.http.auth.jwt_auth import JwtAuthCredentials
-from restapi.restapi_client import RestapiClient
+from deepgram.deepgram_client import DeepgramClient
+from deepgram.http.auth.jwt_auth import JwtAuthCredentials
 
-client = RestapiClient(
+client = DeepgramClient(
     jwt_auth_credentials=JwtAuthCredentials(
         access_token='AccessToken'
     )

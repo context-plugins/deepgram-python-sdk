@@ -22,7 +22,7 @@ Request body for creating a project invite
 ```python
 import jsonpickle
 
-from restapi.models.create_project_invite_v_1_request import CreateProjectInviteV1Request
+from deepgram.models.create_project_invite_v_1_request import CreateProjectInviteV1Request
 
 create_project_invite_v_1_request = CreateProjectInviteV1Request(
     email='email6',

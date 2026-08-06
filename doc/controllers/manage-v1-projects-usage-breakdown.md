@@ -13,12 +13,9 @@ manage_v_1_projects_usage_breakdown_api = client.manage_v_1_projects_usage_break
 
 Retrieves the usage breakdown for a specific project, with various filter options by API feature or by groupings. Setting a feature (e.g. diarize) to true includes requests that used that feature, while false excludes requests that used it. Multiple true filters are combined with OR logic, while false filters use AND logic.
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
        project_id,
-       authorization,
        start=None,
        end=None,
        grouping=None,
@@ -66,12 +63,15 @@ def get(self,
        version=None)
 ```
 
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `start` | `date` | Query, Optional | Start date of the requested date range. Format accepted is YYYY-MM-DD |
 | `end` | `date` | Query, Optional | End date of the requested date range. Format accepted is YYYY-MM-DD |
 | `grouping` | [`V1ProjectsProjectIdUsageBreakdownGetParametersGrouping`](../../doc/models/v1-projects-project-id-usage-breakdown-get-parameters-grouping.md) | Query, Optional | Common usage grouping parameters |
@@ -129,12 +129,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_usage_breakdown_api.get(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_usage_breakdown_api.get(project_id)
 
 if result.is_success():
     print(result.body)

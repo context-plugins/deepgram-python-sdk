@@ -26,7 +26,7 @@ A template variable for agent configurations
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.agent_variable_v_1 import AgentVariableV1
+from deepgram.models.agent_variable_v_1 import AgentVariableV1
 
 agent_variable_v_1 = AgentVariableV1(
     variable_id='variable_id8',

@@ -23,7 +23,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.list_project_members_v_1_response_members_items import ListProjectMembersV1ResponseMembersItems
+from deepgram.models.list_project_members_v_1_response_members_items import ListProjectMembersV1ResponseMembersItems
 
 list_project_members_v_1_response_members_items = ListProjectMembersV1ResponseMembersItems(
     member_id='member_id0',

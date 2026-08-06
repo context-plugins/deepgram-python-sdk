@@ -21,7 +21,7 @@ Request body for Flux TTS batch (REST) text-to-speech conversion. The full block
 ```python
 import jsonpickle
 
-from restapi.models.speak_v_2_request import SpeakV2Request
+from deepgram.models.speak_v_2_request import SpeakV2Request
 
 speak_v_2_request = SpeakV2Request(
     text='text2',

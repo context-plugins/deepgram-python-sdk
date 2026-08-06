@@ -21,18 +21,13 @@ manage_v_1_projects_api = client.manage_v_1_projects
 
 Retrieves basic information about the projects associated with the API key
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
-def list(self,
-        authorization)
+def list(self)
 ```
 
-## Parameters
+## Authentication
 
-| Parameter | Type | Tags | Description |
-|  --- | --- | --- | --- |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Response Type
 
@@ -43,9 +38,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```python
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_api.list(authorization)
+result = manage_v_1_projects_api.list()
 
 if result.is_success():
     print(result.body)
@@ -64,22 +57,22 @@ elif result.is_error():
 
 Retrieves information about the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
        project_id,
-       authorization,
        limit=10,
        page=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `limit` | `float` | Query, Optional | Number of results to return per page. Default 10. Range [1,1000]<br><br>**Default**: `10` |
 | `page` | `float` | Query, Optional | Navigate and return the results to retrieve specific portions of information of the response |
 
@@ -94,13 +87,10 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
 limit = 10
 
 result = manage_v_1_projects_api.get(
     project_id,
-    authorization,
     limit=limit
 )
 
@@ -121,21 +111,21 @@ elif result.is_error():
 
 Updates the name or other properties of an existing project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def update(self,
           project_id,
-          authorization,
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `body` | [`UpdateProjectV1Request`](../../doc/models/update-project-v1-request.md) | Body, Optional | The name of the project |
 
 ## Response Type
@@ -149,12 +139,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_api.update(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_api.update(project_id)
 
 if result.is_success():
     print(result.body)
@@ -173,20 +158,20 @@ elif result.is_error():
 
 Deletes the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def delete(self,
-          project_id,
-          authorization)
+          project_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -199,12 +184,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_api.delete(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_api.delete(project_id)
 
 if result.is_success():
     print(result.body)
@@ -223,20 +203,20 @@ elif result.is_error():
 
 Removes the authenticated account from the specific project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def leave(self,
-         project_id,
-         authorization)
+         project_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -249,12 +229,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_api.leave(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_api.leave(project_id)
 
 if result.is_success():
     print(result.body)

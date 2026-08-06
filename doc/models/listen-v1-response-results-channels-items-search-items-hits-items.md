@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.listen_v_1_response_results_channels_items_search_items_hits_items import ListenV1ResponseResultsChannelsItemsSearchItemsHitsItems
+from deepgram.models.listen_v_1_response_results_channels_items_search_items_hits_items import ListenV1ResponseResultsChannelsItemsSearchItemsHitsItems
 
 listen_v_1_response_results_channels_items_search_items_hits_items = ListenV1ResponseResultsChannelsItemsSearchItemsHitsItems(
     confidence=54.38,

@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.grant_v_1_request import GrantV1Request
+from deepgram.models.grant_v_1_request import GrantV1Request
 
 grant_v_1_request = GrantV1Request(
     ttl_seconds=138.18,

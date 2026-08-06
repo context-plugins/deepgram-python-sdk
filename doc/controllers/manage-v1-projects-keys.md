@@ -20,21 +20,21 @@ manage_v_1_projects_keys_api = client.manage_v_1_projects_keys
 
 Retrieves all API keys associated with the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
         project_id,
-        authorization,
         status=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `status` | [`V1ProjectsProjectIdKeysGetParametersStatus`](../../doc/models/v1-projects-project-id-keys-get-parameters-status.md) | Query, Optional | Only return keys with a specific status |
 
 ## Response Type
@@ -48,12 +48,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_keys_api.list(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_keys_api.list(project_id)
 
 if result.is_success():
     print(result.body)
@@ -72,21 +67,21 @@ elif result.is_error():
 
 Creates a new API key with specified settings for the project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def create(self,
           project_id,
-          authorization,
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `body` | Any \| None | Body, Optional | API key settings |
 
 ## Response Type
@@ -100,12 +95,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_keys_api.create(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_keys_api.create(project_id)
 
 if result.is_success():
     print(result.body)
@@ -124,14 +114,15 @@ elif result.is_error():
 
 Retrieves information about a specified API key
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
        project_id,
-       key_id,
-       authorization)
+       key_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -139,7 +130,6 @@ def get(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `key_id` | `str` | Template, Required | The unique identifier of the API key |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -154,12 +144,9 @@ project_id = 'project_id6'
 
 key_id = 'key_id4'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_keys_api.get(
     project_id,
-    key_id,
-    authorization
+    key_id
 )
 
 if result.is_success():
@@ -179,14 +166,15 @@ elif result.is_error():
 
 Deletes an API key for a specific project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def delete(self,
           project_id,
-          key_id,
-          authorization)
+          key_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -194,7 +182,6 @@ def delete(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `key_id` | `str` | Template, Required | The unique identifier of the API key |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -209,12 +196,9 @@ project_id = 'project_id6'
 
 key_id = 'key_id4'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_keys_api.delete(
     project_id,
-    key_id,
-    authorization
+    key_id
 )
 
 if result.is_success():

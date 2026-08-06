@@ -17,7 +17,7 @@ The unique identifier of the Anthropic model
 ## Example
 
 ```python
-from restapi.models.agent_think_models_v_1_response_models_items_one_of_1_id import AgentThinkModelsV1ResponseModelsItemsOneOf1Id
+from deepgram.models.agent_think_models_v_1_response_models_items_one_of_1_id import AgentThinkModelsV1ResponseModelsItemsOneOf1Id
 
 agent_think_models_v_1_response_models_items_one_of_1_id = AgentThinkModelsV1ResponseModelsItemsOneOf1Id.CLAUDE35HAIKULATEST
 ```

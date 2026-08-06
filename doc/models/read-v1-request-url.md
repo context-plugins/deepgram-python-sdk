@@ -19,7 +19,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.read_v_1_request_url import ReadV1RequestUrl
+from deepgram.models.read_v_1_request_url import ReadV1RequestUrl
 
 read_v_1_request_url = ReadV1RequestUrl(
     url='url4',

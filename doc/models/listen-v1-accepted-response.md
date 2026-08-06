@@ -21,7 +21,7 @@ Accepted response for asynchronous transcription requests
 ```python
 import jsonpickle
 
-from restapi.models.listen_v_1_accepted_response import ListenV1AcceptedResponse
+from deepgram.models.listen_v_1_accepted_response import ListenV1AcceptedResponse
 
 listen_v_1_accepted_response = ListenV1AcceptedResponse(
     request_id='0000054c-0000-0000-0000-000000000000',

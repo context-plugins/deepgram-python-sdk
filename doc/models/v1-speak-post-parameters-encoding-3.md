@@ -16,7 +16,7 @@ Encoding - alaw. Similar to mulaw but used in international telephony.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_encoding_3 import V1SpeakPostParametersEncoding3
+from deepgram.models.v_1_speak_post_parameters_encoding_3 import V1SpeakPostParametersEncoding3
 
 v_1_speak_post_parameters_encoding_3 = V1SpeakPostParametersEncoding3.ALAW
 ```

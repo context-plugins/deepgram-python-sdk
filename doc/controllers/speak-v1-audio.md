@@ -13,11 +13,8 @@ speak_v_1_audio_api = client.speak_v_1_audio
 
 Convert text into natural-sounding speech using Deepgram's TTS REST API
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def generate(self,
-            authorization,
             callback=None,
             callback_method="POST",
             mip_opt_out=False,
@@ -31,11 +28,14 @@ def generate(self,
             body=None)
 ```
 
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `callback` | `str` | Query, Optional | URL to which we'll make the callback request |
 | `callback_method` | [`V1ListenPostParametersCallbackMethod`](../../doc/models/v1-listen-post-parameters-callback-method.md) | Query, Optional | HTTP method by which the callback request will be made<br><br>**Default**: `"POST"` |
 | `mip_opt_out` | `bool` | Query, Optional | Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip<br><br>**Default**: `False` |
@@ -57,8 +57,6 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ## Example Usage
 
 ```python
-authorization = 'Authorization8'
-
 callback_method = V1ListenPostParametersCallbackMethod.POST
 
 mip_opt_out = False
@@ -68,7 +66,6 @@ model = V1SpeakPostParametersModel.AURAASTERIAEN
 speed = 1
 
 result = speak_v_1_audio_api.generate(
-    authorization,
     callback_method=callback_method,
     mip_opt_out=mip_opt_out,
     model=model,

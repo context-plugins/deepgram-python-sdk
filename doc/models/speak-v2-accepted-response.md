@@ -21,7 +21,7 @@ Accepted response returned when a callback URL is supplied; the audio is deliver
 ```python
 import jsonpickle
 
-from restapi.models.speak_v_2_accepted_response import SpeakV2AcceptedResponse
+from deepgram.models.speak_v_2_accepted_response import SpeakV2AcceptedResponse
 
 speak_v_2_accepted_response = SpeakV2AcceptedResponse(
     request_id='00000f7c-0000-0000-0000-000000000000',

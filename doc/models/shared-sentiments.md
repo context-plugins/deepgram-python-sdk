@@ -22,9 +22,9 @@ Output whenever `sentiment=true` is used
 ```python
 import jsonpickle
 
-from restapi.models.shared_sentiments import SharedSentiments
-from restapi.models.shared_sentiments_average import SharedSentimentsAverage
-from restapi.models.shared_sentiments_segments_items import SharedSentimentsSegmentsItems
+from deepgram.models.shared_sentiments import SharedSentiments
+from deepgram.models.shared_sentiments_average import SharedSentimentsAverage
+from deepgram.models.shared_sentiments_segments_items import SharedSentimentsSegmentsItems
 
 shared_sentiments = SharedSentiments(
     segments=[

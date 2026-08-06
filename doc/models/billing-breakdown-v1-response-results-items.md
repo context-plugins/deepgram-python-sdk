@@ -21,8 +21,8 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.billing_breakdown_v_1_response_results_items import BillingBreakdownV1ResponseResultsItems
-from restapi.models.billing_breakdown_v_1_response_results_items_grouping import BillingBreakdownV1ResponseResultsItemsGrouping
+from deepgram.models.billing_breakdown_v_1_response_results_items import BillingBreakdownV1ResponseResultsItems
+from deepgram.models.billing_breakdown_v_1_response_results_items_grouping import BillingBreakdownV1ResponseResultsItemsGrouping
 
 billing_breakdown_v_1_response_results_items = BillingBreakdownV1ResponseResultsItems(
     dollars=165.44,

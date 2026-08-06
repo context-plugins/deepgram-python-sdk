@@ -17,7 +17,7 @@ Encoding - alaw. Supported sample rates - 8000, 16000 Hz.
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_sample_rate_2 import V2SpeakPostParametersSampleRate2
+from deepgram.models.v_2_speak_post_parameters_sample_rate_2 import V2SpeakPostParametersSampleRate2
 
 v_2_speak_post_parameters_sample_rate_2 = V2SpeakPostParametersSampleRate2.ENUM_8000
 ```

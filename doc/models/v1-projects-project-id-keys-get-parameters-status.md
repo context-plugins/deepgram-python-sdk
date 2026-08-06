@@ -15,7 +15,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_projects_project_id_keys_get_parameters_status import V1ProjectsProjectIdKeysGetParametersStatus
+from deepgram.models.v_1_projects_project_id_keys_get_parameters_status import V1ProjectsProjectIdKeysGetParametersStatus
 
 v_1_projects_project_id_keys_get_parameters_status = V1ProjectsProjectIdKeysGetParametersStatus.ACTIVE
 ```

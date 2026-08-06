@@ -20,8 +20,8 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.agent_variable_v_1 import AgentVariableV1
-from restapi.models.list_agent_variables_v_1_response import ListAgentVariablesV1Response
+from deepgram.models.agent_variable_v_1 import AgentVariableV1
+from deepgram.models.list_agent_variables_v_1_response import ListAgentVariablesV1Response
 
 list_agent_variables_v_1_response = ListAgentVariablesV1Response(
     variables=[

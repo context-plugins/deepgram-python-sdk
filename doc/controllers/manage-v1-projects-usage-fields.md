@@ -13,22 +13,22 @@ manage_v_1_projects_usage_fields_api = client.manage_v_1_projects_usage_fields
 
 Lists the features, models, tags, languages, and processing method used for requests in the specified project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
         project_id,
-        authorization,
         start=None,
         end=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `start` | `date` | Query, Optional | Start date of the requested date range. Format accepted is YYYY-MM-DD |
 | `end` | `date` | Query, Optional | End date of the requested date range. Format accepted is YYYY-MM-DD |
 
@@ -43,12 +43,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_usage_fields_api.list(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_usage_fields_api.list(project_id)
 
 if result.is_success():
     print(result.body)

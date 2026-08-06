@@ -21,7 +21,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.error_response_legacy_error import ErrorResponseLegacyError
+from deepgram.models.error_response_legacy_error import ErrorResponseLegacyError
 
 error_response_legacy_error = ErrorResponseLegacyError(
     err_code='err_code2',

@@ -20,7 +20,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_projects_project_id_usage_breakdown_get_parameters_grouping import V1ProjectsProjectIdUsageBreakdownGetParametersGrouping
+from deepgram.models.v_1_projects_project_id_usage_breakdown_get_parameters_grouping import V1ProjectsProjectIdUsageBreakdownGetParametersGrouping
 
 v_1_projects_project_id_usage_breakdown_get_parameters_grouping = V1ProjectsProjectIdUsageBreakdownGetParametersGrouping.ENDPOINT
 ```

@@ -18,7 +18,7 @@ The unique identifier of the Google model
 ## Example
 
 ```python
-from restapi.models.agent_think_models_v_1_response_models_items_one_of_2_id import AgentThinkModelsV1ResponseModelsItemsOneOf2Id
+from deepgram.models.agent_think_models_v_1_response_models_items_one_of_2_id import AgentThinkModelsV1ResponseModelsItemsOneOf2Id
 
 agent_think_models_v_1_response_models_items_one_of_2_id = AgentThinkModelsV1ResponseModelsItemsOneOf2Id.ENUM_GEMINI25FLASH
 ```

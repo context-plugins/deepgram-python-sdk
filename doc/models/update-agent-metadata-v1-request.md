@@ -21,7 +21,7 @@ Request body for updating agent configuration metadata
 ```python
 import jsonpickle
 
-from restapi.models.update_agent_metadata_v_1_request import UpdateAgentMetadataV1Request
+from deepgram.models.update_agent_metadata_v_1_request import UpdateAgentMetadataV1Request
 
 update_agent_metadata_v_1_request = UpdateAgentMetadataV1Request(
     metadata={

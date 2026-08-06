@@ -25,7 +25,7 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.billing_breakdown_v_1_response_results_items_grouping import BillingBreakdownV1ResponseResultsItemsGrouping
+from deepgram.models.billing_breakdown_v_1_response_results_items_grouping import BillingBreakdownV1ResponseResultsItemsGrouping
 
 billing_breakdown_v_1_response_results_items_grouping = BillingBreakdownV1ResponseResultsItemsGrouping(
     start=dateutil.parser.parse('2016-03-13').date(),

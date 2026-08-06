@@ -15,10 +15,10 @@ Represents the proxy server configurations for API calls.
 ## Usage Example
 
 ```python
-from restapi.restapi_client import RestapiClient
-from restapi.http.proxy_settings import ProxySettings
+from deepgram.deepgram_client import DeepgramClient
+from deepgram.http.proxy_settings import ProxySettings
 
-client = RestapiClient(
+client = DeepgramClient(
     proxy_settings=ProxySettings(
         address='http://localhost',
         port=8888,

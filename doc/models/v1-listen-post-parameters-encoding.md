@@ -21,7 +21,7 @@
 ## Example
 
 ```python
-from restapi.models.v_1_listen_post_parameters_encoding import V1ListenPostParametersEncoding
+from deepgram.models.v_1_listen_post_parameters_encoding import V1ListenPostParametersEncoding
 
 v_1_listen_post_parameters_encoding = V1ListenPostParametersEncoding.MULAW
 ```

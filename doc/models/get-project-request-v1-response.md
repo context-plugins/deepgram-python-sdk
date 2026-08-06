@@ -20,8 +20,8 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.get_project_request_v_1_response import GetProjectRequestV1Response
-from restapi.models.project_request_response import ProjectRequestResponse
+from deepgram.models.get_project_request_v_1_response import GetProjectRequestV1Response
+from deepgram.models.project_request_response import ProjectRequestResponse
 
 get_project_request_v_1_response = GetProjectRequestV1Response(
     request=ProjectRequestResponse(

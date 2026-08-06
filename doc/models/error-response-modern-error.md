@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.error_response_modern_error import ErrorResponseModernError
+from deepgram.models.error_response_modern_error import ErrorResponseModernError
 
 error_response_modern_error = ErrorResponseModernError(
     category='category4',

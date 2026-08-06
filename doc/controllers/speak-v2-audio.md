@@ -13,12 +13,9 @@ speak_v_2_audio_api = client.speak_v_2_audio
 
 Synthesize a complete block of text into a single audio response using Deepgram's Flux TTS batch (REST) API. Use this for pre-rendering fixed audio (IVR prompts, notifications, narration) where the whole text is known up front and you don't need incremental playback or interruption.
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def generate(self,
             model,
-            authorization,
             callback=None,
             callback_method="POST",
             mip_opt_out=False,
@@ -31,12 +28,15 @@ def generate(self,
             body=None)
 ```
 
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
+
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `model` | `str` | Query, Required | Flux TTS model used to synthesize the submitted text, in the form `flux-{voice}-{language}` (for example, `flux-alexis-en`). Required; unlike the v1 (Aura) endpoint there is no default and only flux models are accepted. English-only at launch. |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `callback` | `str` | Query, Optional | URL to which we'll make the callback request |
 | `callback_method` | [`V1ListenPostParametersCallbackMethod`](../../doc/models/v1-listen-post-parameters-callback-method.md) | Query, Optional | HTTP method by which the callback request will be made<br><br>**Default**: `"POST"` |
 | `mip_opt_out` | `bool` | Query, Optional | Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip<br><br>**Default**: `False` |
@@ -59,15 +59,12 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 model = 'model2'
 
-authorization = 'Authorization8'
-
 callback_method = V1ListenPostParametersCallbackMethod.POST
 
 mip_opt_out = False
 
 result = speak_v_2_audio_api.generate(
     model,
-    authorization,
     callback_method=callback_method,
     mip_opt_out=mip_opt_out
 )

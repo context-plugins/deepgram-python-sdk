@@ -16,7 +16,7 @@ Encoding - aac. Advanced audio format offering better quality at smaller file si
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_encoding_6 import V2SpeakPostParametersEncoding6
+from deepgram.models.v_2_speak_post_parameters_encoding_6 import V2SpeakPostParametersEncoding6
 
 v_2_speak_post_parameters_encoding_6 = V2SpeakPostParametersEncoding6.AAC
 ```

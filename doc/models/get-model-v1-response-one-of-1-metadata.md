@@ -25,7 +25,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.get_model_v_1_response_one_of_1_metadata import GetModelV1ResponseOneOf1Metadata
+from deepgram.models.get_model_v_1_response_one_of_1_metadata import GetModelV1ResponseOneOf1Metadata
 
 get_model_v_1_response_one_of_1_metadata = GetModelV1ResponseOneOf1Metadata(
     accent='accent2',

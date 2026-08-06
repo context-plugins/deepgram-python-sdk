@@ -20,7 +20,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.shared_sentiments_average import SharedSentimentsAverage
+from deepgram.models.shared_sentiments_average import SharedSentimentsAverage
 
 shared_sentiments_average = SharedSentimentsAverage(
     sentiment='sentiment4',

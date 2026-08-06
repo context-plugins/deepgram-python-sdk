@@ -16,7 +16,7 @@ Encoding - mp3. Popular compressed audio format for music and streaming.
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_encoding_4 import V1SpeakPostParametersEncoding4
+from deepgram.models.v_1_speak_post_parameters_encoding_4 import V1SpeakPostParametersEncoding4
 
 v_1_speak_post_parameters_encoding_4 = V1SpeakPostParametersEncoding4.MP3
 ```

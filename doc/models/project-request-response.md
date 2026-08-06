@@ -30,7 +30,7 @@ A single request
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.project_request_response import ProjectRequestResponse
+from deepgram.models.project_request_response import ProjectRequestResponse
 
 project_request_response = ProjectRequestResponse(
     request_id='request_id6',

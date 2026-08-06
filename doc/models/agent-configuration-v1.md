@@ -26,7 +26,7 @@ A reusable agent configuration
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.agent_configuration_v_1 import AgentConfigurationV1
+from deepgram.models.agent_configuration_v_1 import AgentConfigurationV1
 
 agent_configuration_v_1 = AgentConfigurationV1(
     agent_id='agent_id4',

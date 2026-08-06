@@ -22,7 +22,7 @@
 ```python
 import jsonpickle
 
-from restapi.models.get_project_balance_v_1_response import GetProjectBalanceV1Response
+from deepgram.models.get_project_balance_v_1_response import GetProjectBalanceV1Response
 
 get_project_balance_v_1_response = GetProjectBalanceV1Response(
     balance_id='balance_id4',

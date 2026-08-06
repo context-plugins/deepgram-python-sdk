@@ -20,7 +20,7 @@ Encoding - linear16. Supported sample rates - 8000, 16000, 24000, 32000, 48000 H
 ## Example
 
 ```python
-from restapi.models.v_1_speak_post_parameters_sample_rate_0 import V1SpeakPostParametersSampleRate0
+from deepgram.models.v_1_speak_post_parameters_sample_rate_0 import V1SpeakPostParametersSampleRate0
 
 v_1_speak_post_parameters_sample_rate_0 = V1SpeakPostParametersSampleRate0.ENUM_48000
 ```

@@ -23,7 +23,7 @@ AWS Bedrock models (custom models accepted)
 ```python
 import jsonpickle
 
-from restapi.models.agent_think_models_v_1_response_models_items_4 import AgentThinkModelsV1ResponseModelsItems4
+from deepgram.models.agent_think_models_v_1_response_models_items_4 import AgentThinkModelsV1ResponseModelsItems4
 
 agent_think_models_v_1_response_models_items_4 = AgentThinkModelsV1ResponseModelsItems4(
     id='id0',

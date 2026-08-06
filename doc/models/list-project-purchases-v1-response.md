@@ -20,8 +20,8 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.list_project_purchases_v_1_response import ListProjectPurchasesV1Response
-from restapi.models.list_project_purchases_v_1_response_orders_items import ListProjectPurchasesV1ResponseOrdersItems
+from deepgram.models.list_project_purchases_v_1_response import ListProjectPurchasesV1Response
+from deepgram.models.list_project_purchases_v_1_response_orders_items import ListProjectPurchasesV1ResponseOrdersItems
 
 list_project_purchases_v_1_response = ListProjectPurchasesV1Response(
     orders=[

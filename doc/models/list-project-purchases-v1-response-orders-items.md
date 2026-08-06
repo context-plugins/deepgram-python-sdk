@@ -25,7 +25,7 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.list_project_purchases_v_1_response_orders_items import ListProjectPurchasesV1ResponseOrdersItems
+from deepgram.models.list_project_purchases_v_1_response_orders_items import ListProjectPurchasesV1ResponseOrdersItems
 
 list_project_purchases_v_1_response_orders_items = ListProjectPurchasesV1ResponseOrdersItems(
     order_id='00001500-0000-0000-0000-000000000000',

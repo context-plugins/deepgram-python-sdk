@@ -19,20 +19,20 @@ manage_v_1_projects_members_invites_api = client.manage_v_1_projects_members_inv
 
 Generates a list of invites for a specific project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
-        project_id,
-        authorization)
+        project_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -45,12 +45,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_members_invites_api.list(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_members_invites_api.list(project_id)
 
 if result.is_success():
     print(result.body)
@@ -69,21 +64,21 @@ elif result.is_error():
 
 Generates an invite for a specific project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def create(self,
           project_id,
-          authorization,
           body=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `body` | [`CreateProjectInviteV1Request`](../../doc/models/create-project-invite-v1-request.md) | Body, Optional | email to invite to the project |
 
 ## Response Type
@@ -97,12 +92,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_members_invites_api.create(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_members_invites_api.create(project_id)
 
 if result.is_success():
     print(result.body)
@@ -121,14 +111,15 @@ elif result.is_error():
 
 Deletes an invite for a specific project
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def delete(self,
           project_id,
-          email,
-          authorization)
+          email)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -136,7 +127,6 @@ def delete(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `email` | `str` | Template, Required | The email address of the member |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -151,12 +141,9 @@ project_id = 'project_id6'
 
 email = 'email6'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_members_invites_api.delete(
     project_id,
-    email,
-    authorization
+    email
 )
 
 if result.is_success():

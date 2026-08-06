@@ -28,7 +28,7 @@
 import dateutil.parser
 import jsonpickle
 
-from restapi.models.usage_breakdown_v_1_response_results_items_grouping import UsageBreakdownV1ResponseResultsItemsGrouping
+from deepgram.models.usage_breakdown_v_1_response_results_items_grouping import UsageBreakdownV1ResponseResultsItemsGrouping
 
 usage_breakdown_v_1_response_results_items_grouping = UsageBreakdownV1ResponseResultsItemsGrouping(
     start=dateutil.parser.parse('2016-03-13').date(),

@@ -19,8 +19,8 @@
 ```python
 import jsonpickle
 
-from restapi.models.list_project_members_v_1_response import ListProjectMembersV1Response
-from restapi.models.list_project_members_v_1_response_members_items import ListProjectMembersV1ResponseMembersItems
+from deepgram.models.list_project_members_v_1_response import ListProjectMembersV1Response
+from deepgram.models.list_project_members_v_1_response_members_items import ListProjectMembersV1ResponseMembersItems
 
 list_project_members_v_1_response = ListProjectMembersV1Response(
     members=[

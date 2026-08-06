@@ -20,7 +20,7 @@ Encoding - flac. Supported sample rates - 8000, 16000, 22050, 32000, 48000 Hz.
 ## Example
 
 ```python
-from restapi.models.v_2_speak_post_parameters_sample_rate_3 import V2SpeakPostParametersSampleRate3
+from deepgram.models.v_2_speak_post_parameters_sample_rate_3 import V2SpeakPostParametersSampleRate3
 
 v_2_speak_post_parameters_sample_rate_3 = V2SpeakPostParametersSampleRate3.ENUM_32000
 ```

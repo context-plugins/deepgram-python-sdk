@@ -18,21 +18,21 @@ manage_v_1_projects_models_api = client.manage_v_1_projects_models
 
 Returns metadata on all the latest models that a specific project has access to, including non-public models
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def list(self,
         project_id,
-        authorization,
         include_outdated=None)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
 | Parameter | Type | Tags | Description |
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 | `include_outdated` | `bool` | Query, Optional | returns non-latest versions of models |
 
 ## Response Type
@@ -46,12 +46,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```python
 project_id = 'project_id6'
 
-authorization = 'Authorization8'
-
-result = manage_v_1_projects_models_api.list(
-    project_id,
-    authorization
-)
+result = manage_v_1_projects_models_api.list(project_id)
 
 if result.is_success():
     print(result.body)
@@ -70,14 +65,15 @@ elif result.is_error():
 
 Returns metadata for a specific model
 
-:information_source: **Note** This endpoint does not require authentication.
-
 ```python
 def get(self,
        project_id,
-       model_id,
-       authorization)
+       model_id)
 ```
+
+## Authentication
+
+This endpoint requires [ApiKeyAuth](../../doc/auth/custom-header-signature.md)
 
 ## Parameters
 
@@ -85,7 +81,6 @@ def get(self,
 |  --- | --- | --- | --- |
 | `project_id` | `str` | Template, Required | The unique identifier of the project |
 | `model_id` | `str` | Template, Required | The specific UUID of the model |
-| `authorization` | `str` | Header, Required | Use `Authorization: Token <API_KEY>`<br>Example: `Authorization: Token 12345abcdef` |
 
 ## Response Type
 
@@ -100,12 +95,9 @@ project_id = 'project_id6'
 
 model_id = 'model_id0'
 
-authorization = 'Authorization8'
-
 result = manage_v_1_projects_models_api.get(
     project_id,
-    model_id,
-    authorization
+    model_id
 )
 
 if result.is_success():

@@ -22,8 +22,8 @@
 ```python
 import jsonpickle
 
-from restapi.models.shared_intents_results_intents_segments_items import SharedIntentsResultsIntentsSegmentsItems
-from restapi.models.shared_intents_results_intents_segments_items_intents_items import SharedIntentsResultsIntentsSegmentsItemsIntentsItems
+from deepgram.models.shared_intents_results_intents_segments_items import SharedIntentsResultsIntentsSegmentsItems
+from deepgram.models.shared_intents_results_intents_segments_items_intents_items import SharedIntentsResultsIntentsSegmentsItemsIntentsItems
 
 shared_intents_results_intents_segments_items = SharedIntentsResultsIntentsSegmentsItems(
     text='text4',

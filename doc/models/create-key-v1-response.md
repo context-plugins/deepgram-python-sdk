@@ -26,7 +26,7 @@ API key created
 ```python
 import jsonpickle
 
-from restapi.models.create_key_v_1_response import CreateKeyV1Response
+from deepgram.models.create_key_v_1_response import CreateKeyV1Response
 
 create_key_v_1_response = CreateKeyV1Response(
     api_key_id='api_key_id2',

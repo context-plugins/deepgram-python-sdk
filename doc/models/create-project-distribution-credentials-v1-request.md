@@ -21,7 +21,7 @@ Request body for creating distribution credentials
 ```python
 import jsonpickle
 
-from restapi.models.create_project_distribution_credentials_v_1_request import CreateProjectDistributionCredentialsV1Request
+from deepgram.models.create_project_distribution_credentials_v_1_request import CreateProjectDistributionCredentialsV1Request
 
 create_project_distribution_credentials_v_1_request = CreateProjectDistributionCredentialsV1Request(
     comment='comment6',
