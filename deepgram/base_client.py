@@ -10,7 +10,7 @@ from .server.server_config import Environment2Config, ProductionConfig, ServerCo
 DEFAULT_TIMEOUT = 30.0
 
 
-class BaseRestApiClient(Generic[RawClientT]):
+class BaseDeepgramClient(Generic[RawClientT]):
     _raw_client: RawClientT
 
     def __init__(

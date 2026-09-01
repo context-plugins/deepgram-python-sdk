@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsMembersScopes — operations
 
-Accessor: `client.manage_v1_projects_members_scopes` · Source: `rest_api/apis/manage_v1_projects_members_scopes.py` · 2 operations
+Accessor: `client.manage_v1_projects_members_scopes` · Source: `deepgram/apis/manage_v1_projects_members_scopes.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListProjectMemberScopesV1Response` | `rest_api/models/list_project_member_scopes_v1_response.py` |
-| `List9ErrorBody` | `rest_api/errors/list9_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListProjectMemberScopesV1Response` | `deepgram/models/list_project_member_scopes_v1_response.py` |
+| `List9ErrorBody` | `deepgram/errors/list9_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_members_scopes.update4
 
@@ -38,9 +38,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UpdateProjectMemberScopesV1Request` | `rest_api/models/update_project_member_scopes_v1_request.py` |
-| `UpdateProjectMemberScopesV1RequestDict` | `rest_api/models/update_project_member_scopes_v1_request.py` |
-| `UpdateProjectMemberScopesV1Response` | `rest_api/models/update_project_member_scopes_v1_response.py` |
-| `Update4ErrorBody` | `rest_api/errors/update4_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `UpdateProjectMemberScopesV1Request` | `deepgram/models/update_project_member_scopes_v1_request.py` |
+| `UpdateProjectMemberScopesV1RequestDict` | `deepgram/models/update_project_member_scopes_v1_request.py` |
+| `UpdateProjectMemberScopesV1Response` | `deepgram/models/update_project_member_scopes_v1_response.py` |
+| `Update4ErrorBody` | `deepgram/errors/update4_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

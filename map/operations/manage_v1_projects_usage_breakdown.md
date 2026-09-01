@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsUsageBreakdown — operations
 
-Accessor: `client.manage_v1_projects_usage_breakdown` · Source: `rest_api/apis/manage_v1_projects_usage_breakdown.py` · 1 operation
+Accessor: `client.manage_v1_projects_usage_breakdown` · Source: `deepgram/apis/manage_v1_projects_usage_breakdown.py` · 1 operation
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,11 +20,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ProjectsProjectIdUsageBreakdownGetParametersGroupingOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_grouping.py` |
-| `V1ProjectsProjectIdUsageBreakdownGetParametersDeploymentOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_deployment.py` |
-| `V1ProjectsProjectIdUsageBreakdownGetParametersEndpointOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_endpoint.py` |
-| `V1ProjectsProjectIdUsageBreakdownGetParametersMethodOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_method.py` |
-| `UsageBreakdownV1Response` | `rest_api/models/usage_breakdown_v1_response.py` |
-| `Get9ErrorBody` | `rest_api/errors/get9_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ProjectsProjectIdUsageBreakdownGetParametersGroupingOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_grouping.py` |
+| `V1ProjectsProjectIdUsageBreakdownGetParametersDeploymentOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_deployment.py` |
+| `V1ProjectsProjectIdUsageBreakdownGetParametersEndpointOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_endpoint.py` |
+| `V1ProjectsProjectIdUsageBreakdownGetParametersMethodOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_breakdown_get_parameters_method.py` |
+| `UsageBreakdownV1Response` | `deepgram/models/usage_breakdown_v1_response.py` |
+| `Get9ErrorBody` | `deepgram/errors/get9_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

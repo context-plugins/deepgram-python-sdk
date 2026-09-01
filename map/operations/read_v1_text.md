@@ -2,7 +2,7 @@
 
 # ReadV1Text — operations
 
-Accessor: `client.read_v1_text` · Source: `rest_api/apis/read_v1_text.py` · 1 operation
+Accessor: `client.read_v1_text` · Source: `deepgram/apis/read_v1_text.py` · 1 operation
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,19 +19,19 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ListenPostParametersCallbackMethodOrStr` | `rest_api/models/enums/v1_listen_post_parameters_callback_method.py` |
-| `V1ReadPostParametersSummarize` | `rest_api/models/unions/v1_read_post_parameters_summarize.py` |
-| `V1ReadPostParametersSummarizeDict` | `rest_api/models/unions/v1_read_post_parameters_summarize.py` |
-| `V1ReadPostParametersTag` | `rest_api/models/unions/v1_read_post_parameters_tag.py` |
-| `V1ReadPostParametersTagDict` | `rest_api/models/unions/v1_read_post_parameters_tag.py` |
-| `V1ReadPostParametersCustomTopic` | `rest_api/models/unions/v1_read_post_parameters_custom_topic.py` |
-| `V1ReadPostParametersCustomTopicDict` | `rest_api/models/unions/v1_read_post_parameters_custom_topic.py` |
-| `V1ListenPostParametersCustomTopicModeOrStr` | `rest_api/models/enums/v1_listen_post_parameters_custom_topic_mode.py` |
-| `V1ReadPostParametersCustomIntent` | `rest_api/models/unions/v1_read_post_parameters_custom_intent.py` |
-| `V1ReadPostParametersCustomIntentDict` | `rest_api/models/unions/v1_read_post_parameters_custom_intent.py` |
-| `ReadV1Request` | `rest_api/models/unions/read_v1_request.py` |
-| `ReadV1RequestDict` | `rest_api/models/unions/read_v1_request.py` |
-| `ReadV1Response` | `rest_api/models/read_v1_response.py` |
-| `AnalyzeErrorBody` | `rest_api/errors/analyze_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ListenPostParametersCallbackMethodOrStr` | `deepgram/models/enums/v1_listen_post_parameters_callback_method.py` |
+| `V1ReadPostParametersSummarize` | `deepgram/models/unions/v1_read_post_parameters_summarize.py` |
+| `V1ReadPostParametersSummarizeDict` | `deepgram/models/unions/v1_read_post_parameters_summarize.py` |
+| `V1ReadPostParametersTag` | `deepgram/models/unions/v1_read_post_parameters_tag.py` |
+| `V1ReadPostParametersTagDict` | `deepgram/models/unions/v1_read_post_parameters_tag.py` |
+| `V1ReadPostParametersCustomTopic` | `deepgram/models/unions/v1_read_post_parameters_custom_topic.py` |
+| `V1ReadPostParametersCustomTopicDict` | `deepgram/models/unions/v1_read_post_parameters_custom_topic.py` |
+| `V1ListenPostParametersCustomTopicModeOrStr` | `deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py` |
+| `V1ReadPostParametersCustomIntent` | `deepgram/models/unions/v1_read_post_parameters_custom_intent.py` |
+| `V1ReadPostParametersCustomIntentDict` | `deepgram/models/unions/v1_read_post_parameters_custom_intent.py` |
+| `ReadV1Request` | `deepgram/models/unions/read_v1_request.py` |
+| `ReadV1RequestDict` | `deepgram/models/unions/read_v1_request.py` |
+| `ReadV1Response` | `deepgram/models/read_v1_response.py` |
+| `AnalyzeErrorBody` | `deepgram/errors/analyze_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

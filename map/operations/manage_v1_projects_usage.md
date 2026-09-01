@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsUsage — operations
 
-Accessor: `client.manage_v1_projects_usage` · Source: `rest_api/apis/manage_v1_projects_usage.py` · 1 operation
+Accessor: `client.manage_v1_projects_usage` · Source: `deepgram/apis/manage_v1_projects_usage.py` · 1 operation
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,10 +20,10 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ProjectsProjectIdUsageGetParametersDeploymentOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_get_parameters_deployment.py` |
-| `V1ProjectsProjectIdUsageGetParametersEndpointOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_get_parameters_endpoint.py` |
-| `V1ProjectsProjectIdUsageGetParametersMethodOrStr` | `rest_api/models/enums/v1_projects_project_id_usage_get_parameters_method.py` |
-| `UsageV1Response` | `rest_api/models/usage_v1_response.py` |
-| `Get8ErrorBody` | `rest_api/errors/get8_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ProjectsProjectIdUsageGetParametersDeploymentOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_get_parameters_deployment.py` |
+| `V1ProjectsProjectIdUsageGetParametersEndpointOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_get_parameters_endpoint.py` |
+| `V1ProjectsProjectIdUsageGetParametersMethodOrStr` | `deepgram/models/enums/v1_projects_project_id_usage_get_parameters_method.py` |
+| `UsageV1Response` | `deepgram/models/usage_v1_response.py` |
+| `Get8ErrorBody` | `deepgram/errors/get8_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

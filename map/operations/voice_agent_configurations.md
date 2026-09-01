@@ -2,7 +2,7 @@
 
 # VoiceAgentConfigurations — operations
 
-Accessor: `client.voice_agent_configurations` · Source: `rest_api/apis/voice_agent_configurations.py` · 5 operations
+Accessor: `client.voice_agent_configurations` · Source: `deepgram/apis/voice_agent_configurations.py` · 5 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,11 +20,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CreateAgentConfigurationV1Request` | `rest_api/models/create_agent_configuration_v1_request.py` |
-| `CreateAgentConfigurationV1RequestDict` | `rest_api/models/create_agent_configuration_v1_request.py` |
-| `CreateAgentConfigurationV1Response` | `rest_api/models/create_agent_configuration_v1_response.py` |
-| `CreateErrorBody` | `rest_api/errors/create_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `CreateAgentConfigurationV1Request` | `deepgram/models/create_agent_configuration_v1_request.py` |
+| `CreateAgentConfigurationV1RequestDict` | `deepgram/models/create_agent_configuration_v1_request.py` |
+| `CreateAgentConfigurationV1Response` | `deepgram/models/create_agent_configuration_v1_response.py` |
+| `CreateErrorBody` | `deepgram/errors/create_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_configurations.delete
 
@@ -40,8 +40,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteErrorBody` | `rest_api/errors/delete_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `DeleteErrorBody` | `deepgram/errors/delete_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_configurations.get
 
@@ -57,9 +57,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AgentConfigurationV1` | `rest_api/models/agent_configuration_v1.py` |
-| `GetErrorBody` | `rest_api/errors/get_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `AgentConfigurationV1` | `deepgram/models/agent_configuration_v1.py` |
+| `GetErrorBody` | `deepgram/errors/get_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_configurations.list2
 
@@ -75,9 +75,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListAgentConfigurationsV1Response` | `rest_api/models/list_agent_configurations_v1_response.py` |
-| `List2ErrorBody` | `rest_api/errors/list2_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListAgentConfigurationsV1Response` | `deepgram/models/list_agent_configurations_v1_response.py` |
+| `List2ErrorBody` | `deepgram/errors/list2_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_configurations.update
 
@@ -93,9 +93,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UpdateAgentMetadataV1Request` | `rest_api/models/update_agent_metadata_v1_request.py` |
-| `UpdateAgentMetadataV1RequestDict` | `rest_api/models/update_agent_metadata_v1_request.py` |
-| `AgentConfigurationV1` | `rest_api/models/agent_configuration_v1.py` |
-| `UpdateErrorBody` | `rest_api/errors/update_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `UpdateAgentMetadataV1Request` | `deepgram/models/update_agent_metadata_v1_request.py` |
+| `UpdateAgentMetadataV1RequestDict` | `deepgram/models/update_agent_metadata_v1_request.py` |
+| `AgentConfigurationV1` | `deepgram/models/agent_configuration_v1.py` |
+| `UpdateErrorBody` | `deepgram/errors/update_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

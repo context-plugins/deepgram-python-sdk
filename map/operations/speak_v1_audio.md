@@ -2,7 +2,7 @@
 
 # SpeakV1Audio — operations
 
-Accessor: `client.speak_v1_audio` · Source: `rest_api/apis/speak_v1_audio.py` · 1 operation
+Accessor: `client.speak_v1_audio` · Source: `deepgram/apis/speak_v1_audio.py` · 1 operation
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,20 +19,20 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ListenPostParametersCallbackMethodOrStr` | `rest_api/models/enums/v1_listen_post_parameters_callback_method.py` |
-| `V1SpeakPostParametersTag` | `rest_api/models/unions/v1_speak_post_parameters_tag.py` |
-| `V1SpeakPostParametersTagDict` | `rest_api/models/unions/v1_speak_post_parameters_tag.py` |
-| `V1SpeakPostParametersBitRate` | `rest_api/models/unions/v1_speak_post_parameters_bit_rate.py` |
-| `V1SpeakPostParametersBitRateDict` | `rest_api/models/unions/v1_speak_post_parameters_bit_rate.py` |
-| `V1SpeakPostParametersContainer` | `rest_api/models/unions/v1_speak_post_parameters_container.py` |
-| `V1SpeakPostParametersContainerDict` | `rest_api/models/unions/v1_speak_post_parameters_container.py` |
-| `V1SpeakPostParametersEncoding` | `rest_api/models/unions/v1_speak_post_parameters_encoding.py` |
-| `V1SpeakPostParametersEncodingDict` | `rest_api/models/unions/v1_speak_post_parameters_encoding.py` |
-| `V1SpeakPostParametersModelOrStr` | `rest_api/models/enums/v1_speak_post_parameters_model.py` |
-| `V1SpeakPostParametersSampleRate` | `rest_api/models/unions/v1_speak_post_parameters_sample_rate.py` |
-| `V1SpeakPostParametersSampleRateDict` | `rest_api/models/unions/v1_speak_post_parameters_sample_rate.py` |
-| `SpeakV1Request` | `rest_api/models/speak_v1_request.py` |
-| `SpeakV1RequestDict` | `rest_api/models/speak_v1_request.py` |
-| `GenerateErrorBody` | `rest_api/errors/generate_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ListenPostParametersCallbackMethodOrStr` | `deepgram/models/enums/v1_listen_post_parameters_callback_method.py` |
+| `V1SpeakPostParametersTag` | `deepgram/models/unions/v1_speak_post_parameters_tag.py` |
+| `V1SpeakPostParametersTagDict` | `deepgram/models/unions/v1_speak_post_parameters_tag.py` |
+| `V1SpeakPostParametersBitRate` | `deepgram/models/unions/v1_speak_post_parameters_bit_rate.py` |
+| `V1SpeakPostParametersBitRateDict` | `deepgram/models/unions/v1_speak_post_parameters_bit_rate.py` |
+| `V1SpeakPostParametersContainer` | `deepgram/models/unions/v1_speak_post_parameters_container.py` |
+| `V1SpeakPostParametersContainerDict` | `deepgram/models/unions/v1_speak_post_parameters_container.py` |
+| `V1SpeakPostParametersEncoding` | `deepgram/models/unions/v1_speak_post_parameters_encoding.py` |
+| `V1SpeakPostParametersEncodingDict` | `deepgram/models/unions/v1_speak_post_parameters_encoding.py` |
+| `V1SpeakPostParametersModelOrStr` | `deepgram/models/enums/v1_speak_post_parameters_model.py` |
+| `V1SpeakPostParametersSampleRate` | `deepgram/models/unions/v1_speak_post_parameters_sample_rate.py` |
+| `V1SpeakPostParametersSampleRateDict` | `deepgram/models/unions/v1_speak_post_parameters_sample_rate.py` |
+| `SpeakV1Request` | `deepgram/models/speak_v1_request.py` |
+| `SpeakV1RequestDict` | `deepgram/models/speak_v1_request.py` |
+| `GenerateErrorBody` | `deepgram/errors/generate_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

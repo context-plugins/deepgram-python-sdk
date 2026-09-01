@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsMembersInvites — operations
 
-Accessor: `client.manage_v1_projects_members_invites` · Source: `rest_api/apis/manage_v1_projects_members_invites.py` · 3 operations
+Accessor: `client.manage_v1_projects_members_invites` · Source: `deepgram/apis/manage_v1_projects_members_invites.py` · 3 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,11 +20,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CreateProjectInviteV1Request` | `rest_api/models/create_project_invite_v1_request.py` |
-| `CreateProjectInviteV1RequestDict` | `rest_api/models/create_project_invite_v1_request.py` |
-| `CreateProjectInviteV1Response` | `rest_api/models/create_project_invite_v1_response.py` |
-| `Create4ErrorBody` | `rest_api/errors/create4_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `CreateProjectInviteV1Request` | `deepgram/models/create_project_invite_v1_request.py` |
+| `CreateProjectInviteV1RequestDict` | `deepgram/models/create_project_invite_v1_request.py` |
+| `CreateProjectInviteV1Response` | `deepgram/models/create_project_invite_v1_response.py` |
+| `Create4ErrorBody` | `deepgram/errors/create4_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_members_invites.delete6
 
@@ -40,9 +40,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteProjectInviteV1Response` | `rest_api/models/delete_project_invite_v1_response.py` |
-| `Delete6ErrorBody` | `rest_api/errors/delete6_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `DeleteProjectInviteV1Response` | `deepgram/models/delete_project_invite_v1_response.py` |
+| `Delete6ErrorBody` | `deepgram/errors/delete6_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_members_invites.list10
 
@@ -58,7 +58,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListProjectInvitesV1Response` | `rest_api/models/list_project_invites_v1_response.py` |
-| `List10ErrorBody` | `rest_api/errors/list10_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListProjectInvitesV1Response` | `deepgram/models/list_project_invites_v1_response.py` |
+| `List10ErrorBody` | `deepgram/errors/list10_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

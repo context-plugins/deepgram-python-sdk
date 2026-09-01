@@ -2,7 +2,7 @@
 
 # SelfHostedV1DistributionCredentials — operations
 
-Accessor: `client.self_hosted_v1_distribution_credentials` · Source: `rest_api/apis/self_hosted_v1_distribution_credentials.py` · 4 operations
+Accessor: `client.self_hosted_v1_distribution_credentials` · Source: `deepgram/apis/self_hosted_v1_distribution_credentials.py` · 4 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,13 +20,13 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr` | `rest_api/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_scopes_schema_items.py` |
-| `V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr` | `rest_api/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_provider.py` |
-| `CreateProjectDistributionCredentialsV1Request` | `rest_api/models/create_project_distribution_credentials_v1_request.py` |
-| `CreateProjectDistributionCredentialsV1RequestDict` | `rest_api/models/create_project_distribution_credentials_v1_request.py` |
-| `CreateProjectDistributionCredentialsV1Response` | `rest_api/models/create_project_distribution_credentials_v1_response.py` |
-| `Create5ErrorBody` | `rest_api/errors/create5_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr` | `deepgram/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_scopes_schema_items.py` |
+| `V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr` | `deepgram/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_provider.py` |
+| `CreateProjectDistributionCredentialsV1Request` | `deepgram/models/create_project_distribution_credentials_v1_request.py` |
+| `CreateProjectDistributionCredentialsV1RequestDict` | `deepgram/models/create_project_distribution_credentials_v1_request.py` |
+| `CreateProjectDistributionCredentialsV1Response` | `deepgram/models/create_project_distribution_credentials_v1_response.py` |
+| `Create5ErrorBody` | `deepgram/errors/create5_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.self_hosted_v1_distribution_credentials.delete7
 
@@ -42,9 +42,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GetProjectDistributionCredentialsV1Response` | `rest_api/models/get_project_distribution_credentials_v1_response.py` |
-| `Delete7ErrorBody` | `rest_api/errors/delete7_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `GetProjectDistributionCredentialsV1Response` | `deepgram/models/get_project_distribution_credentials_v1_response.py` |
+| `Delete7ErrorBody` | `deepgram/errors/delete7_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.self_hosted_v1_distribution_credentials.get11
 
@@ -60,9 +60,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GetProjectDistributionCredentialsV1Response` | `rest_api/models/get_project_distribution_credentials_v1_response.py` |
-| `Get11ErrorBody` | `rest_api/errors/get11_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `GetProjectDistributionCredentialsV1Response` | `deepgram/models/get_project_distribution_credentials_v1_response.py` |
+| `Get11ErrorBody` | `deepgram/errors/get11_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.self_hosted_v1_distribution_credentials.list17
 
@@ -78,7 +78,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListProjectDistributionCredentialsV1Response` | `rest_api/models/list_project_distribution_credentials_v1_response.py` |
-| `List17ErrorBody` | `rest_api/errors/list17_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListProjectDistributionCredentialsV1Response` | `deepgram/models/list_project_distribution_credentials_v1_response.py` |
+| `List17ErrorBody` | `deepgram/errors/list17_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

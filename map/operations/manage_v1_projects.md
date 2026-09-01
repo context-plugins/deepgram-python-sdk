@@ -2,7 +2,7 @@
 
 # ManageV1Projects — operations
 
-Accessor: `client.manage_v1_projects` · Source: `rest_api/apis/manage_v1_projects.py` · 5 operations
+Accessor: `client.manage_v1_projects` · Source: `deepgram/apis/manage_v1_projects.py` · 5 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteProjectV1Response` | `rest_api/models/delete_project_v1_response.py` |
-| `Delete3ErrorBody` | `rest_api/errors/delete3_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `DeleteProjectV1Response` | `deepgram/models/delete_project_v1_response.py` |
+| `Delete3ErrorBody` | `deepgram/errors/delete3_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects.get3
 
@@ -38,9 +38,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GetProjectV1Response` | `rest_api/models/get_project_v1_response.py` |
-| `Get3ErrorBody` | `rest_api/errors/get3_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `GetProjectV1Response` | `deepgram/models/get_project_v1_response.py` |
+| `Get3ErrorBody` | `deepgram/errors/get3_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects.leave
 
@@ -56,9 +56,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `LeaveProjectV1Response` | `rest_api/models/leave_project_v1_response.py` |
-| `LeaveErrorBody` | `rest_api/errors/leave_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `LeaveProjectV1Response` | `deepgram/models/leave_project_v1_response.py` |
+| `LeaveErrorBody` | `deepgram/errors/leave_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects.list4
 
@@ -72,9 +72,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListProjectsV1Response` | `rest_api/models/list_projects_v1_response.py` |
-| `List4ErrorBody` | `rest_api/errors/list4_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListProjectsV1Response` | `deepgram/models/list_projects_v1_response.py` |
+| `List4ErrorBody` | `deepgram/errors/list4_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects.update3
 
@@ -90,9 +90,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UpdateProjectV1Request` | `rest_api/models/update_project_v1_request.py` |
-| `UpdateProjectV1RequestDict` | `rest_api/models/update_project_v1_request.py` |
-| `UpdateProjectV1Response` | `rest_api/models/update_project_v1_response.py` |
-| `Update3ErrorBody` | `rest_api/errors/update3_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `UpdateProjectV1Request` | `deepgram/models/update_project_v1_request.py` |
+| `UpdateProjectV1RequestDict` | `deepgram/models/update_project_v1_request.py` |
+| `UpdateProjectV1Response` | `deepgram/models/update_project_v1_response.py` |
+| `Update3ErrorBody` | `deepgram/errors/update3_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

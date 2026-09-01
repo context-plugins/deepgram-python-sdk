@@ -1,14 +1,14 @@
 <!-- Generated file — do not edit; regenerated with the SDK. -->
 
-# SDK map — REST API (Python)
+# SDK map — Deepgram (Python)
 
 > A generated table of contents for this SDK. Consult this map and its sub-pages to learn signatures, error types, and server/auth wiring **by lookup**. Model shapes and enum values are *not* duplicated here — the map names the module declaring each type; read the shape there. Every name is the emitted spelling, so a wrong one fails at import rather than working silently.
 
 |  |  |
 | --- | --- |
-| SDK display name | REST API |
-| Root package | `rest_api` |
-| Distribution name | `rest-api` |
+| SDK display name | Deepgram |
+| Root package | `deepgram` |
+| Distribution name | `deepgram` |
 | Requires | Python 3.10 or later |
 | API spec version | `1.0.0` |
 | Generator | APIMatic |
@@ -24,27 +24,27 @@ All `Source` paths on this map and its sub-pages are relative to the **SDK root*
 ### Synchronous client
 
 ```python
-from rest_api import RestApiClient
+from deepgram import DeepgramClient
 
-client = RestApiClient(api_key_auth="YOUR_API_KEY", jwt_auth="YOUR_BEARER_TOKEN", environment="production")
+client = DeepgramClient(api_key_auth="YOUR_API_KEY", jwt_auth="YOUR_BEARER_TOKEN", environment="production")
 
 # TODO: call endpoints here -- see api-reference.md
 
 client.close()
 ```
 
-Alternatively, scope it — `with RestApiClient(...) as client:` closes the pool on exit.
+Alternatively, scope it — `with DeepgramClient(...) as client:` closes the pool on exit.
 
 ### Asynchronous client
 
 ```python
 from asyncio import run
 
-from rest_api import AsyncRestApiClient
+from deepgram import AsyncDeepgramClient
 
 
 async def main() -> None:
-    client = AsyncRestApiClient(api_key_auth="YOUR_API_KEY", jwt_auth="YOUR_BEARER_TOKEN", environment="production")
+    client = AsyncDeepgramClient(api_key_auth="YOUR_API_KEY", jwt_auth="YOUR_BEARER_TOKEN", environment="production")
     # TODO: call endpoints here, awaiting each -- see api-reference.md
     await client.aclose()
 
@@ -52,15 +52,15 @@ async def main() -> None:
 run(main())
 ```
 
-Alternatively, scope it — `async with AsyncRestApiClient(...) as client:` closes the pool on exit.
+Alternatively, scope it — `async with AsyncDeepgramClient(...) as client:` closes the pool on exit.
 
-`AsyncClient` (`rest_api/async_client.py`) mirrors `Client` method for method, each endpoint method a coroutine. It takes the same keywords, except that each client accepts only its own transport and — where the **Async Type** column differs — only its own flavor.
+`AsyncClient` (`deepgram/async_client.py`) mirrors `Client` method for method, each endpoint method a coroutine. It takes the same keywords, except that each client accepts only its own transport and — where the **Async Type** column differs — only its own flavor.
 
-`Client` and `AsyncClient` are aliases of `RestApiClient` and `AsyncRestApiClient` — the names tracebacks and `repr()` show; all four import from the root.
+`Client` and `AsyncClient` are aliases of `DeepgramClient` and `AsyncDeepgramClient` — the names tracebacks and `repr()` show; all four import from the root.
 
 `close()` / `aclose()` closes the transport even when you supplied one via `custom_http_client=` / `custom_async_http_client=`, and a closed client cannot be reused.
 
-Every API group is a property on the client (e.g. `client.agent_v1_settings_think_models`). Every constructor argument is optional and keyword-only. Sources: `rest_api/client.py`, `rest_api/async_client.py`:
+Every API group is a property on the client (e.g. `client.agent_v1_settings_think_models`). Every constructor argument is optional and keyword-only. Sources: `deepgram/client.py`, `deepgram/async_client.py`:
 
 | Keyword | Sync Type | Async Type | Default |
 | --- | --- | --- | --- |
@@ -76,9 +76,9 @@ The types those columns name — where each imports from and, for a credentials 
 
 | Type | Import from | Shape |
 | --- | --- | --- |
-| `Environment` | `rest_api.server` | `Literal` of the Environments table's names |
-| `HttpClient` | `rest_api.core` | protocol — `send(request: HttpRequest) -> HttpResponse` · `close()` |
-| `AsyncHttpClient` | `rest_api.core` | protocol — `async send(request: HttpRequest) -> HttpResponse` · `async aclose()` |
+| `Environment` | `deepgram.server` | `Literal` of the Environments table's names |
+| `HttpClient` | `deepgram.core` | protocol — `send(request: HttpRequest) -> HttpResponse` · `close()` |
+| `AsyncHttpClient` | `deepgram.core` | protocol — `async send(request: HttpRequest) -> HttpResponse` · `async aclose()` |
 
 ---
 
@@ -91,22 +91,22 @@ Every operation is reached in two response modes:
 
 What `.error` holds is fixed per operation. There are two cases:
 
-- **Case A — typed error.** The operation documents at least one error status, so `rest_api/errors/` declares a union alias over the bodies those statuses map to — `RawError` is always its last arm, for any undocumented status — and `.error` is annotated with that alias. Narrow it with `isinstance`. The operation blocks name the alias and the status each arm maps from.
-- **Case B — raw error.** The operation documents no error status; `.error` is `RawError` (`rest_api/core/results.py`): `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse`.
+- **Case A — typed error.** The operation documents at least one error status, so `deepgram/errors/` declares a union alias over the bodies those statuses map to — `RawError` is always its last arm, for any undocumented status — and `.error` is annotated with that alias. Narrow it with `isinstance`. The operation blocks name the alias and the status each arm maps from.
+- **Case B — raw error.** The operation documents no error status; `.error` is `RawError` (`deepgram/core/results.py`): `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse`.
 
-Core runtime types (`rest_api/core/`) — public members with their **declared types**, verbatim from source:
+Core runtime types (`deepgram/core/`) — public members with their **declared types**, verbatim from source:
 
 | Type | Public members | Source |
 | --- | --- | --- |
-| `ApiError` — raised by every parsed call; `.error` is a Case A alias from `rest_api/errors/` or `RawError` | `error: E` · `status_code: int` · `response: HttpResponse` | `rest_api/core/exceptions.py` |
-| `ApiResult[T, E]` — returned by every raw call; the `Success[T] \| Failure[E]` union | `payload: T` (on `Success`) · `error: E` (on `Failure`) · `response: HttpResponse` (on both) | `rest_api/core/results.py` |
-| `RawError` | `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse` | `rest_api/core/results.py` |
+| `ApiError` — raised by every parsed call; `.error` is a Case A alias from `deepgram/errors/` or `RawError` | `error: E` · `status_code: int` · `response: HttpResponse` | `deepgram/core/exceptions.py` |
+| `ApiResult[T, E]` — returned by every raw call; the `Success[T] \| Failure[E]` union | `payload: T` (on `Success`) · `error: E` (on `Failure`) · `response: HttpResponse` (on both) | `deepgram/core/results.py` |
+| `RawError` | `status_code: int` · `content: bytes` · `text(encoding="utf-8"): str` · `json(): Any` · `response: HttpResponse` | `deepgram/core/results.py` |
 
 Typed error bodies (the arms of a Case A alias) are ordinary models — no special handling. The operation's **Type sources** table gives the module that declares each one; read field names, declared types and JSON aliases there, as for any other model.
 
 ```python
-from rest_api.core import ApiError, RawError
-from rest_api.models.unions import ErrorResponse
+from deepgram.core import ApiError, RawError
+from deepgram.models.unions import ErrorResponse
 
 try:
     response = client.agent_v1_settings_think_models.list_()
@@ -135,7 +135,7 @@ Each links to a sub-page with one block per operation, headed by its full access
 | **Four spellings, one signature** — the same method name and parameters on `Client` and `AsyncClient`, each also reachable through `.with_raw_response`; the async twin is a coroutine to `await`, with the same return types and error case, and where the **Async Type** column differs, pass the type it names | Getting a client |
 | **Parsed raises, raw returns** — `ApiError` versus `ApiResult` | Error-handling model |
 | **Case B error is always `RawError`** — also the last arm of every Case A alias, where a block's **Error arms** bullet ends in it | Error-handling model |
-| **A trailing `request_options`** — keyword-only and optional, for per-call overrides such as a timeout or extra headers; every signature ends with it | here (`rest_api/core/request_options.py`) |
+| **A trailing `request_options`** — keyword-only and optional, for per-call overrides such as a timeout or extra headers; every signature ends with it | here (`deepgram/core/request_options.py`) |
 | **Base URL is the selected environment's** — this SDK's only server, one URL per `environment=`; override it with `base_url="https://…"` | Servers & auth |
 | **Parameter names are literal** — signatures are generated code verbatim, and everything behind the bare `*` must be passed by name | here |
 | **A parameter's wire name is its Python name** — sent as-is on the path, query string, header or body, unless the block's **Params** bullet carries a wire name beside the role | here |
@@ -175,14 +175,14 @@ Sub-pages chunk per `###` block: each block is self-contained given the table ab
 
 ## Models — where they live, how to build them
 
-**Shapes live only in the source.** Every module under `rest_api/models/` declares one type plus its input companion, and every module under `rest_api/errors/` one alias plus the mapper that builds it; no two share a name. Take a type's module from the operation's **Type sources** table. When no retrieved chunk names it, the module is the type name in snake_case under the kind's directory below (`AgentConfigurationV1` ↔ `agent_configuration_v1.py`; an error alias drops its `Body` suffix: `AnalyzeErrorBody` ↔ `analyze_error.py`). Never grep for a type.
+**Shapes live only in the source.** Every module under `deepgram/models/` declares one type plus its input companion, and every module under `deepgram/errors/` one alias plus the mapper that builds it; no two share a name. Take a type's module from the operation's **Type sources** table. When no retrieved chunk names it, the module is the type name in snake_case under the kind's directory below (`AgentConfigurationV1` ↔ `agent_configuration_v1.py`; an error alias drops its `Body` suffix: `AnalyzeErrorBody` ↔ `analyze_error.py`). Never grep for a type.
 
 | Group | Count | Directory (module = `<type_name>.py`) |
 | --- | --- | --- |
-| Models (`SdkBaseModel` pydantic classes) | 139 | `rest_api/models/` |
-| Enums (`Enum` over `str`) — Python member names + wire values | 73 | `rest_api/models/enums/` |
-| Unions (plain) — `TypeAlias` over the arms | 31 | `rest_api/models/unions/` |
-| Error aliases (one per Case A operation) | 50 | `rest_api/errors/` |
+| Models (`SdkBaseModel` pydantic classes) | 139 | `deepgram/models/` |
+| Enums (`Enum` over `str`) — Python member names + wire values | 73 | `deepgram/models/enums/` |
+| Unions (plain) — `TypeAlias` over the arms | 31 | `deepgram/models/unions/` |
+| Error aliases (one per Case A operation) | 50 | `deepgram/errors/` |
 
 Conventions: a model is a `SdkBaseModel` (pydantic) class; in this SDK every field's wire name is its Python name — no field carries a `Field(alias=…)`. An omittable field is annotated `Optional[T]` and defaults to `UNSET`, and one that may also be explicitly null is `OptionalNullable[T]`; both come from `core` and neither is `typing.Optional` — there is no `None` arm unless the spec declared the property nullable, so passing `None` to the first is a type error rather than a value that serializes.
 
@@ -192,13 +192,13 @@ Import paths by content type (`from <package> import <Name>`):
 
 | Contents | Import from |
 | --- | --- |
-| Client (root) | `rest_api` |
-| Operation controllers | `rest_api.apis` |
-| Models | `rest_api.models` |
-| Enums | `rest_api.models.enums` |
-| Unions | `rest_api.models.unions`, `rest_api.models` |
-| Error aliases | `rest_api.errors` |
-| Core runtime (`ApiError`, `ApiResult`, `RawError`, …) | `rest_api.core` |
+| Client (root) | `deepgram` |
+| Operation controllers | `deepgram.apis` |
+| Models | `deepgram.models` |
+| Enums | `deepgram.models.enums` |
+| Unions | `deepgram.models.unions`, `deepgram.models` |
+| Error aliases | `deepgram.errors` |
+| Core runtime (`ApiError`, `ApiResult`, `RawError`, …) | `deepgram.core` |
 
 ---
 
@@ -215,7 +215,7 @@ Operation blocks name their scheme in an **Auth** bullet; an operation whose spe
 
 A scheme you did not configure is skipped silently rather than raising, and the request is sent anyway — so an authentication failure can mean no credential was sent rather than a bad one.
 
-**Environments.** `environment=` selects the target environment (`rest_api/server/environment.py`); this SDK's one server (`rest_api/server/server_config.py`) has a base URL per environment:
+**Environments.** `environment=` selects the target environment (`deepgram/server/environment.py`); this SDK's one server (`deepgram/server/server_config.py`) has a base URL per environment:
 
 | Environment | Base URL | Hosting | Override point |
 | --- | --- | --- | --- |

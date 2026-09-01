@@ -2,7 +2,7 @@
 
 # ListenV1Media — operations
 
-Accessor: `client.listen_v1_media` · Source: `rest_api/apis/listen_v1_media.py` · 1 operation
+Accessor: `client.listen_v1_media` · Source: `deepgram/apis/listen_v1_media.py` · 1 operation
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -19,37 +19,37 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ListenPostParametersCallbackMethodOrStr` | `rest_api/models/enums/v1_listen_post_parameters_callback_method.py` |
-| `V1ListenPostParametersExtra` | `rest_api/models/unions/v1_listen_post_parameters_extra.py` |
-| `V1ListenPostParametersExtraDict` | `rest_api/models/unions/v1_listen_post_parameters_extra.py` |
-| `V1ListenPostParametersSummarize` | `rest_api/models/unions/v1_listen_post_parameters_summarize.py` |
-| `V1ListenPostParametersSummarizeDict` | `rest_api/models/unions/v1_listen_post_parameters_summarize.py` |
-| `V1ListenPostParametersTag` | `rest_api/models/unions/v1_listen_post_parameters_tag.py` |
-| `V1ListenPostParametersTagDict` | `rest_api/models/unions/v1_listen_post_parameters_tag.py` |
-| `V1ListenPostParametersCustomTopic` | `rest_api/models/unions/v1_listen_post_parameters_custom_topic.py` |
-| `V1ListenPostParametersCustomTopicDict` | `rest_api/models/unions/v1_listen_post_parameters_custom_topic.py` |
-| `V1ListenPostParametersCustomTopicModeOrStr` | `rest_api/models/enums/v1_listen_post_parameters_custom_topic_mode.py` |
-| `V1ListenPostParametersCustomIntent` | `rest_api/models/unions/v1_listen_post_parameters_custom_intent.py` |
-| `V1ListenPostParametersCustomIntentDict` | `rest_api/models/unions/v1_listen_post_parameters_custom_intent.py` |
-| `V1ListenPostParametersDetectLanguage` | `rest_api/models/unions/v1_listen_post_parameters_detect_language.py` |
-| `V1ListenPostParametersDetectLanguageDict` | `rest_api/models/unions/v1_listen_post_parameters_detect_language.py` |
-| `V1ListenPostParametersDiarizeModelOrStr` | `rest_api/models/enums/v1_listen_post_parameters_diarize_model.py` |
-| `V1ListenPostParametersEncodingOrStr` | `rest_api/models/enums/v1_listen_post_parameters_encoding.py` |
-| `V1ListenPostParametersKeywords` | `rest_api/models/unions/v1_listen_post_parameters_keywords.py` |
-| `V1ListenPostParametersKeywordsDict` | `rest_api/models/unions/v1_listen_post_parameters_keywords.py` |
-| `V1ListenPostParametersModel` | `rest_api/models/unions/v1_listen_post_parameters_model.py` |
-| `V1ListenPostParametersModelDict` | `rest_api/models/unions/v1_listen_post_parameters_model.py` |
-| `V1ListenPostParametersRedact` | `rest_api/models/unions/v1_listen_post_parameters_redact.py` |
-| `V1ListenPostParametersRedactDict` | `rest_api/models/unions/v1_listen_post_parameters_redact.py` |
-| `V1ListenPostParametersReplace` | `rest_api/models/unions/v1_listen_post_parameters_replace.py` |
-| `V1ListenPostParametersReplaceDict` | `rest_api/models/unions/v1_listen_post_parameters_replace.py` |
-| `V1ListenPostParametersSearch` | `rest_api/models/unions/v1_listen_post_parameters_search.py` |
-| `V1ListenPostParametersSearchDict` | `rest_api/models/unions/v1_listen_post_parameters_search.py` |
-| `V1ListenPostParametersVersion` | `rest_api/models/unions/v1_listen_post_parameters_version.py` |
-| `V1ListenPostParametersVersionDict` | `rest_api/models/unions/v1_listen_post_parameters_version.py` |
-| `ListenV1RequestUrl` | `rest_api/models/listen_v1_request_url.py` |
-| `ListenV1RequestUrlDict` | `rest_api/models/listen_v1_request_url.py` |
-| `ListenV1MediaTranscribeResponse200` | `rest_api/models/unions/listen_v1_media_transcribe_response200.py` |
-| `TranscribeErrorBody` | `rest_api/errors/transcribe_error.py` |
-| `ListenV1Response` | `rest_api/models/listen_v1_response.py` |
+| `V1ListenPostParametersCallbackMethodOrStr` | `deepgram/models/enums/v1_listen_post_parameters_callback_method.py` |
+| `V1ListenPostParametersExtra` | `deepgram/models/unions/v1_listen_post_parameters_extra.py` |
+| `V1ListenPostParametersExtraDict` | `deepgram/models/unions/v1_listen_post_parameters_extra.py` |
+| `V1ListenPostParametersSummarize` | `deepgram/models/unions/v1_listen_post_parameters_summarize.py` |
+| `V1ListenPostParametersSummarizeDict` | `deepgram/models/unions/v1_listen_post_parameters_summarize.py` |
+| `V1ListenPostParametersTag` | `deepgram/models/unions/v1_listen_post_parameters_tag.py` |
+| `V1ListenPostParametersTagDict` | `deepgram/models/unions/v1_listen_post_parameters_tag.py` |
+| `V1ListenPostParametersCustomTopic` | `deepgram/models/unions/v1_listen_post_parameters_custom_topic.py` |
+| `V1ListenPostParametersCustomTopicDict` | `deepgram/models/unions/v1_listen_post_parameters_custom_topic.py` |
+| `V1ListenPostParametersCustomTopicModeOrStr` | `deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py` |
+| `V1ListenPostParametersCustomIntent` | `deepgram/models/unions/v1_listen_post_parameters_custom_intent.py` |
+| `V1ListenPostParametersCustomIntentDict` | `deepgram/models/unions/v1_listen_post_parameters_custom_intent.py` |
+| `V1ListenPostParametersDetectLanguage` | `deepgram/models/unions/v1_listen_post_parameters_detect_language.py` |
+| `V1ListenPostParametersDetectLanguageDict` | `deepgram/models/unions/v1_listen_post_parameters_detect_language.py` |
+| `V1ListenPostParametersDiarizeModelOrStr` | `deepgram/models/enums/v1_listen_post_parameters_diarize_model.py` |
+| `V1ListenPostParametersEncodingOrStr` | `deepgram/models/enums/v1_listen_post_parameters_encoding.py` |
+| `V1ListenPostParametersKeywords` | `deepgram/models/unions/v1_listen_post_parameters_keywords.py` |
+| `V1ListenPostParametersKeywordsDict` | `deepgram/models/unions/v1_listen_post_parameters_keywords.py` |
+| `V1ListenPostParametersModel` | `deepgram/models/unions/v1_listen_post_parameters_model.py` |
+| `V1ListenPostParametersModelDict` | `deepgram/models/unions/v1_listen_post_parameters_model.py` |
+| `V1ListenPostParametersRedact` | `deepgram/models/unions/v1_listen_post_parameters_redact.py` |
+| `V1ListenPostParametersRedactDict` | `deepgram/models/unions/v1_listen_post_parameters_redact.py` |
+| `V1ListenPostParametersReplace` | `deepgram/models/unions/v1_listen_post_parameters_replace.py` |
+| `V1ListenPostParametersReplaceDict` | `deepgram/models/unions/v1_listen_post_parameters_replace.py` |
+| `V1ListenPostParametersSearch` | `deepgram/models/unions/v1_listen_post_parameters_search.py` |
+| `V1ListenPostParametersSearchDict` | `deepgram/models/unions/v1_listen_post_parameters_search.py` |
+| `V1ListenPostParametersVersion` | `deepgram/models/unions/v1_listen_post_parameters_version.py` |
+| `V1ListenPostParametersVersionDict` | `deepgram/models/unions/v1_listen_post_parameters_version.py` |
+| `ListenV1RequestUrl` | `deepgram/models/listen_v1_request_url.py` |
+| `ListenV1RequestUrlDict` | `deepgram/models/listen_v1_request_url.py` |
+| `ListenV1MediaTranscribeResponse200` | `deepgram/models/unions/listen_v1_media_transcribe_response200.py` |
+| `TranscribeErrorBody` | `deepgram/errors/transcribe_error.py` |
+| `ListenV1Response` | `deepgram/models/listen_v1_response.py` |
 

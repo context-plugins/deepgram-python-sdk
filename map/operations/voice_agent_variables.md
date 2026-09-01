@@ -2,7 +2,7 @@
 
 # VoiceAgentVariables — operations
 
-Accessor: `client.voice_agent_variables` · Source: `rest_api/apis/voice_agent_variables.py` · 5 operations
+Accessor: `client.voice_agent_variables` · Source: `deepgram/apis/voice_agent_variables.py` · 5 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,11 +20,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CreateAgentVariableV1Request` | `rest_api/models/create_agent_variable_v1_request.py` |
-| `CreateAgentVariableV1RequestDict` | `rest_api/models/create_agent_variable_v1_request.py` |
-| `AgentVariableV1` | `rest_api/models/agent_variable_v1.py` |
-| `Create2ErrorBody` | `rest_api/errors/create2_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `CreateAgentVariableV1Request` | `deepgram/models/create_agent_variable_v1_request.py` |
+| `CreateAgentVariableV1RequestDict` | `deepgram/models/create_agent_variable_v1_request.py` |
+| `AgentVariableV1` | `deepgram/models/agent_variable_v1.py` |
+| `Create2ErrorBody` | `deepgram/errors/create2_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_variables.delete2
 
@@ -40,8 +40,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `Delete2ErrorBody` | `rest_api/errors/delete2_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `Delete2ErrorBody` | `deepgram/errors/delete2_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_variables.get2
 
@@ -57,9 +57,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `AgentVariableV1` | `rest_api/models/agent_variable_v1.py` |
-| `Get2ErrorBody` | `rest_api/errors/get2_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `AgentVariableV1` | `deepgram/models/agent_variable_v1.py` |
+| `Get2ErrorBody` | `deepgram/errors/get2_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_variables.list3
 
@@ -75,9 +75,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListAgentVariablesV1Response` | `rest_api/models/list_agent_variables_v1_response.py` |
-| `List3ErrorBody` | `rest_api/errors/list3_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListAgentVariablesV1Response` | `deepgram/models/list_agent_variables_v1_response.py` |
+| `List3ErrorBody` | `deepgram/errors/list3_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.voice_agent_variables.update2
 
@@ -93,9 +93,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `UpdateAgentVariableV1Request` | `rest_api/models/update_agent_variable_v1_request.py` |
-| `UpdateAgentVariableV1RequestDict` | `rest_api/models/update_agent_variable_v1_request.py` |
-| `AgentVariableV1` | `rest_api/models/agent_variable_v1.py` |
-| `Update2ErrorBody` | `rest_api/errors/update2_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `UpdateAgentVariableV1Request` | `deepgram/models/update_agent_variable_v1_request.py` |
+| `UpdateAgentVariableV1RequestDict` | `deepgram/models/update_agent_variable_v1_request.py` |
+| `AgentVariableV1` | `deepgram/models/agent_variable_v1.py` |
+| `Update2ErrorBody` | `deepgram/errors/update2_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

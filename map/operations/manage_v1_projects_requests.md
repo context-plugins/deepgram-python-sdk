@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsRequests — operations
 
-Accessor: `client.manage_v1_projects_requests` · Source: `rest_api/apis/manage_v1_projects_requests.py` · 2 operations
+Accessor: `client.manage_v1_projects_requests` · Source: `deepgram/apis/manage_v1_projects_requests.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GetProjectRequestV1Response` | `rest_api/models/get_project_request_v1_response.py` |
-| `Get7ErrorBody` | `rest_api/errors/get7_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `GetProjectRequestV1Response` | `deepgram/models/get_project_request_v1_response.py` |
+| `Get7ErrorBody` | `deepgram/errors/get7_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_requests.list11
 
@@ -38,11 +38,11 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ProjectsProjectIdRequestsGetParametersDeploymentOrStr` | `rest_api/models/enums/v1_projects_project_id_requests_get_parameters_deployment.py` |
-| `V1ProjectsProjectIdRequestsGetParametersEndpointOrStr` | `rest_api/models/enums/v1_projects_project_id_requests_get_parameters_endpoint.py` |
-| `V1ProjectsProjectIdRequestsGetParametersMethodOrStr` | `rest_api/models/enums/v1_projects_project_id_requests_get_parameters_method.py` |
-| `V1ProjectsProjectIdRequestsGetParametersStatusOrStr` | `rest_api/models/enums/v1_projects_project_id_requests_get_parameters_status.py` |
-| `ListProjectRequestsV1Response` | `rest_api/models/list_project_requests_v1_response.py` |
-| `List11ErrorBody` | `rest_api/errors/list11_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ProjectsProjectIdRequestsGetParametersDeploymentOrStr` | `deepgram/models/enums/v1_projects_project_id_requests_get_parameters_deployment.py` |
+| `V1ProjectsProjectIdRequestsGetParametersEndpointOrStr` | `deepgram/models/enums/v1_projects_project_id_requests_get_parameters_endpoint.py` |
+| `V1ProjectsProjectIdRequestsGetParametersMethodOrStr` | `deepgram/models/enums/v1_projects_project_id_requests_get_parameters_method.py` |
+| `V1ProjectsProjectIdRequestsGetParametersStatusOrStr` | `deepgram/models/enums/v1_projects_project_id_requests_get_parameters_status.py` |
+| `ListProjectRequestsV1Response` | `deepgram/models/list_project_requests_v1_response.py` |
+| `List11ErrorBody` | `deepgram/errors/list11_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

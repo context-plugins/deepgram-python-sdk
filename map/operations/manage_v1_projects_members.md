@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsMembers — operations
 
-Accessor: `client.manage_v1_projects_members` · Source: `rest_api/apis/manage_v1_projects_members.py` · 2 operations
+Accessor: `client.manage_v1_projects_members` · Source: `deepgram/apis/manage_v1_projects_members.py` · 2 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteProjectMemberV1Response` | `rest_api/models/delete_project_member_v1_response.py` |
-| `Delete5ErrorBody` | `rest_api/errors/delete5_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `DeleteProjectMemberV1Response` | `deepgram/models/delete_project_member_v1_response.py` |
+| `Delete5ErrorBody` | `deepgram/errors/delete5_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_members.list8
 
@@ -38,7 +38,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `ListProjectMembersV1Response` | `rest_api/models/list_project_members_v1_response.py` |
-| `List8ErrorBody` | `rest_api/errors/list8_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `ListProjectMembersV1Response` | `deepgram/models/list_project_members_v1_response.py` |
+| `List8ErrorBody` | `deepgram/errors/list8_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

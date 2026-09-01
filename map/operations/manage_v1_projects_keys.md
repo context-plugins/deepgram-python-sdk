@@ -2,7 +2,7 @@
 
 # ManageV1ProjectsKeys — operations
 
-Accessor: `client.manage_v1_projects_keys` · Source: `rest_api/apis/manage_v1_projects_keys.py` · 4 operations
+Accessor: `client.manage_v1_projects_keys` · Source: `deepgram/apis/manage_v1_projects_keys.py` · 4 operations
 
 Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omit what its invariants table covers and are otherwise self-contained, so chunk at block level. Signatures are the sync parsed spelling; the async and raw spellings take the same parameters (see sdk-map.md). **Type sources** names the module declaring each type an operation mentions, so resolving a body, return or error payload is a lookup rather than a search; the runtime types `RawError` and `ApiResult` are excluded.
 
@@ -20,9 +20,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `CreateKeyV1Response` | `rest_api/models/create_key_v1_response.py` |
-| `Create3ErrorBody` | `rest_api/errors/create3_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `CreateKeyV1Response` | `deepgram/models/create_key_v1_response.py` |
+| `Create3ErrorBody` | `deepgram/errors/create3_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_keys.delete4
 
@@ -38,9 +38,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `DeleteProjectKeyV1Response` | `rest_api/models/delete_project_key_v1_response.py` |
-| `Delete4ErrorBody` | `rest_api/errors/delete4_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `DeleteProjectKeyV1Response` | `deepgram/models/delete_project_key_v1_response.py` |
+| `Delete4ErrorBody` | `deepgram/errors/delete4_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_keys.get6
 
@@ -56,9 +56,9 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `GetProjectKeyV1Response` | `rest_api/models/get_project_key_v1_response.py` |
-| `Get6ErrorBody` | `rest_api/errors/get6_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `GetProjectKeyV1Response` | `deepgram/models/get_project_key_v1_response.py` |
+| `Get6ErrorBody` | `deepgram/errors/get6_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 
 ### client.manage_v1_projects_keys.list7
 
@@ -74,8 +74,8 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 | Type | Source |
 | --- | --- |
-| `V1ProjectsProjectIdKeysGetParametersStatusOrStr` | `rest_api/models/enums/v1_projects_project_id_keys_get_parameters_status.py` |
-| `ListProjectKeysV1Response` | `rest_api/models/list_project_keys_v1_response.py` |
-| `List7ErrorBody` | `rest_api/errors/list7_error.py` |
-| `ErrorResponse` | `rest_api/models/unions/error_response.py` |
+| `V1ProjectsProjectIdKeysGetParametersStatusOrStr` | `deepgram/models/enums/v1_projects_project_id_keys_get_parameters_status.py` |
+| `ListProjectKeysV1Response` | `deepgram/models/list_project_keys_v1_response.py` |
+| `List7ErrorBody` | `deepgram/errors/list7_error.py` |
+| `ErrorResponse` | `deepgram/models/unions/error_response.py` |
 

@@ -30,7 +30,7 @@ from .apis.speak_v2_audio import AsyncSpeakV2Audio
 from .apis.voice_agent_configurations import AsyncVoiceAgentConfigurations
 from .apis.voice_agent_variables import AsyncVoiceAgentVariables
 from .auth import AsyncAuthSchemes
-from .base_client import DEFAULT_TIMEOUT, BaseRestApiClient
+from .base_client import DEFAULT_TIMEOUT, BaseDeepgramClient
 from .core import (
     OPERATING_SYSTEM,
     PYTHON_RUNTIME,
@@ -45,7 +45,7 @@ from .core import (
 from .server.environment import Environment
 
 
-class AsyncRestApiClient(BaseRestApiClient[AsyncRawClient]):
+class AsyncDeepgramClient(BaseDeepgramClient[AsyncRawClient]):
     def __init__(
         self,
         *,
@@ -62,7 +62,7 @@ class AsyncRestApiClient(BaseRestApiClient[AsyncRawClient]):
                 custom_async_http_client if custom_async_http_client is not None else AsyncHttpxClient(timeout=timeout)
             ),
             global_headers=[
-                param[str]("User-Agent", "RestApiClient/1.0.0 Python"),
+                param[str]("User-Agent", "DeepgramClient/1.0.0 Python"),
                 param[str]("X-APIMatic-Lang", "Python"),
                 param[str]("X-APIMatic-Package-Version", "1.0.0"),
                 param[str]("X-APIMatic-Gen-Version", "4.0.0"),
@@ -183,4 +183,4 @@ class AsyncRestApiClient(BaseRestApiClient[AsyncRawClient]):
         await self.aclose()
 
 
-AsyncClient = AsyncRestApiClient
+AsyncClient = AsyncDeepgramClient
