@@ -1,0 +1,31 @@
+from __future__ import annotations
+
+from typing_extensions import TypedDict
+
+from ..core import SdkBaseModel
+from .list_project_distribution_credentials_v1_response_distribution_credentials_items_distribution_credentials import (
+    ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentials,
+    ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentialsDict,
+)
+from .list_project_distribution_credentials_v1_response_distribution_credentials_items_member import (
+    ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMember,
+    ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMemberDict,
+)
+
+
+class ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItems(SdkBaseModel):
+    member: ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMember
+    distribution_credentials: (
+        ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentials
+    )
+
+
+class ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDict(TypedDict):
+    member: (
+        ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMember
+        | ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMemberDict
+    )
+    distribution_credentials: (
+        ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentials
+        | ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentialsDict
+    )
