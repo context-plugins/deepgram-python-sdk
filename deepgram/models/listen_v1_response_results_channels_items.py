@@ -20,15 +20,6 @@ class ListenV1ResponseResultsChannelsItems(SdkBaseModel):
 
 
 class ListenV1ResponseResultsChannelsItemsDict(TypedDict):
-    search: NotRequired[
-        list[ListenV1ResponseResultsChannelsItemsSearchItems | ListenV1ResponseResultsChannelsItemsSearchItemsDict]
-    ]
-    alternatives: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsDict
-            )
-        ]
-    ]
+    search: NotRequired[list[ListenV1ResponseResultsChannelsItemsSearchItemsDict]]
+    alternatives: NotRequired[list[ListenV1ResponseResultsChannelsItemsAlternativesItemsDict]]
     detected_language: NotRequired[str]

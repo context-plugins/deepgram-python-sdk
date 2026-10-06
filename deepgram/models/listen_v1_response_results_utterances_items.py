@@ -28,8 +28,6 @@ class ListenV1ResponseResultsUtterancesItemsDict(TypedDict):
     confidence: NotRequired[float]
     channel: NotRequired[int]
     transcript: NotRequired[str]
-    words: NotRequired[
-        list[ListenV1ResponseResultsUtterancesItemsWordsItems | ListenV1ResponseResultsUtterancesItemsWordsItemsDict]
-    ]
+    words: NotRequired[list[ListenV1ResponseResultsUtterancesItemsWordsItemsDict]]
     speaker: NotRequired[int]
     id: NotRequired[UUID]

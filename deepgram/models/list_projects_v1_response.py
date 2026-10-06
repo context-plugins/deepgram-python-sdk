@@ -14,4 +14,4 @@ class ListProjectsV1Response(SdkBaseModel):
 
 
 class ListProjectsV1ResponseDict(TypedDict):
-    projects: NotRequired[list[ListProjectsV1ResponseProjectsItems | ListProjectsV1ResponseProjectsItemsDict]]
+    projects: NotRequired[list[ListProjectsV1ResponseProjectsItemsDict]]

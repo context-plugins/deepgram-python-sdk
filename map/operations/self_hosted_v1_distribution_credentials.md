@@ -10,7 +10,7 @@ Each `###` block is one operation and assumes `sdk-map.md` is loaded: blocks omi
 
 - **Route**: `POST /v1/projects/{project_id}/self-hosted/distribution/credentials`
 - **Auth**: `api_key_auth`
-- **Signature**: `def create5(project_id: str, *, scopes: list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None = None, provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = None, body: CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
+- **Signature**: `def create5(project_id: str, *, scopes: list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None = None, provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY, body: CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None)`
   - required, positional: `project_id`
 - **Params**: `project_id` — path · `scopes` — query · `provider` — query · `body` — JSON body
 - **Returns (parsed)**: `CreateProjectDistributionCredentialsV1Response`

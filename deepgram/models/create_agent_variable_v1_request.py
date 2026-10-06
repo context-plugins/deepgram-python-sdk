@@ -4,7 +4,7 @@ from typing import Any
 
 from typing_extensions import NotRequired, TypedDict
 
-from ..core import UNSET, Optional, SdkBaseModel
+from ..core import SdkBaseModel
 
 
 class CreateAgentVariableV1Request(SdkBaseModel):
@@ -16,7 +16,7 @@ class CreateAgentVariableV1Request(SdkBaseModel):
     value: Any
     """The value to substitute. Can be any valid JSON type (string, number, boolean, object, or array)"""
 
-    api_version: Optional[int] = UNSET
+    api_version: int = 1
     """API version. Defaults to 1"""
 
 

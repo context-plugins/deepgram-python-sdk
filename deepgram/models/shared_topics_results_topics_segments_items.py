@@ -20,6 +20,4 @@ class SharedTopicsResultsTopicsSegmentsItemsDict(TypedDict):
     text: NotRequired[str]
     start_word: NotRequired[float]
     end_word: NotRequired[float]
-    topics: NotRequired[
-        list[SharedTopicsResultsTopicsSegmentsItemsTopicsItems | SharedTopicsResultsTopicsSegmentsItemsTopicsItemsDict]
-    ]
+    topics: NotRequired[list[SharedTopicsResultsTopicsSegmentsItemsTopicsItemsDict]]

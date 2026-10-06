@@ -28,4 +28,4 @@ class ListModelsV1ResponseTtsModelsDict(TypedDict):
     languages: NotRequired[list[str]]
     version: NotRequired[str]
     uuid: NotRequired[UUID]
-    metadata: NotRequired[ListModelsV1ResponseTtsModelsMetadata | ListModelsV1ResponseTtsModelsMetadataDict]
+    metadata: NotRequired[ListModelsV1ResponseTtsModelsMetadataDict]

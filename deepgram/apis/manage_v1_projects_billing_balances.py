@@ -1,7 +1,16 @@
 from __future__ import annotations
 
 from ..auth import AsyncAuthSchemes, AuthSchemes
-from ..core import ApiResult, AsyncRawClient, RawClient, RequestOptionsOrDict, SecuredRawResponse, json_decoder, param
+from ..core import (
+    ApiResult,
+    AsyncRawClient,
+    RawClient,
+    RequestOptionsOrDict,
+    SecuredRawResponse,
+    async_json_decoder,
+    json_decoder,
+    param,
+)
 from ..errors.get10_error import Get10ErrorBody, get10_error_mapper
 from ..errors.list13_error import List13ErrorBody, list13_error_mapper
 from ..models.get_project_balance_v1_response import GetProjectBalanceV1Response
@@ -21,7 +30,8 @@ class ManageV1ProjectsBillingBalances:
         Args:
             project_id: The unique identifier of the project
             balance_id: The unique identifier of the balance
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific balance
@@ -37,7 +47,8 @@ class ManageV1ProjectsBillingBalances:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of outstanding balances
@@ -63,7 +74,8 @@ class AsyncManageV1ProjectsBillingBalances:
         Args:
             project_id: The unique identifier of the project
             balance_id: The unique identifier of the balance
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific balance
@@ -79,7 +91,8 @@ class AsyncManageV1ProjectsBillingBalances:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of outstanding balances
@@ -102,7 +115,8 @@ class ManageV1ProjectsBillingBalancesWithRawResponse(SecuredRawResponse[RawClien
         Args:
             project_id: The unique identifier of the project
             balance_id: The unique identifier of the balance
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -123,7 +137,8 @@ class ManageV1ProjectsBillingBalancesWithRawResponse(SecuredRawResponse[RawClien
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -147,7 +162,8 @@ class AsyncManageV1ProjectsBillingBalancesWithRawResponse(SecuredRawResponse[Asy
         Args:
             project_id: The unique identifier of the project
             balance_id: The unique identifier of the balance
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -156,7 +172,7 @@ class AsyncManageV1ProjectsBillingBalancesWithRawResponse(SecuredRawResponse[Asy
             url_template=self._server.default("/v1/projects/{project_id}/balances/{balance_id}"),
             path_params=[param[str]("project_id", project_id), param[str]("balance_id", balance_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetProjectBalanceV1Response],
+            decoder=async_json_decoder[GetProjectBalanceV1Response],
             error_mapper=get10_error_mapper,
             request_options=request_options,
         )
@@ -168,7 +184,8 @@ class AsyncManageV1ProjectsBillingBalancesWithRawResponse(SecuredRawResponse[Asy
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -177,7 +194,7 @@ class AsyncManageV1ProjectsBillingBalancesWithRawResponse(SecuredRawResponse[Asy
             url_template=self._server.default("/v1/projects/{project_id}/balances"),
             path_params=[param[str]("project_id", project_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectBalancesV1Response],
+            decoder=async_json_decoder[ListProjectBalancesV1Response],
             error_mapper=list13_error_mapper,
             request_options=request_options,
         )

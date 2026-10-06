@@ -18,10 +18,5 @@ class ListProjectDistributionCredentialsV1Response(SdkBaseModel):
 
 class ListProjectDistributionCredentialsV1ResponseDict(TypedDict):
     distribution_credentials: NotRequired[
-        list[
-            (
-                ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItems
-                | ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDict
-            )
-        ]
+        list[ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDict]
     ]

@@ -9,7 +9,7 @@ class ListProjectBalancesV1ResponseBalancesItems(SdkBaseModel):
     balance_id: Optional[str] = UNSET
     """The unique identifier of the balance"""
 
-    amount: Optional[float] = UNSET
+    amount: float = 0.0
     """The amount of the balance"""
 
     units: Optional[str] = UNSET

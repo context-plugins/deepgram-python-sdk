@@ -28,4 +28,4 @@ class GetModelV1Response1Dict(TypedDict):
     languages: NotRequired[list[str]]
     version: NotRequired[str]
     uuid: NotRequired[UUID]
-    metadata: NotRequired[GetModelV1ResponseOneOf1Metadata | GetModelV1ResponseOneOf1MetadataDict]
+    metadata: NotRequired[GetModelV1ResponseOneOf1MetadataDict]

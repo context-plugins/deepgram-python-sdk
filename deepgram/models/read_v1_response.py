@@ -15,5 +15,5 @@ class ReadV1Response(SdkBaseModel):
 
 
 class ReadV1ResponseDict(TypedDict):
-    metadata: ReadV1ResponseMetadata | ReadV1ResponseMetadataDict
-    results: ReadV1ResponseResults | ReadV1ResponseResultsDict
+    metadata: ReadV1ResponseMetadataDict
+    results: ReadV1ResponseResultsDict

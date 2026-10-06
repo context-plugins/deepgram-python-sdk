@@ -8,6 +8,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_decoder,
     param,
 )
@@ -128,7 +129,8 @@ class ManageV1ProjectsUsage:
             utt_split: Filter for requests where utt split was used
             utterances: Filter for requests where utterances was used
             version: Filter for requests where version was used
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific request for a specific project
@@ -292,7 +294,8 @@ class AsyncManageV1ProjectsUsage:
             utt_split: Filter for requests where utt split was used
             utterances: Filter for requests where utterances was used
             version: Filter for requests where version was used
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific request for a specific project
@@ -455,7 +458,8 @@ class ManageV1ProjectsUsageWithRawResponse(SecuredRawResponse[RawClient, Server,
             utt_split: Filter for requests where utt split was used
             utterances: Filter for requests where utterances was used
             version: Filter for requests where version was used
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -616,7 +620,8 @@ class AsyncManageV1ProjectsUsageWithRawResponse(SecuredRawResponse[AsyncRawClien
             utt_split: Filter for requests where utt split was used
             utterances: Filter for requests where utterances was used
             version: Filter for requests where version was used
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -671,7 +676,7 @@ class AsyncManageV1ProjectsUsageWithRawResponse(SecuredRawResponse[AsyncRawClien
                 param[bool | None]("version", version),
             ],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[UsageV1Response],
+            decoder=async_json_decoder[UsageV1Response],
             error_mapper=get8_error_mapper,
             request_options=request_options,
         )

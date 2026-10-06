@@ -27,5 +27,5 @@ class BillingBreakdownV1Response(SdkBaseModel):
 class BillingBreakdownV1ResponseDict(TypedDict):
     start: Date
     end: Date
-    resolution: BillingBreakdownV1ResponseResolution | BillingBreakdownV1ResponseResolutionDict
-    results: list[BillingBreakdownV1ResponseResultsItems | BillingBreakdownV1ResponseResultsItemsDict]
+    resolution: BillingBreakdownV1ResponseResolutionDict
+    results: list[BillingBreakdownV1ResponseResultsItemsDict]

@@ -25,7 +25,7 @@ class UsageBreakdownV1ResponseResultsItemsGrouping(SdkBaseModel):
     method: OptionalNullable[str] = UNSET
     """Optional method identifier"""
 
-    tags: Optional[list[str | None]] = UNSET
+    tags: OptionalNullable[list[str]] = UNSET
     """Optional list of tags, null unless grouped by tags."""
 
     deployment: OptionalNullable[str] = UNSET
@@ -40,5 +40,5 @@ class UsageBreakdownV1ResponseResultsItemsGroupingDict(TypedDict):
     feature_set: NotRequired[str | None]
     models: NotRequired[list[str]]
     method: NotRequired[str | None]
-    tags: NotRequired[list[str | None]]
+    tags: NotRequired[list[str] | None]
     deployment: NotRequired[str | None]

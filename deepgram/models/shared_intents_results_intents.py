@@ -14,4 +14,4 @@ class SharedIntentsResultsIntents(SdkBaseModel):
 
 
 class SharedIntentsResultsIntentsDict(TypedDict):
-    segments: NotRequired[list[SharedIntentsResultsIntentsSegmentsItems | SharedIntentsResultsIntentsSegmentsItemsDict]]
+    segments: NotRequired[list[SharedIntentsResultsIntentsSegmentsItemsDict]]

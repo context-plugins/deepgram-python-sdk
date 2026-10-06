@@ -20,11 +20,4 @@ class SharedIntentsResultsIntentsSegmentsItemsDict(TypedDict):
     text: NotRequired[str]
     start_word: NotRequired[float]
     end_word: NotRequired[float]
-    intents: NotRequired[
-        list[
-            (
-                SharedIntentsResultsIntentsSegmentsItemsIntentsItems
-                | SharedIntentsResultsIntentsSegmentsItemsIntentsItemsDict
-            )
-        ]
-    ]
+    intents: NotRequired[list[SharedIntentsResultsIntentsSegmentsItemsIntentsItemsDict]]

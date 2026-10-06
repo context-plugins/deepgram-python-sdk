@@ -15,5 +15,5 @@ class SharedSentiments(SdkBaseModel):
 
 
 class SharedSentimentsDict(TypedDict):
-    segments: NotRequired[list[SharedSentimentsSegmentsItems | SharedSentimentsSegmentsItemsDict]]
-    average: NotRequired[SharedSentimentsAverage | SharedSentimentsAverageDict]
+    segments: NotRequired[list[SharedSentimentsSegmentsItemsDict]]
+    average: NotRequired[SharedSentimentsAverageDict]

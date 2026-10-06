@@ -37,9 +37,7 @@ class ReadV1ResponseMetadataMetadataDict(TypedDict):
     request_id: NotRequired[UUID]
     created: NotRequired[RFC3339DateTime]
     language: NotRequired[str]
-    summary_info: NotRequired[ReadV1ResponseMetadataMetadataSummaryInfo | ReadV1ResponseMetadataMetadataSummaryInfoDict]
-    sentiment_info: NotRequired[
-        ReadV1ResponseMetadataMetadataSentimentInfo | ReadV1ResponseMetadataMetadataSentimentInfoDict
-    ]
-    topics_info: NotRequired[ReadV1ResponseMetadataMetadataTopicsInfo | ReadV1ResponseMetadataMetadataTopicsInfoDict]
-    intents_info: NotRequired[ReadV1ResponseMetadataMetadataIntentsInfo | ReadV1ResponseMetadataMetadataIntentsInfoDict]
+    summary_info: NotRequired[ReadV1ResponseMetadataMetadataSummaryInfoDict]
+    sentiment_info: NotRequired[ReadV1ResponseMetadataMetadataSentimentInfoDict]
+    topics_info: NotRequired[ReadV1ResponseMetadataMetadataTopicsInfoDict]
+    intents_info: NotRequired[ReadV1ResponseMetadataMetadataIntentsInfoDict]

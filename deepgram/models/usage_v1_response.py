@@ -15,4 +15,4 @@ class UsageV1Response(SdkBaseModel):
 class UsageV1ResponseDict(TypedDict):
     start: NotRequired[Date]
     end: NotRequired[Date]
-    resolution: NotRequired[UsageV1ResponseResolution | UsageV1ResponseResolutionDict]
+    resolution: NotRequired[UsageV1ResponseResolutionDict]

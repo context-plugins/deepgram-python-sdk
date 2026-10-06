@@ -15,5 +15,5 @@ class ListenV1ResponseError(SdkBaseModel):
 
 
 class ListenV1ResponseErrorDict(TypedDict):
-    metadata: ListenV1ResponseMetadata | ListenV1ResponseMetadataDict
-    results: ListenV1ResponseResults | ListenV1ResponseResultsDict
+    metadata: ListenV1ResponseMetadataDict
+    results: ListenV1ResponseResultsDict

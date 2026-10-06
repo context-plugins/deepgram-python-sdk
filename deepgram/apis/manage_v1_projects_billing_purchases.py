@@ -1,7 +1,16 @@
 from __future__ import annotations
 
 from ..auth import AsyncAuthSchemes, AuthSchemes
-from ..core import ApiResult, AsyncRawClient, RawClient, RequestOptionsOrDict, SecuredRawResponse, json_decoder, param
+from ..core import (
+    ApiResult,
+    AsyncRawClient,
+    RawClient,
+    RequestOptionsOrDict,
+    SecuredRawResponse,
+    async_json_decoder,
+    json_decoder,
+    param,
+)
 from ..errors.list16_error import List16ErrorBody, list16_error_mapper
 from ..models.list_project_purchases_v1_response import ListProjectPurchasesV1Response
 from ..server.server import Server
@@ -19,7 +28,8 @@ class ManageV1ProjectsBillingPurchases:
         Args:
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of purchases for a specific project
@@ -45,7 +55,8 @@ class AsyncManageV1ProjectsBillingPurchases:
         Args:
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of purchases for a specific project
@@ -68,7 +79,8 @@ class ManageV1ProjectsBillingPurchasesWithRawResponse(SecuredRawResponse[RawClie
         Args:
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -95,7 +107,8 @@ class AsyncManageV1ProjectsBillingPurchasesWithRawResponse(
         Args:
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -105,7 +118,7 @@ class AsyncManageV1ProjectsBillingPurchasesWithRawResponse(
             path_params=[param[str]("project_id", project_id)],
             query_params=[param[float | None]("limit", limit)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectPurchasesV1Response],
+            decoder=async_json_decoder[ListProjectPurchasesV1Response],
             error_mapper=list16_error_mapper,
             request_options=request_options,
         )

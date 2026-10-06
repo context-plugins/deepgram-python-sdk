@@ -19,8 +19,5 @@ class GetProjectDistributionCredentialsV1Response(SdkBaseModel):
 
 
 class GetProjectDistributionCredentialsV1ResponseDict(TypedDict):
-    member: GetProjectDistributionCredentialsV1ResponseMember | GetProjectDistributionCredentialsV1ResponseMemberDict
-    distribution_credentials: (
-        GetProjectDistributionCredentialsV1ResponseDistributionCredentials
-        | GetProjectDistributionCredentialsV1ResponseDistributionCredentialsDict
-    )
+    member: GetProjectDistributionCredentialsV1ResponseMemberDict
+    distribution_credentials: GetProjectDistributionCredentialsV1ResponseDistributionCredentialsDict

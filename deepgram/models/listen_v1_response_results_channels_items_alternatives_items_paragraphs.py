@@ -16,11 +16,4 @@ class ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphs(SdkBaseMod
 
 class ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsDict(TypedDict):
     transcript: NotRequired[str]
-    paragraphs: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItemsDict
-            )
-        ]
-    ]
+    paragraphs: NotRequired[list[ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItemsDict]]

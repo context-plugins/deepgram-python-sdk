@@ -19,5 +19,5 @@ class ListProjectKeysV1ResponseApiKeysItems(SdkBaseModel):
 
 
 class ListProjectKeysV1ResponseApiKeysItemsDict(TypedDict):
-    member: NotRequired[ListProjectKeysV1ResponseApiKeysItemsMember | ListProjectKeysV1ResponseApiKeysItemsMemberDict]
-    api_key: NotRequired[ListProjectKeysV1ResponseApiKeysItemsApiKey | ListProjectKeysV1ResponseApiKeysItemsApiKeyDict]
+    member: NotRequired[ListProjectKeysV1ResponseApiKeysItemsMemberDict]
+    api_key: NotRequired[ListProjectKeysV1ResponseApiKeysItemsApiKeyDict]

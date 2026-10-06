@@ -18,4 +18,4 @@ class BillingBreakdownV1ResponseResultsItems(SdkBaseModel):
 
 class BillingBreakdownV1ResponseResultsItemsDict(TypedDict):
     dollars: float
-    grouping: BillingBreakdownV1ResponseResultsItemsGrouping | BillingBreakdownV1ResponseResultsItemsGroupingDict
+    grouping: BillingBreakdownV1ResponseResultsItemsGroupingDict

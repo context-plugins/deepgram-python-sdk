@@ -13,5 +13,5 @@ class ListModelsV1Response(SdkBaseModel):
 
 
 class ListModelsV1ResponseDict(TypedDict):
-    stt: NotRequired[list[ListModelsV1ResponseSttModels | ListModelsV1ResponseSttModelsDict]]
-    tts: NotRequired[list[ListModelsV1ResponseTtsModels | ListModelsV1ResponseTtsModelsDict]]
+    stt: NotRequired[list[ListModelsV1ResponseSttModelsDict]]
+    tts: NotRequired[list[ListModelsV1ResponseTtsModelsDict]]

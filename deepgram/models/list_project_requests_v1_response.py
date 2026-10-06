@@ -19,4 +19,4 @@ class ListProjectRequestsV1Response(SdkBaseModel):
 class ListProjectRequestsV1ResponseDict(TypedDict):
     page: NotRequired[float]
     limit: NotRequired[float]
-    requests: NotRequired[list[ProjectRequestResponse | ProjectRequestResponseDict]]
+    requests: NotRequired[list[ProjectRequestResponseDict]]

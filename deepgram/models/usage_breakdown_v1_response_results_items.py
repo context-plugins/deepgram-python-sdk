@@ -42,4 +42,4 @@ class UsageBreakdownV1ResponseResultsItemsDict(TypedDict):
     tokens_out: float
     tts_characters: float
     requests: float
-    grouping: UsageBreakdownV1ResponseResultsItemsGrouping | UsageBreakdownV1ResponseResultsItemsGroupingDict
+    grouping: UsageBreakdownV1ResponseResultsItemsGroupingDict

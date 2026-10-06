@@ -11,4 +11,4 @@ class ReadV1ResponseMetadata(SdkBaseModel):
 
 
 class ReadV1ResponseMetadataDict(TypedDict):
-    metadata: NotRequired[ReadV1ResponseMetadataMetadata | ReadV1ResponseMetadataMetadataDict]
+    metadata: NotRequired[ReadV1ResponseMetadataMetadataDict]

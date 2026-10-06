@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -23,6 +24,7 @@ from ..models.create_project_distribution_credentials_v1_request import (
 )
 from ..models.create_project_distribution_credentials_v1_response import CreateProjectDistributionCredentialsV1Response
 from ..models.enums.v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_provider import (
+    V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider,
     V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr,
 )
 from ..models.enums.v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_scopes_schema_items import (
@@ -44,7 +46,9 @@ class SelfHostedV1DistributionCredentials:
         scopes: (
             list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None
         ) = None,
-        provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = None,
+        provider: (
+            V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None
+        ) = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY,
         body: (
             CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None
         ) = None,
@@ -57,7 +61,8 @@ class SelfHostedV1DistributionCredentials:
             scopes: List of permission scopes for the credentials
             provider: The provider of the distribution service
             body: The set of distribution credentials to create
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Single distribution credential
@@ -76,7 +81,8 @@ class SelfHostedV1DistributionCredentials:
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Single distribution credential
@@ -95,7 +101,8 @@ class SelfHostedV1DistributionCredentials:
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Single distribution credential
@@ -113,7 +120,8 @@ class SelfHostedV1DistributionCredentials:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of distribution credentials for a specific project
@@ -138,7 +146,9 @@ class AsyncSelfHostedV1DistributionCredentials:
         scopes: (
             list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None
         ) = None,
-        provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = None,
+        provider: (
+            V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None
+        ) = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY,
         body: (
             CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None
         ) = None,
@@ -151,7 +161,8 @@ class AsyncSelfHostedV1DistributionCredentials:
             scopes: List of permission scopes for the credentials
             provider: The provider of the distribution service
             body: The set of distribution credentials to create
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Single distribution credential
@@ -172,7 +183,8 @@ class AsyncSelfHostedV1DistributionCredentials:
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Single distribution credential
@@ -193,7 +205,8 @@ class AsyncSelfHostedV1DistributionCredentials:
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Single distribution credential
@@ -213,7 +226,8 @@ class AsyncSelfHostedV1DistributionCredentials:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of distribution credentials for a specific project
@@ -235,7 +249,9 @@ class SelfHostedV1DistributionCredentialsWithRawResponse(SecuredRawResponse[RawC
         scopes: (
             list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None
         ) = None,
-        provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = None,
+        provider: (
+            V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None
+        ) = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY,
         body: (
             CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None
         ) = None,
@@ -248,7 +264,8 @@ class SelfHostedV1DistributionCredentialsWithRawResponse(SecuredRawResponse[RawC
             scopes: List of permission scopes for the credentials
             provider: The provider of the distribution service
             body: The set of distribution credentials to create
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -285,7 +302,8 @@ class SelfHostedV1DistributionCredentialsWithRawResponse(SecuredRawResponse[RawC
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -313,7 +331,8 @@ class SelfHostedV1DistributionCredentialsWithRawResponse(SecuredRawResponse[RawC
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -339,7 +358,8 @@ class SelfHostedV1DistributionCredentialsWithRawResponse(SecuredRawResponse[RawC
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -364,7 +384,9 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
         scopes: (
             list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None
         ) = None,
-        provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = None,
+        provider: (
+            V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None
+        ) = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY,
         body: (
             CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None
         ) = None,
@@ -377,7 +399,8 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
             scopes: List of permission scopes for the credentials
             provider: The provider of the distribution service
             body: The set of distribution credentials to create
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -401,7 +424,7 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
                 CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None
             ](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[CreateProjectDistributionCredentialsV1Response],
+            decoder=async_json_decoder[CreateProjectDistributionCredentialsV1Response],
             error_mapper=create5_error_mapper,
             request_options=request_options,
         )
@@ -414,7 +437,8 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -429,7 +453,7 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
             ],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetProjectDistributionCredentialsV1Response],
+            decoder=async_json_decoder[GetProjectDistributionCredentialsV1Response],
             error_mapper=delete7_error_mapper,
             request_options=request_options,
         )
@@ -442,7 +466,8 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
         Args:
             project_id: The unique identifier of the project
             distribution_credentials_id: The UUID of the distribution credentials
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -456,7 +481,7 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
                 param[str]("distribution_credentials_id", distribution_credentials_id),
             ],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetProjectDistributionCredentialsV1Response],
+            decoder=async_json_decoder[GetProjectDistributionCredentialsV1Response],
             error_mapper=get11_error_mapper,
             request_options=request_options,
         )
@@ -468,7 +493,8 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -477,7 +503,7 @@ class AsyncSelfHostedV1DistributionCredentialsWithRawResponse(
             url_template=self._server.default("/v1/projects/{project_id}/self-hosted/distribution/credentials"),
             path_params=[param[str]("project_id", project_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectDistributionCredentialsV1Response],
+            decoder=async_json_decoder[ListProjectDistributionCredentialsV1Response],
             error_mapper=list17_error_mapper,
             request_options=request_options,
         )

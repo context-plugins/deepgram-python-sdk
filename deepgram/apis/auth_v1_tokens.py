@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -35,7 +36,8 @@ class AuthV1Tokens:
 
         Args:
             body: Time to live settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Grant response
@@ -65,7 +67,8 @@ class AsyncAuthV1Tokens:
 
         Args:
             body: Time to live settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Grant response
@@ -92,7 +95,8 @@ class AuthV1TokensWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
 
         Args:
             body: Time to live settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -121,7 +125,8 @@ class AsyncAuthV1TokensWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
 
         Args:
             body: Time to live settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -131,7 +136,7 @@ class AsyncAuthV1TokensWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[GrantV1Request | GrantV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GrantV1Response],
+            decoder=async_json_decoder[GrantV1Response],
             error_mapper=grant_error_mapper,
             request_options=request_options,
         )

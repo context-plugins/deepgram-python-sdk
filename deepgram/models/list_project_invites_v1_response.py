@@ -14,4 +14,4 @@ class ListProjectInvitesV1Response(SdkBaseModel):
 
 
 class ListProjectInvitesV1ResponseDict(TypedDict):
-    invites: NotRequired[list[ListProjectInvitesV1ResponseInvitesItems | ListProjectInvitesV1ResponseInvitesItemsDict]]
+    invites: NotRequired[list[ListProjectInvitesV1ResponseInvitesItemsDict]]

@@ -14,4 +14,4 @@ class AgentThinkModelsV1Response(SdkBaseModel):
 
 
 class AgentThinkModelsV1ResponseDict(TypedDict):
-    models: list[AgentThinkModelsV1ResponseModelsItems | AgentThinkModelsV1ResponseModelsItemsDict]
+    models: list[AgentThinkModelsV1ResponseModelsItemsDict]

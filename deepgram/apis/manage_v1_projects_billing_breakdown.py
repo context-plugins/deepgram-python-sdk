@@ -8,6 +8,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_decoder,
     param,
 )
@@ -50,7 +51,8 @@ class ManageV1ProjectsBillingBreakdown:
             tag: Filter for requests where a specific tag was used
             line_item: Filter requests by line item (e.g. streaming::nova-3)
             grouping: Group billing breakdown by one or more dimensions (accessor, deployment, line_item, tags)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Billing breakdown response
@@ -102,7 +104,8 @@ class AsyncManageV1ProjectsBillingBreakdown:
             tag: Filter for requests where a specific tag was used
             line_item: Filter requests by line item (e.g. streaming::nova-3)
             grouping: Group billing breakdown by one or more dimensions (accessor, deployment, line_item, tags)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Billing breakdown response
@@ -153,7 +156,8 @@ class ManageV1ProjectsBillingBreakdownWithRawResponse(SecuredRawResponse[RawClie
             tag: Filter for requests where a specific tag was used
             line_item: Filter requests by line item (e.g. streaming::nova-3)
             grouping: Group billing breakdown by one or more dimensions (accessor, deployment, line_item, tags)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -206,7 +210,8 @@ class AsyncManageV1ProjectsBillingBreakdownWithRawResponse(
             tag: Filter for requests where a specific tag was used
             line_item: Filter requests by line item (e.g. streaming::nova-3)
             grouping: Group billing breakdown by one or more dimensions (accessor, deployment, line_item, tags)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -226,7 +231,7 @@ class AsyncManageV1ProjectsBillingBreakdownWithRawResponse(
                 ),
             ],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[BillingBreakdownV1Response],
+            decoder=async_json_decoder[BillingBreakdownV1Response],
             error_mapper=list14_error_mapper,
             request_options=request_options,
         )

@@ -1,7 +1,15 @@
 from __future__ import annotations
 
 from ..auth import AsyncAuthSchemes, AuthSchemes
-from ..core import ApiResult, AsyncRawClient, RawClient, RequestOptionsOrDict, SecuredRawResponse, json_decoder
+from ..core import (
+    ApiResult,
+    AsyncRawClient,
+    RawClient,
+    RequestOptionsOrDict,
+    SecuredRawResponse,
+    async_json_decoder,
+    json_decoder,
+)
 from ..errors.list_error import ListErrorBody, list_error_mapper
 from ..models.agent_think_models_v1_response import AgentThinkModelsV1Response
 from ..server.server import Server
@@ -15,7 +23,8 @@ class AgentV1SettingsThinkModels:
         """Retrieves the available think models that can be used for AI agent processing
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             List of available think models
@@ -37,7 +46,8 @@ class AsyncAgentV1SettingsThinkModels:
         """Retrieves the available think models that can be used for AI agent processing
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             List of available think models
@@ -58,7 +68,8 @@ class AgentV1SettingsThinkModelsWithRawResponse(SecuredRawResponse[RawClient, Se
         """Retrieves the available think models that can be used for AI agent processing
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -79,7 +90,8 @@ class AsyncAgentV1SettingsThinkModelsWithRawResponse(SecuredRawResponse[AsyncRaw
         """Retrieves the available think models that can be used for AI agent processing
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -87,7 +99,7 @@ class AsyncAgentV1SettingsThinkModelsWithRawResponse(SecuredRawResponse[AsyncRaw
             http_method="GET",
             url_template=self._server.default("/v1/agent/settings/think/models"),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[AgentThinkModelsV1Response],
+            decoder=async_json_decoder[AgentThinkModelsV1Response],
             error_mapper=list_error_mapper,
             request_options=request_options,
         )

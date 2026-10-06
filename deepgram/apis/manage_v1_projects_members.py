@@ -3,7 +3,16 @@ from __future__ import annotations
 from uuid import UUID, uuid4
 
 from ..auth import AsyncAuthSchemes, AuthSchemes
-from ..core import ApiResult, AsyncRawClient, RawClient, RequestOptionsOrDict, SecuredRawResponse, json_decoder, param
+from ..core import (
+    ApiResult,
+    AsyncRawClient,
+    RawClient,
+    RequestOptionsOrDict,
+    SecuredRawResponse,
+    async_json_decoder,
+    json_decoder,
+    param,
+)
 from ..errors.delete5_error import Delete5ErrorBody, delete5_error_mapper
 from ..errors.list8_error import List8ErrorBody, list8_error_mapper
 from ..models.delete_project_member_v1_response import DeleteProjectMemberV1Response
@@ -23,7 +32,8 @@ class ManageV1ProjectsMembers:
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Delete the specific member from the project
@@ -39,7 +49,8 @@ class ManageV1ProjectsMembers:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of members for a given project
@@ -65,7 +76,8 @@ class AsyncManageV1ProjectsMembers:
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Delete the specific member from the project
@@ -81,7 +93,8 @@ class AsyncManageV1ProjectsMembers:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of members for a given project
@@ -104,7 +117,8 @@ class ManageV1ProjectsMembersWithRawResponse(SecuredRawResponse[RawClient, Serve
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -126,7 +140,8 @@ class ManageV1ProjectsMembersWithRawResponse(SecuredRawResponse[RawClient, Serve
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -150,7 +165,8 @@ class AsyncManageV1ProjectsMembersWithRawResponse(SecuredRawResponse[AsyncRawCli
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -160,7 +176,7 @@ class AsyncManageV1ProjectsMembersWithRawResponse(SecuredRawResponse[AsyncRawCli
             path_params=[param[str]("project_id", project_id), param[str]("member_id", member_id)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[DeleteProjectMemberV1Response],
+            decoder=async_json_decoder[DeleteProjectMemberV1Response],
             error_mapper=delete5_error_mapper,
             request_options=request_options,
         )
@@ -172,7 +188,8 @@ class AsyncManageV1ProjectsMembersWithRawResponse(SecuredRawResponse[AsyncRawCli
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -181,7 +198,7 @@ class AsyncManageV1ProjectsMembersWithRawResponse(SecuredRawResponse[AsyncRawCli
             url_template=self._server.default("/v1/projects/{project_id}/members"),
             path_params=[param[str]("project_id", project_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectMembersV1Response],
+            decoder=async_json_decoder[ListProjectMembersV1Response],
             error_mapper=list8_error_mapper,
             request_options=request_options,
         )

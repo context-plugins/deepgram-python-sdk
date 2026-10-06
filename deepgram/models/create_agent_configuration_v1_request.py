@@ -14,7 +14,7 @@ class CreateAgentConfigurationV1Request(SdkBaseModel):
     metadata: Optional[dict[str, str]] = UNSET
     """A map of arbitrary key-value pairs for labeling or organizing the agent configuration"""
 
-    api_version: Optional[int] = UNSET
+    api_version: int = 1
     """API version. Defaults to 1"""
 
 

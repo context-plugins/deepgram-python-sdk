@@ -9,12 +9,16 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
 )
 from ..errors.generate2_error import Generate2ErrorBody, generate2_error_mapper
-from ..models.enums.v1_listen_post_parameters_callback_method import V1ListenPostParametersCallbackMethodOrStr
+from ..models.enums.v1_listen_post_parameters_callback_method import (
+    V1ListenPostParametersCallbackMethod,
+    V1ListenPostParametersCallbackMethodOrStr,
+)
 from ..models.enums.v2_speak_post_parameters_priority import V2SpeakPostParametersPriorityOrStr
 from ..models.speak_v2_accepted_response import SpeakV2AcceptedResponse
 from ..models.speak_v2_request import SpeakV2Request, SpeakV2RequestDict
@@ -47,7 +51,7 @@ class SpeakV2Audio:
         model: str,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V2SpeakPostParametersTag | V2SpeakPostParametersTagDict | None = None,
         bit_rate: V2SpeakPostParametersBitRate | V2SpeakPostParametersBitRateDict | None = None,
@@ -80,7 +84,8 @@ class SpeakV2Audio:
                 sample rates are supported. For some encodings, the sample rate is not configurable
             priority: Processing priority for asynchronous (callback) requests. The only supported value is low.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Returns the synthesized audio in the requested encoding as a binary stream. When a ``callback`` URL is
@@ -121,7 +126,7 @@ class AsyncSpeakV2Audio:
         model: str,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V2SpeakPostParametersTag | V2SpeakPostParametersTagDict | None = None,
         bit_rate: V2SpeakPostParametersBitRate | V2SpeakPostParametersBitRateDict | None = None,
@@ -154,7 +159,8 @@ class AsyncSpeakV2Audio:
                 sample rates are supported. For some encodings, the sample rate is not configurable
             priority: Processing priority for asynchronous (callback) requests. The only supported value is low.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Returns the synthesized audio in the requested encoding as a binary stream. When a ``callback`` URL is
@@ -194,7 +200,7 @@ class SpeakV2AudioWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
         model: str,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V2SpeakPostParametersTag | V2SpeakPostParametersTagDict | None = None,
         bit_rate: V2SpeakPostParametersBitRate | V2SpeakPostParametersBitRateDict | None = None,
@@ -227,7 +233,8 @@ class SpeakV2AudioWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
                 sample rates are supported. For some encodings, the sample rate is not configurable
             priority: Processing priority for asynchronous (callback) requests. The only supported value is low.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -265,7 +272,7 @@ class AsyncSpeakV2AudioWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
         model: str,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V2SpeakPostParametersTag | V2SpeakPostParametersTagDict | None = None,
         bit_rate: V2SpeakPostParametersBitRate | V2SpeakPostParametersBitRateDict | None = None,
@@ -298,7 +305,8 @@ class AsyncSpeakV2AudioWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
                 sample rates are supported. For some encodings, the sample rate is not configurable
             priority: Processing priority for asynchronous (callback) requests. The only supported value is low.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -324,7 +332,7 @@ class AsyncSpeakV2AudioWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[SpeakV2Request | SpeakV2RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[SpeakV2AcceptedResponse],
+            decoder=async_json_decoder[SpeakV2AcceptedResponse],
             error_mapper=generate2_error_mapper,
             request_options=request_options,
         )

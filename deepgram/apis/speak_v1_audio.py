@@ -10,13 +10,17 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
 )
 from ..errors.generate_error import GenerateErrorBody, generate_error_mapper
-from ..models.enums.v1_listen_post_parameters_callback_method import V1ListenPostParametersCallbackMethodOrStr
-from ..models.enums.v1_speak_post_parameters_model import V1SpeakPostParametersModelOrStr
+from ..models.enums.v1_listen_post_parameters_callback_method import (
+    V1ListenPostParametersCallbackMethod,
+    V1ListenPostParametersCallbackMethodOrStr,
+)
+from ..models.enums.v1_speak_post_parameters_model import V1SpeakPostParametersModel, V1SpeakPostParametersModelOrStr
 from ..models.speak_v1_request import SpeakV1Request, SpeakV1RequestDict
 from ..models.unions.v1_speak_post_parameters_bit_rate import (
     V1SpeakPostParametersBitRate,
@@ -46,13 +50,13 @@ class SpeakV1Audio:
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V1SpeakPostParametersTag | V1SpeakPostParametersTagDict | None = None,
         bit_rate: V1SpeakPostParametersBitRate | V1SpeakPostParametersBitRateDict | None = None,
         container: V1SpeakPostParametersContainer | V1SpeakPostParametersContainerDict | None = None,
         encoding: V1SpeakPostParametersEncoding | V1SpeakPostParametersEncodingDict | None = None,
-        model: V1SpeakPostParametersModelOrStr | None = None,
+        model: V1SpeakPostParametersModelOrStr | None = V1SpeakPostParametersModel.AURA_ASTERIA_EN,
         sample_rate: V1SpeakPostParametersSampleRate | V1SpeakPostParametersSampleRateDict | None = None,
         speed: float | None = 1.0,
         body: SpeakV1Request | SpeakV1RequestDict | None = None,
@@ -77,7 +81,8 @@ class SpeakV1Audio:
             speed: Speaking rate multiplier that adjusts the pace of generated speech while preserving natural prosody
                 and voice quality. Not yet supported in all languages.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Successful text-to-speech transformation
@@ -112,13 +117,13 @@ class AsyncSpeakV1Audio:
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V1SpeakPostParametersTag | V1SpeakPostParametersTagDict | None = None,
         bit_rate: V1SpeakPostParametersBitRate | V1SpeakPostParametersBitRateDict | None = None,
         container: V1SpeakPostParametersContainer | V1SpeakPostParametersContainerDict | None = None,
         encoding: V1SpeakPostParametersEncoding | V1SpeakPostParametersEncodingDict | None = None,
-        model: V1SpeakPostParametersModelOrStr | None = None,
+        model: V1SpeakPostParametersModelOrStr | None = V1SpeakPostParametersModel.AURA_ASTERIA_EN,
         sample_rate: V1SpeakPostParametersSampleRate | V1SpeakPostParametersSampleRateDict | None = None,
         speed: float | None = 1.0,
         body: SpeakV1Request | SpeakV1RequestDict | None = None,
@@ -143,7 +148,8 @@ class AsyncSpeakV1Audio:
             speed: Speaking rate multiplier that adjusts the pace of generated speech while preserving natural prosody
                 and voice quality. Not yet supported in all languages.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Successful text-to-speech transformation
@@ -177,13 +183,13 @@ class SpeakV1AudioWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V1SpeakPostParametersTag | V1SpeakPostParametersTagDict | None = None,
         bit_rate: V1SpeakPostParametersBitRate | V1SpeakPostParametersBitRateDict | None = None,
         container: V1SpeakPostParametersContainer | V1SpeakPostParametersContainerDict | None = None,
         encoding: V1SpeakPostParametersEncoding | V1SpeakPostParametersEncodingDict | None = None,
-        model: V1SpeakPostParametersModelOrStr | None = None,
+        model: V1SpeakPostParametersModelOrStr | None = V1SpeakPostParametersModel.AURA_ASTERIA_EN,
         sample_rate: V1SpeakPostParametersSampleRate | V1SpeakPostParametersSampleRateDict | None = None,
         speed: float | None = 1.0,
         body: SpeakV1Request | SpeakV1RequestDict | None = None,
@@ -208,7 +214,8 @@ class SpeakV1AudioWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSche
             speed: Speaking rate multiplier that adjusts the pace of generated speech while preserving natural prosody
                 and voice quality. Not yet supported in all languages.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -245,13 +252,13 @@ class AsyncSpeakV1AudioWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         mip_opt_out: bool | None = False,
         tag: V1SpeakPostParametersTag | V1SpeakPostParametersTagDict | None = None,
         bit_rate: V1SpeakPostParametersBitRate | V1SpeakPostParametersBitRateDict | None = None,
         container: V1SpeakPostParametersContainer | V1SpeakPostParametersContainerDict | None = None,
         encoding: V1SpeakPostParametersEncoding | V1SpeakPostParametersEncodingDict | None = None,
-        model: V1SpeakPostParametersModelOrStr | None = None,
+        model: V1SpeakPostParametersModelOrStr | None = V1SpeakPostParametersModel.AURA_ASTERIA_EN,
         sample_rate: V1SpeakPostParametersSampleRate | V1SpeakPostParametersSampleRateDict | None = None,
         speed: float | None = 1.0,
         body: SpeakV1Request | SpeakV1RequestDict | None = None,
@@ -276,7 +283,8 @@ class AsyncSpeakV1AudioWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
             speed: Speaking rate multiplier that adjusts the pace of generated speech while preserving natural prosody
                 and voice quality. Not yet supported in all languages.
             body: Transform text to speech
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -302,7 +310,7 @@ class AsyncSpeakV1AudioWithRawResponse(SecuredRawResponse[AsyncRawClient, Server
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[SpeakV1Request | SpeakV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[Any],
+            decoder=async_json_decoder[Any],
             error_mapper=generate_error_mapper,
             request_options=request_options,
         )

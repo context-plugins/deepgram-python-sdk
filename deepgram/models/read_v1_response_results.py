@@ -24,7 +24,7 @@ class ReadV1ResponseResults(SdkBaseModel):
 
 
 class ReadV1ResponseResultsDict(TypedDict):
-    summary: NotRequired[ReadV1ResponseResultsSummary | ReadV1ResponseResultsSummaryDict]
-    topics: NotRequired[SharedTopics | SharedTopicsDict]
-    intents: NotRequired[SharedIntents | SharedIntentsDict]
-    sentiments: NotRequired[SharedSentiments | SharedSentimentsDict]
+    summary: NotRequired[ReadV1ResponseResultsSummaryDict]
+    topics: NotRequired[SharedTopicsDict]
+    intents: NotRequired[SharedIntentsDict]
+    sentiments: NotRequired[SharedSentimentsDict]

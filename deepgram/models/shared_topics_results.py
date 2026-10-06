@@ -11,4 +11,4 @@ class SharedTopicsResults(SdkBaseModel):
 
 
 class SharedTopicsResultsDict(TypedDict):
-    topics: NotRequired[SharedTopicsResultsTopics | SharedTopicsResultsTopicsDict]
+    topics: NotRequired[SharedTopicsResultsTopicsDict]

@@ -22,4 +22,4 @@ class GetProjectKeyV1ResponseItemMemberDict(TypedDict):
     email: NotRequired[str]
     first_name: NotRequired[str]
     last_name: NotRequired[str]
-    api_key: NotRequired[GetProjectKeyV1ResponseItemMemberApiKey | GetProjectKeyV1ResponseItemMemberApiKeyDict]
+    api_key: NotRequired[GetProjectKeyV1ResponseItemMemberApiKeyDict]

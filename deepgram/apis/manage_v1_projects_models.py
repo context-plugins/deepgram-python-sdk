@@ -1,7 +1,16 @@
 from __future__ import annotations
 
 from ..auth import AsyncAuthSchemes, AuthSchemes
-from ..core import ApiResult, AsyncRawClient, RawClient, RequestOptionsOrDict, SecuredRawResponse, json_decoder, param
+from ..core import (
+    ApiResult,
+    AsyncRawClient,
+    RawClient,
+    RequestOptionsOrDict,
+    SecuredRawResponse,
+    async_json_decoder,
+    json_decoder,
+    param,
+)
 from ..errors.get4_error import Get4ErrorBody, get4_error_mapper
 from ..errors.list5_error import List5ErrorBody, list5_error_mapper
 from ..models.list_models_v1_response import ListModelsV1Response
@@ -21,7 +30,8 @@ class ManageV1ProjectsModels:
         Args:
             project_id: The unique identifier of the project
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A model object that can be either STT or TTS
@@ -42,7 +52,8 @@ class ManageV1ProjectsModels:
         Args:
             project_id: The unique identifier of the project
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of models
@@ -70,7 +81,8 @@ class AsyncManageV1ProjectsModels:
         Args:
             project_id: The unique identifier of the project
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A model object that can be either STT or TTS
@@ -91,7 +103,8 @@ class AsyncManageV1ProjectsModels:
         Args:
             project_id: The unique identifier of the project
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of models
@@ -118,7 +131,8 @@ class ManageV1ProjectsModelsWithRawResponse(SecuredRawResponse[RawClient, Server
         Args:
             project_id: The unique identifier of the project
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -144,7 +158,8 @@ class ManageV1ProjectsModelsWithRawResponse(SecuredRawResponse[RawClient, Server
         Args:
             project_id: The unique identifier of the project
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -169,7 +184,8 @@ class AsyncManageV1ProjectsModelsWithRawResponse(SecuredRawResponse[AsyncRawClie
         Args:
             project_id: The unique identifier of the project
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -178,7 +194,7 @@ class AsyncManageV1ProjectsModelsWithRawResponse(SecuredRawResponse[AsyncRawClie
             url_template=self._server.default("/v1/projects/{project_id}/models/{model_id}"),
             path_params=[param[str]("project_id", project_id), param[str]("model_id", model_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetModelV1Response],
+            decoder=async_json_decoder[GetModelV1Response],
             error_mapper=get4_error_mapper,
             request_options=request_options,
         )
@@ -195,7 +211,8 @@ class AsyncManageV1ProjectsModelsWithRawResponse(SecuredRawResponse[AsyncRawClie
         Args:
             project_id: The unique identifier of the project
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -205,7 +222,7 @@ class AsyncManageV1ProjectsModelsWithRawResponse(SecuredRawResponse[AsyncRawClie
             path_params=[param[str]("project_id", project_id)],
             query_params=[param[bool | None]("include_outdated", include_outdated)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListModelsV1Response],
+            decoder=async_json_decoder[ListModelsV1Response],
             error_mapper=list5_error_mapper,
             request_options=request_options,
         )

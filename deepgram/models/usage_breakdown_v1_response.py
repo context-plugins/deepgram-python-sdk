@@ -27,5 +27,5 @@ class UsageBreakdownV1Response(SdkBaseModel):
 class UsageBreakdownV1ResponseDict(TypedDict):
     start: Date
     end: Date
-    resolution: UsageBreakdownV1ResponseResolution | UsageBreakdownV1ResponseResolutionDict
-    results: list[UsageBreakdownV1ResponseResultsItems | UsageBreakdownV1ResponseResultsItemsDict]
+    resolution: UsageBreakdownV1ResponseResolutionDict
+    results: list[UsageBreakdownV1ResponseResultsItemsDict]

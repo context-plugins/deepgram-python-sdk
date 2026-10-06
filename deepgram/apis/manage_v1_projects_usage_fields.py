@@ -8,6 +8,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_decoder,
     param,
 )
@@ -34,7 +35,8 @@ class ManageV1ProjectsUsageFields:
             project_id: The unique identifier of the project
             start: Start date of the requested date range. Format accepted is YYYY-MM-DD
             end: End date of the requested date range. Format accepted is YYYY-MM-DD
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of fields for a specific project
@@ -68,7 +70,8 @@ class AsyncManageV1ProjectsUsageFields:
             project_id: The unique identifier of the project
             start: Start date of the requested date range. Format accepted is YYYY-MM-DD
             end: End date of the requested date range. Format accepted is YYYY-MM-DD
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of fields for a specific project
@@ -99,7 +102,8 @@ class ManageV1ProjectsUsageFieldsWithRawResponse(SecuredRawResponse[RawClient, S
             project_id: The unique identifier of the project
             start: Start date of the requested date range. Format accepted is YYYY-MM-DD
             end: End date of the requested date range. Format accepted is YYYY-MM-DD
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -130,7 +134,8 @@ class AsyncManageV1ProjectsUsageFieldsWithRawResponse(SecuredRawResponse[AsyncRa
             project_id: The unique identifier of the project
             start: Start date of the requested date range. Format accepted is YYYY-MM-DD
             end: End date of the requested date range. Format accepted is YYYY-MM-DD
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -140,7 +145,7 @@ class AsyncManageV1ProjectsUsageFieldsWithRawResponse(SecuredRawResponse[AsyncRa
             path_params=[param[str]("project_id", project_id)],
             query_params=[param[Date | None]("start", start), param[Date | None]("end", end)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[UsageFieldsV1Response],
+            decoder=async_json_decoder[UsageFieldsV1Response],
             error_mapper=list12_error_mapper,
             request_options=request_options,
         )

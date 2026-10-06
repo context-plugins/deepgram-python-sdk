@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -36,7 +37,8 @@ class ManageV1ProjectsMembersScopes:
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of scopes for a specific member
@@ -59,7 +61,8 @@ class ManageV1ProjectsMembersScopes:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
             body: A scope to update
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Updated the scopes for a specific member
@@ -87,7 +90,8 @@ class AsyncManageV1ProjectsMembersScopes:
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of scopes for a specific member
@@ -110,7 +114,8 @@ class AsyncManageV1ProjectsMembersScopes:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
             body: A scope to update
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Updated the scopes for a specific member
@@ -135,7 +140,8 @@ class ManageV1ProjectsMembersScopesWithRawResponse(SecuredRawResponse[RawClient,
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -163,7 +169,8 @@ class ManageV1ProjectsMembersScopesWithRawResponse(SecuredRawResponse[RawClient,
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
             body: A scope to update
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -189,7 +196,8 @@ class AsyncManageV1ProjectsMembersScopesWithRawResponse(SecuredRawResponse[Async
         Args:
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -198,7 +206,7 @@ class AsyncManageV1ProjectsMembersScopesWithRawResponse(SecuredRawResponse[Async
             url_template=self._server.default("/v1/projects/{project_id}/members/{member_id}/scopes"),
             path_params=[param[str]("project_id", project_id), param[str]("member_id", member_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectMemberScopesV1Response],
+            decoder=async_json_decoder[ListProjectMemberScopesV1Response],
             error_mapper=list9_error_mapper,
             request_options=request_options,
         )
@@ -217,7 +225,8 @@ class AsyncManageV1ProjectsMembersScopesWithRawResponse(SecuredRawResponse[Async
             project_id: The unique identifier of the project
             member_id: The unique identifier of the Member
             body: A scope to update
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -228,7 +237,7 @@ class AsyncManageV1ProjectsMembersScopesWithRawResponse(SecuredRawResponse[Async
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UpdateProjectMemberScopesV1Request | UpdateProjectMemberScopesV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[UpdateProjectMemberScopesV1Response],
+            decoder=async_json_decoder[UpdateProjectMemberScopesV1Response],
             error_mapper=update4_error_mapper,
             request_options=request_options,
         )

@@ -14,4 +14,4 @@ class ListProjectPurchasesV1Response(SdkBaseModel):
 
 
 class ListProjectPurchasesV1ResponseDict(TypedDict):
-    orders: NotRequired[list[ListProjectPurchasesV1ResponseOrdersItems | ListProjectPurchasesV1ResponseOrdersItemsDict]]
+    orders: NotRequired[list[ListProjectPurchasesV1ResponseOrdersItemsDict]]

@@ -14,4 +14,4 @@ class ReadV1ResponseResultsSummaryResults(SdkBaseModel):
 
 
 class ReadV1ResponseResultsSummaryResultsDict(TypedDict):
-    summary: NotRequired[ReadV1ResponseResultsSummaryResultsSummary | ReadV1ResponseResultsSummaryResultsSummaryDict]
+    summary: NotRequired[ReadV1ResponseResultsSummaryResultsSummaryDict]

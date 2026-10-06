@@ -16,11 +16,4 @@ class ListenV1ResponseResultsChannelsItemsSearchItems(SdkBaseModel):
 
 class ListenV1ResponseResultsChannelsItemsSearchItemsDict(TypedDict):
     query: NotRequired[str]
-    hits: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsSearchItemsHitsItems
-                | ListenV1ResponseResultsChannelsItemsSearchItemsHitsItemsDict
-            )
-        ]
-    ]
+    hits: NotRequired[list[ListenV1ResponseResultsChannelsItemsSearchItemsHitsItemsDict]]

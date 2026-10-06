@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -38,7 +39,8 @@ class ManageV1Projects:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A project
@@ -61,7 +63,8 @@ class ManageV1Projects:
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
             page: Navigate and return the results to retrieve specific portions of information of the response
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A project
@@ -77,7 +80,8 @@ class ManageV1Projects:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Successfully removed account from project
@@ -90,7 +94,8 @@ class ManageV1Projects:
         """Retrieves basic information about the projects associated with the API key
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of projects
@@ -111,7 +116,8 @@ class ManageV1Projects:
         Args:
             project_id: The unique identifier of the project
             body: The name of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A project
@@ -136,7 +142,8 @@ class AsyncManageV1Projects:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A project
@@ -159,7 +166,8 @@ class AsyncManageV1Projects:
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
             page: Navigate and return the results to retrieve specific portions of information of the response
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A project
@@ -177,7 +185,8 @@ class AsyncManageV1Projects:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Successfully removed account from project
@@ -190,7 +199,8 @@ class AsyncManageV1Projects:
         """Retrieves basic information about the projects associated with the API key
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of projects
@@ -211,7 +221,8 @@ class AsyncManageV1Projects:
         Args:
             project_id: The unique identifier of the project
             body: The name of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A project
@@ -233,7 +244,8 @@ class ManageV1ProjectsWithRawResponse(SecuredRawResponse[RawClient, Server, Auth
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -262,7 +274,8 @@ class ManageV1ProjectsWithRawResponse(SecuredRawResponse[RawClient, Server, Auth
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
             page: Navigate and return the results to retrieve specific portions of information of the response
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -284,7 +297,8 @@ class ManageV1ProjectsWithRawResponse(SecuredRawResponse[RawClient, Server, Auth
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -305,7 +319,8 @@ class ManageV1ProjectsWithRawResponse(SecuredRawResponse[RawClient, Server, Auth
         """Retrieves basic information about the projects associated with the API key
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -330,7 +345,8 @@ class ManageV1ProjectsWithRawResponse(SecuredRawResponse[RawClient, Server, Auth
         Args:
             project_id: The unique identifier of the project
             body: The name of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -355,7 +371,8 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -365,7 +382,7 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
             path_params=[param[str]("project_id", project_id)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[DeleteProjectV1Response],
+            decoder=async_json_decoder[DeleteProjectV1Response],
             error_mapper=delete3_error_mapper,
             request_options=request_options,
         )
@@ -384,7 +401,8 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
             project_id: The unique identifier of the project
             limit: Number of results to return per page. Default 10. Range [1,1000]
             page: Navigate and return the results to retrieve specific portions of information of the response
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -394,7 +412,7 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
             path_params=[param[str]("project_id", project_id)],
             query_params=[param[float | None]("limit", limit), param[float | None]("page", page)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetProjectV1Response],
+            decoder=async_json_decoder[GetProjectV1Response],
             error_mapper=get3_error_mapper,
             request_options=request_options,
         )
@@ -406,7 +424,8 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -416,7 +435,7 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
             path_params=[param[str]("project_id", project_id)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[LeaveProjectV1Response],
+            decoder=async_json_decoder[LeaveProjectV1Response],
             error_mapper=leave_error_mapper,
             request_options=request_options,
         )
@@ -427,7 +446,8 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
         """Retrieves basic information about the projects associated with the API key
 
         Args:
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -435,7 +455,7 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
             http_method="GET",
             url_template=self._server.default("/v1/projects"),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectsV1Response],
+            decoder=async_json_decoder[ListProjectsV1Response],
             error_mapper=list4_error_mapper,
             request_options=request_options,
         )
@@ -452,7 +472,8 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
         Args:
             project_id: The unique identifier of the project
             body: The name of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -463,7 +484,7 @@ class AsyncManageV1ProjectsWithRawResponse(SecuredRawResponse[AsyncRawClient, Se
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UpdateProjectV1Request | UpdateProjectV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[UpdateProjectV1Response],
+            decoder=async_json_decoder[UpdateProjectV1Response],
             error_mapper=update3_error_mapper,
             request_options=request_options,
         )

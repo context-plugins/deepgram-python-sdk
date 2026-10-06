@@ -14,4 +14,4 @@ class GetProjectKeyV1ResponseItem(SdkBaseModel):
 
 
 class GetProjectKeyV1ResponseItemDict(TypedDict):
-    member: NotRequired[GetProjectKeyV1ResponseItemMember | GetProjectKeyV1ResponseItemMemberDict]
+    member: NotRequired[GetProjectKeyV1ResponseItemMemberDict]

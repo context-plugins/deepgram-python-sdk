@@ -61,7 +61,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -150,7 +150,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>body</code> | <code>[GrantV1Request](deepgram/models/grant_v1_request.py) \| [GrantV1RequestDict](deepgram/models/grant_v1_request.py) \| None</code> | Time to live settings<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -186,7 +186,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 > Source: [ListenV1Media](deepgram/apis/listen_v1_media.py)
 
 <details>
-<summary><code>def transcribe(*, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None, extra: V1ListenPostParametersExtra | V1ListenPostParametersExtraDict | None = None, sentiment: bool | None = False, summarize: V1ListenPostParametersSummarize | V1ListenPostParametersSummarizeDict | None = None, tag: V1ListenPostParametersTag | V1ListenPostParametersTagDict | None = None, topics: bool | None = False, custom_topic: V1ListenPostParametersCustomTopic | V1ListenPostParametersCustomTopicDict | None = None, custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None, intents: bool | None = False, custom_intent: V1ListenPostParametersCustomIntent | V1ListenPostParametersCustomIntentDict | None = None, custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None, detect_entities: bool | None = False, detect_language: V1ListenPostParametersDetectLanguage | V1ListenPostParametersDetectLanguageDict | None = None, diarize: bool | None = False, diarize_model: V1ListenPostParametersDiarizeModelOrStr | None = None, dictation: bool | None = False, encoding: V1ListenPostParametersEncodingOrStr | None = None, filler_words: bool | None = False, keyterm: list[str] | None = None, keywords: V1ListenPostParametersKeywords | V1ListenPostParametersKeywordsDict | None = None, language: str | None = "en", measurements: bool | None = False, model: V1ListenPostParametersModel | V1ListenPostParametersModelDict | None = None, multichannel: bool | None = False, numerals: bool | None = False, paragraphs: bool | None = False, profanity_filter: bool | None = False, punctuate: bool | None = False, redact: V1ListenPostParametersRedact | V1ListenPostParametersRedactDict | None = None, replace: V1ListenPostParametersReplace | V1ListenPostParametersReplaceDict | None = None, search: V1ListenPostParametersSearch | V1ListenPostParametersSearchDict | None = None, smart_format: bool | None = False, utterances: bool | None = False, utt_split: float | None = 0.8, version: V1ListenPostParametersVersion | V1ListenPostParametersVersionDict | None = None, mip_opt_out: bool | None = False, body: ListenV1RequestUrl | ListenV1RequestUrlDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[ListenV1MediaTranscribeResponse200, TranscribeErrorBody]</code></summary>
+<summary><code>def transcribe(*, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST, extra: V1ListenPostParametersExtra | V1ListenPostParametersExtraDict | None = None, sentiment: bool | None = False, summarize: V1ListenPostParametersSummarize | V1ListenPostParametersSummarizeDict | None = None, tag: V1ListenPostParametersTag | V1ListenPostParametersTagDict | None = None, topics: bool | None = False, custom_topic: V1ListenPostParametersCustomTopic | V1ListenPostParametersCustomTopicDict | None = None, custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = V1ListenPostParametersCustomTopicMode.EXTENDED, intents: bool | None = False, custom_intent: V1ListenPostParametersCustomIntent | V1ListenPostParametersCustomIntentDict | None = None, custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = V1ListenPostParametersCustomTopicMode.EXTENDED, detect_entities: bool | None = False, detect_language: V1ListenPostParametersDetectLanguage | V1ListenPostParametersDetectLanguageDict | None = None, diarize: bool | None = False, diarize_model: V1ListenPostParametersDiarizeModelOrStr | None = None, dictation: bool | None = False, encoding: V1ListenPostParametersEncodingOrStr | None = None, filler_words: bool | None = False, keyterm: list[str] | None = None, keywords: V1ListenPostParametersKeywords | V1ListenPostParametersKeywordsDict | None = None, language: str | None = "en", measurements: bool | None = False, model: V1ListenPostParametersModel | V1ListenPostParametersModelDict | None = None, multichannel: bool | None = False, numerals: bool | None = False, paragraphs: bool | None = False, profanity_filter: bool | None = False, punctuate: bool | None = False, redact: V1ListenPostParametersRedact | V1ListenPostParametersRedactDict | None = None, replace: V1ListenPostParametersReplace | V1ListenPostParametersReplaceDict | None = None, search: V1ListenPostParametersSearch | V1ListenPostParametersSearchDict | None = None, smart_format: bool | None = False, utterances: bool | None = False, utt_split: float | None = 0.8, version: V1ListenPostParametersVersion | V1ListenPostParametersVersionDict | None = None, mip_opt_out: bool | None = False, body: ListenV1RequestUrl | ListenV1RequestUrlDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[ListenV1MediaTranscribeResponse200, TranscribeErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -239,17 +239,17 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>callback</code> | <code>str \| None</code> | URL to which we'll make the callback request<br>**Default**: <code>None</code> |
-| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>None</code> |
+| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>V1ListenPostParametersCallbackMethod.POST</code> |
 | <code>extra</code> | <code>[V1ListenPostParametersExtra](deepgram/models/unions/v1_listen_post_parameters_extra.py) \| [V1ListenPostParametersExtraDict](deepgram/models/unions/v1_listen_post_parameters_extra.py) \| None</code> | Arbitrary key-value pairs that are attached to the API response for usage in downstream processing<br>**Default**: <code>None</code> |
 | <code>sentiment</code> | <code>bool \| None</code> | Recognizes the sentiment throughout a transcript or text<br>**Default**: <code>False</code> |
 | <code>summarize</code> | <code>[V1ListenPostParametersSummarize](deepgram/models/unions/v1_listen_post_parameters_summarize.py) \| [V1ListenPostParametersSummarizeDict](deepgram/models/unions/v1_listen_post_parameters_summarize.py) \| None</code> | Summarize content. For Listen API, supports string version option. For Read API, accepts boolean only.<br>**Default**: <code>None</code> |
 | <code>tag</code> | <code>[V1ListenPostParametersTag](deepgram/models/unions/v1_listen_post_parameters_tag.py) \| [V1ListenPostParametersTagDict](deepgram/models/unions/v1_listen_post_parameters_tag.py) \| None</code> | Label your requests for the purpose of identification during usage reporting<br>**Default**: <code>None</code> |
 | <code>topics</code> | <code>bool \| None</code> | Detect topics throughout a transcript or text<br>**Default**: <code>False</code> |
 | <code>custom_topic</code> | <code>[V1ListenPostParametersCustomTopic](deepgram/models/unions/v1_listen_post_parameters_custom_topic.py) \| [V1ListenPostParametersCustomTopicDict](deepgram/models/unions/v1_listen_post_parameters_custom_topic.py) \| None</code> | Custom topics you want the model to detect within your input audio or text if present Submit up to `100`.<br>**Default**: <code>None</code> |
-| <code>custom_topic_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret strings submitted to the `custom_topic` param. When `strict`, the model will only return topics submitted using the `custom_topic` param. When `extended`, the model will return its own detected topics in addition to those submitted using the `custom_topic` param<br>**Default**: <code>None</code> |
+| <code>custom_topic_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret strings submitted to the `custom_topic` param. When `strict`, the model will only return topics submitted using the `custom_topic` param. When `extended`, the model will return its own detected topics in addition to those submitted using the `custom_topic` param<br>**Default**: <code>V1ListenPostParametersCustomTopicMode.EXTENDED</code> |
 | <code>intents</code> | <code>bool \| None</code> | Recognizes speaker intent throughout a transcript or text<br>**Default**: <code>False</code> |
 | <code>custom_intent</code> | <code>[V1ListenPostParametersCustomIntent](deepgram/models/unions/v1_listen_post_parameters_custom_intent.py) \| [V1ListenPostParametersCustomIntentDict](deepgram/models/unions/v1_listen_post_parameters_custom_intent.py) \| None</code> | Custom intents you want the model to detect within your input audio if present<br>**Default**: <code>None</code> |
-| <code>custom_intent_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret intents submitted to the `custom_intent` param. When `strict`, the model will only return intents submitted using the `custom_intent` param. When `extended`, the model will return its own detected intents in the `custom_intent` param.<br>**Default**: <code>None</code> |
+| <code>custom_intent_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret intents submitted to the `custom_intent` param. When `strict`, the model will only return intents submitted using the `custom_intent` param. When `extended`, the model will return its own detected intents in the `custom_intent` param.<br>**Default**: <code>V1ListenPostParametersCustomTopicMode.EXTENDED</code> |
 | <code>detect_entities</code> | <code>bool \| None</code> | Identifies and extracts key entities from content in submitted audio<br>**Default**: <code>False</code> |
 | <code>detect_language</code> | <code>[V1ListenPostParametersDetectLanguage](deepgram/models/unions/v1_listen_post_parameters_detect_language.py) \| [V1ListenPostParametersDetectLanguageDict](deepgram/models/unions/v1_listen_post_parameters_detect_language.py) \| None</code> | Identifies the dominant language spoken in submitted audio<br>**Default**: <code>None</code> |
 | <code>diarize</code> | <code>bool \| None</code> | Deprecated: use `diarize_model` instead. Recognize speaker changes. Each word in the transcript will be assigned a speaker number starting at 0.<br>**Default**: <code>False</code> |
@@ -276,7 +276,7 @@ match result:
 | <code>version</code> | <code>[V1ListenPostParametersVersion](deepgram/models/unions/v1_listen_post_parameters_version.py) \| [V1ListenPostParametersVersionDict](deepgram/models/unions/v1_listen_post_parameters_version.py) \| None</code> | Version of an AI model to use<br>**Default**: <code>None</code> |
 | <code>mip_opt_out</code> | <code>bool \| None</code> | Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip<br>**Default**: <code>False</code> |
 | <code>body</code> | <code>[ListenV1RequestUrl](deepgram/models/listen_v1_request_url.py) \| [ListenV1RequestUrlDict](deepgram/models/listen_v1_request_url.py) \| None</code> | Transcribe an audio or video file<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -335,7 +335,7 @@ Returns metadata for a specific public model
 **Sync**
 
 ```python
-result = client.manage_v1_models.with_raw_response.get5(model_id)
+result = client.manage_v1_models.with_raw_response.get5("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetModelV1Response
@@ -346,7 +346,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_models.with_raw_response.get5(model_id)
+result = await async_client.manage_v1_models.with_raw_response.get5("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetModelV1Response
@@ -365,7 +365,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>model_id</code> | <code>str</code> | The specific UUID of the model |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -450,7 +450,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>include_outdated</code> | <code>bool \| None</code> | returns non-latest versions of models<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -509,7 +509,7 @@ Deletes the specified project
 **Sync**
 
 ```python
-result = client.manage_v1_projects.with_raw_response.delete3(project_id)
+result = client.manage_v1_projects.with_raw_response.delete3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectV1Response
@@ -520,7 +520,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects.with_raw_response.delete3(project_id)
+result = await async_client.manage_v1_projects.with_raw_response.delete3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectV1Response
@@ -539,7 +539,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -594,7 +594,7 @@ Retrieves information about the specified project
 **Sync**
 
 ```python
-result = client.manage_v1_projects.with_raw_response.get3(project_id)
+result = client.manage_v1_projects.with_raw_response.get3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectV1Response
@@ -605,7 +605,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects.with_raw_response.get3(project_id)
+result = await async_client.manage_v1_projects.with_raw_response.get3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectV1Response
@@ -626,7 +626,7 @@ match result:
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>limit</code> | <code>float \| None</code> | Number of results to return per page. Default 10. Range [1,1000]<br>**Default**: <code>10.0</code> |
 | <code>page</code> | <code>float \| None</code> | Navigate and return the results to retrieve specific portions of information of the response<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -681,7 +681,7 @@ Removes the authenticated account from the specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects.with_raw_response.leave(project_id)
+result = client.manage_v1_projects.with_raw_response.leave("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type LeaveProjectV1Response
@@ -692,7 +692,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects.with_raw_response.leave(project_id)
+result = await async_client.manage_v1_projects.with_raw_response.leave("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type LeaveProjectV1Response
@@ -711,7 +711,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -795,7 +795,7 @@ match result:
 
 | Name | Type | Description |
 | --- | --- | --- |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -850,7 +850,7 @@ Updates the name or other properties of an existing project
 **Sync**
 
 ```python
-result = client.manage_v1_projects.with_raw_response.update3(project_id)
+result = client.manage_v1_projects.with_raw_response.update3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UpdateProjectV1Response
@@ -861,7 +861,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects.with_raw_response.update3(project_id)
+result = await async_client.manage_v1_projects.with_raw_response.update3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UpdateProjectV1Response
@@ -881,7 +881,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>body</code> | <code>[UpdateProjectV1Request](deepgram/models/update_project_v1_request.py) \| [UpdateProjectV1RequestDict](deepgram/models/update_project_v1_request.py) \| None</code> | The name of the project<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -940,7 +940,9 @@ Retrieves details about the specified balance
 **Sync**
 
 ```python
-result = client.manage_v1_projects_billing_balances.with_raw_response.get10(project_id, balance_id)
+result = client.manage_v1_projects_billing_balances.with_raw_response.get10(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectBalanceV1Response
@@ -951,7 +953,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_billing_balances.with_raw_response.get10(project_id, balance_id)
+result = await async_client.manage_v1_projects_billing_balances.with_raw_response.get10(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectBalanceV1Response
@@ -971,7 +975,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>balance_id</code> | <code>str</code> | The unique identifier of the balance |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1026,7 +1030,7 @@ Generates a list of outstanding balances for the specified project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_billing_balances.with_raw_response.list13(project_id)
+result = client.manage_v1_projects_billing_balances.with_raw_response.list13("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectBalancesV1Response
@@ -1037,7 +1041,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_billing_balances.with_raw_response.list13(project_id)
+result = await async_client.manage_v1_projects_billing_balances.with_raw_response.list13("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectBalancesV1Response
@@ -1056,7 +1060,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1115,7 +1119,7 @@ Retrieves the billing summary for a specific project, with various filter option
 **Sync**
 
 ```python
-result = client.manage_v1_projects_billing_breakdown.with_raw_response.list14(project_id)
+result = client.manage_v1_projects_billing_breakdown.with_raw_response.list14("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type BillingBreakdownV1Response
@@ -1126,7 +1130,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_billing_breakdown.with_raw_response.list14(project_id)
+result = await async_client.manage_v1_projects_billing_breakdown.with_raw_response.list14("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type BillingBreakdownV1Response
@@ -1152,7 +1156,7 @@ match result:
 | <code>tag</code> | <code>str \| None</code> | Filter for requests where a specific tag was used<br>**Default**: <code>None</code> |
 | <code>line_item</code> | <code>str \| None</code> | Filter requests by line item (e.g. streaming::nova-3)<br>**Default**: <code>None</code> |
 | <code>grouping</code> | <code>list&#91;[V1ProjectsProjectIdBillingBreakdownGetParametersGroupingSchemaItemsOrStr](deepgram/models/enums/v1_projects_project_id_billing_breakdown_get_parameters_grouping_schema_items.py)&#93; \| None</code> | Group billing breakdown by one or more dimensions (accessor, deployment, line_item, tags)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1211,7 +1215,7 @@ Lists the accessors, deployment types, tags, and line items used for billing dat
 **Sync**
 
 ```python
-result = client.manage_v1_projects_billing_fields.with_raw_response.list15(project_id)
+result = client.manage_v1_projects_billing_fields.with_raw_response.list15("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListBillingFieldsV1Response
@@ -1222,7 +1226,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_billing_fields.with_raw_response.list15(project_id)
+result = await async_client.manage_v1_projects_billing_fields.with_raw_response.list15("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListBillingFieldsV1Response
@@ -1243,7 +1247,7 @@ match result:
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>start</code> | <code>Date \| None</code> | Start date of the requested date range. Format accepted is YYYY-MM-DD<br>**Default**: <code>None</code> |
 | <code>end</code> | <code>Date \| None</code> | End date of the requested date range. Format accepted is YYYY-MM-DD<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1302,7 +1306,7 @@ Returns the original purchased amount on an order transaction
 **Sync**
 
 ```python
-result = client.manage_v1_projects_billing_purchases.with_raw_response.list16(project_id)
+result = client.manage_v1_projects_billing_purchases.with_raw_response.list16("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectPurchasesV1Response
@@ -1313,7 +1317,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_billing_purchases.with_raw_response.list16(project_id)
+result = await async_client.manage_v1_projects_billing_purchases.with_raw_response.list16("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectPurchasesV1Response
@@ -1333,7 +1337,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>limit</code> | <code>float \| None</code> | Number of results to return per page. Default 10. Range [1,1000]<br>**Default**: <code>10.0</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1392,7 +1396,7 @@ Creates a new API key with specified settings for the project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_keys.with_raw_response.create3(project_id)
+result = client.manage_v1_projects_keys.with_raw_response.create3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateKeyV1Response
@@ -1403,7 +1407,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_keys.with_raw_response.create3(project_id)
+result = await async_client.manage_v1_projects_keys.with_raw_response.create3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateKeyV1Response
@@ -1423,7 +1427,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>body</code> | <code>Any \| None</code> | API key settings<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1478,7 +1482,7 @@ Deletes an API key for a specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_keys.with_raw_response.delete4(project_id, key_id)
+result = client.manage_v1_projects_keys.with_raw_response.delete4("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectKeyV1Response
@@ -1489,7 +1493,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_keys.with_raw_response.delete4(project_id, key_id)
+result = await async_client.manage_v1_projects_keys.with_raw_response.delete4(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectKeyV1Response
@@ -1509,7 +1515,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>key_id</code> | <code>str</code> | The unique identifier of the API key |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1564,7 +1570,7 @@ Retrieves information about a specified API key
 **Sync**
 
 ```python
-result = client.manage_v1_projects_keys.with_raw_response.get6(project_id, key_id)
+result = client.manage_v1_projects_keys.with_raw_response.get6("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectKeyV1Response
@@ -1575,7 +1581,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_keys.with_raw_response.get6(project_id, key_id)
+result = await async_client.manage_v1_projects_keys.with_raw_response.get6("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectKeyV1Response
@@ -1595,7 +1601,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>key_id</code> | <code>str</code> | The unique identifier of the API key |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1650,7 +1656,7 @@ Retrieves all API keys associated with the specified project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_keys.with_raw_response.list7(project_id)
+result = client.manage_v1_projects_keys.with_raw_response.list7("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectKeysV1Response
@@ -1661,7 +1667,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_keys.with_raw_response.list7(project_id)
+result = await async_client.manage_v1_projects_keys.with_raw_response.list7("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectKeysV1Response
@@ -1681,7 +1687,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>status</code> | <code>[V1ProjectsProjectIdKeysGetParametersStatusOrStr](deepgram/models/enums/v1_projects_project_id_keys_get_parameters_status.py) \| None</code> | Only return keys with a specific status<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1740,7 +1746,7 @@ Removes a member from the project using their unique member ID
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members.with_raw_response.delete5(project_id, member_id)
+result = client.manage_v1_projects_members.with_raw_response.delete5("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectMemberV1Response
@@ -1751,7 +1757,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members.with_raw_response.delete5(project_id, member_id)
+result = await async_client.manage_v1_projects_members.with_raw_response.delete5(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectMemberV1Response
@@ -1771,7 +1779,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>member_id</code> | <code>str</code> | The unique identifier of the Member |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1826,7 +1834,7 @@ Retrieves a list of members for a given project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members.with_raw_response.list8(project_id)
+result = client.manage_v1_projects_members.with_raw_response.list8("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectMembersV1Response
@@ -1837,7 +1845,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members.with_raw_response.list8(project_id)
+result = await async_client.manage_v1_projects_members.with_raw_response.list8("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectMembersV1Response
@@ -1856,7 +1864,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -1915,7 +1923,7 @@ Generates an invite for a specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members_invites.with_raw_response.create4(project_id)
+result = client.manage_v1_projects_members_invites.with_raw_response.create4("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateProjectInviteV1Response
@@ -1926,7 +1934,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members_invites.with_raw_response.create4(project_id)
+result = await async_client.manage_v1_projects_members_invites.with_raw_response.create4("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateProjectInviteV1Response
@@ -1946,7 +1954,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>body</code> | <code>[CreateProjectInviteV1Request](deepgram/models/create_project_invite_v1_request.py) \| [CreateProjectInviteV1RequestDict](deepgram/models/create_project_invite_v1_request.py) \| None</code> | email to invite to the project<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2001,7 +2009,9 @@ Deletes an invite for a specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members_invites.with_raw_response.delete6(project_id, email)
+result = client.manage_v1_projects_members_invites.with_raw_response.delete6(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectInviteV1Response
@@ -2012,7 +2022,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members_invites.with_raw_response.delete6(project_id, email)
+result = await async_client.manage_v1_projects_members_invites.with_raw_response.delete6(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type DeleteProjectInviteV1Response
@@ -2032,7 +2044,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>email</code> | <code>str</code> | The email address of the member |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2087,7 +2099,7 @@ Generates a list of invites for a specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members_invites.with_raw_response.list10(project_id)
+result = client.manage_v1_projects_members_invites.with_raw_response.list10("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectInvitesV1Response
@@ -2098,7 +2110,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members_invites.with_raw_response.list10(project_id)
+result = await async_client.manage_v1_projects_members_invites.with_raw_response.list10("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectInvitesV1Response
@@ -2117,7 +2129,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2176,7 +2188,7 @@ Retrieves a list of scopes for a specific member
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members_scopes.with_raw_response.list9(project_id, member_id)
+result = client.manage_v1_projects_members_scopes.with_raw_response.list9("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectMemberScopesV1Response
@@ -2187,7 +2199,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members_scopes.with_raw_response.list9(project_id, member_id)
+result = await async_client.manage_v1_projects_members_scopes.with_raw_response.list9(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectMemberScopesV1Response
@@ -2207,7 +2221,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>member_id</code> | <code>str</code> | The unique identifier of the Member |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2262,7 +2276,9 @@ Updates the scopes for a specific member
 **Sync**
 
 ```python
-result = client.manage_v1_projects_members_scopes.with_raw_response.update4(project_id, member_id)
+result = client.manage_v1_projects_members_scopes.with_raw_response.update4(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UpdateProjectMemberScopesV1Response
@@ -2273,7 +2289,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_members_scopes.with_raw_response.update4(project_id, member_id)
+result = await async_client.manage_v1_projects_members_scopes.with_raw_response.update4(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UpdateProjectMemberScopesV1Response
@@ -2294,7 +2312,7 @@ match result:
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>member_id</code> | <code>str</code> | The unique identifier of the Member |
 | <code>body</code> | <code>[UpdateProjectMemberScopesV1Request](deepgram/models/update_project_member_scopes_v1_request.py) \| [UpdateProjectMemberScopesV1RequestDict](deepgram/models/update_project_member_scopes_v1_request.py) \| None</code> | A scope to update<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2353,7 +2371,7 @@ Returns metadata for a specific model
 **Sync**
 
 ```python
-result = client.manage_v1_projects_models.with_raw_response.get4(project_id, model_id)
+result = client.manage_v1_projects_models.with_raw_response.get4("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetModelV1Response
@@ -2364,7 +2382,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_models.with_raw_response.get4(project_id, model_id)
+result = await async_client.manage_v1_projects_models.with_raw_response.get4(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetModelV1Response
@@ -2384,7 +2404,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>model_id</code> | <code>str</code> | The specific UUID of the model |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2439,7 +2459,7 @@ Returns metadata on all the latest models that a specific project has access to,
 **Sync**
 
 ```python
-result = client.manage_v1_projects_models.with_raw_response.list5(project_id)
+result = client.manage_v1_projects_models.with_raw_response.list5("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListModelsV1Response
@@ -2450,7 +2470,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_models.with_raw_response.list5(project_id)
+result = await async_client.manage_v1_projects_models.with_raw_response.list5("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListModelsV1Response
@@ -2470,7 +2490,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>include_outdated</code> | <code>bool \| None</code> | returns non-latest versions of models<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2529,7 +2549,7 @@ Retrieves a specific request for a specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_requests.with_raw_response.get7(project_id, request_id)
+result = client.manage_v1_projects_requests.with_raw_response.get7("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectRequestV1Response
@@ -2540,7 +2560,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_requests.with_raw_response.get7(project_id, request_id)
+result = await async_client.manage_v1_projects_requests.with_raw_response.get7(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectRequestV1Response
@@ -2560,7 +2582,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>request_id</code> | <code>str</code> | The unique identifier of the request |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2615,7 +2637,7 @@ Generates a list of requests for a specific project
 **Sync**
 
 ```python
-result = client.manage_v1_projects_requests.with_raw_response.list11(project_id)
+result = client.manage_v1_projects_requests.with_raw_response.list11("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectRequestsV1Response
@@ -2626,7 +2648,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_requests.with_raw_response.list11(project_id)
+result = await async_client.manage_v1_projects_requests.with_raw_response.list11("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectRequestsV1Response
@@ -2655,7 +2677,7 @@ match result:
 | <code>endpoint</code> | <code>[V1ProjectsProjectIdRequestsGetParametersEndpointOrStr](deepgram/models/enums/v1_projects_project_id_requests_get_parameters_endpoint.py) \| None</code> | Filter for requests where a specific endpoint was used<br>**Default**: <code>None</code> |
 | <code>method</code> | <code>[V1ProjectsProjectIdRequestsGetParametersMethodOrStr](deepgram/models/enums/v1_projects_project_id_requests_get_parameters_method.py) \| None</code> | Filter for requests where a specific method was used<br>**Default**: <code>None</code> |
 | <code>status</code> | <code>[V1ProjectsProjectIdRequestsGetParametersStatusOrStr](deepgram/models/enums/v1_projects_project_id_requests_get_parameters_status.py) \| None</code> | Filter for requests that succeeded (status code < 300) or failed (status code >=400)<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2714,7 +2736,7 @@ Retrieves the usage for a specific project. Use Get Project Usage Breakdown for 
 **Sync**
 
 ```python
-result = client.manage_v1_projects_usage.with_raw_response.get8(project_id)
+result = client.manage_v1_projects_usage.with_raw_response.get8("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsageV1Response
@@ -2725,7 +2747,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_usage.with_raw_response.get8(project_id)
+result = await async_client.manage_v1_projects_usage.with_raw_response.get8("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsageV1Response
@@ -2788,7 +2810,7 @@ match result:
 | <code>utt_split</code> | <code>bool \| None</code> | Filter for requests where utt split was used<br>**Default**: <code>None</code> |
 | <code>utterances</code> | <code>bool \| None</code> | Filter for requests where utterances was used<br>**Default**: <code>None</code> |
 | <code>version</code> | <code>bool \| None</code> | Filter for requests where version was used<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2847,7 +2869,7 @@ Retrieves the usage breakdown for a specific project, with various filter option
 **Sync**
 
 ```python
-result = client.manage_v1_projects_usage_breakdown.with_raw_response.get9(project_id)
+result = client.manage_v1_projects_usage_breakdown.with_raw_response.get9("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsageBreakdownV1Response
@@ -2858,7 +2880,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_usage_breakdown.with_raw_response.get9(project_id)
+result = await async_client.manage_v1_projects_usage_breakdown.with_raw_response.get9("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsageBreakdownV1Response
@@ -2922,7 +2944,7 @@ match result:
 | <code>utt_split</code> | <code>bool \| None</code> | Filter for requests where utt split was used<br>**Default**: <code>None</code> |
 | <code>utterances</code> | <code>bool \| None</code> | Filter for requests where utterances was used<br>**Default**: <code>None</code> |
 | <code>version</code> | <code>bool \| None</code> | Filter for requests where version was used<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -2981,7 +3003,7 @@ Lists the features, models, tags, languages, and processing method used for requ
 **Sync**
 
 ```python
-result = client.manage_v1_projects_usage_fields.with_raw_response.list12(project_id)
+result = client.manage_v1_projects_usage_fields.with_raw_response.list12("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsageFieldsV1Response
@@ -2992,7 +3014,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.manage_v1_projects_usage_fields.with_raw_response.list12(project_id)
+result = await async_client.manage_v1_projects_usage_fields.with_raw_response.list12("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type UsageFieldsV1Response
@@ -3013,7 +3035,7 @@ match result:
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>start</code> | <code>Date \| None</code> | Start date of the requested date range. Format accepted is YYYY-MM-DD<br>**Default**: <code>None</code> |
 | <code>end</code> | <code>Date \| None</code> | End date of the requested date range. Format accepted is YYYY-MM-DD<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3049,7 +3071,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 > Source: [ReadV1Text](deepgram/apis/read_v1_text.py)
 
 <details>
-<summary><code>def analyze(*, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None, sentiment: bool | None = False, summarize: V1ReadPostParametersSummarize | V1ReadPostParametersSummarizeDict | None = None, tag: V1ReadPostParametersTag | V1ReadPostParametersTagDict | None = None, topics: bool | None = False, custom_topic: V1ReadPostParametersCustomTopic | V1ReadPostParametersCustomTopicDict | None = None, custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None, intents: bool | None = False, custom_intent: V1ReadPostParametersCustomIntent | V1ReadPostParametersCustomIntentDict | None = None, custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None, language: str | None = "en", body: ReadV1Request | ReadV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[ReadV1Response, AnalyzeErrorBody]</code></summary>
+<summary><code>def analyze(*, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST, sentiment: bool | None = False, summarize: V1ReadPostParametersSummarize | V1ReadPostParametersSummarizeDict | None = None, tag: V1ReadPostParametersTag | V1ReadPostParametersTagDict | None = None, topics: bool | None = False, custom_topic: V1ReadPostParametersCustomTopic | V1ReadPostParametersCustomTopicDict | None = None, custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = V1ListenPostParametersCustomTopicMode.EXTENDED, intents: bool | None = False, custom_intent: V1ReadPostParametersCustomIntent | V1ReadPostParametersCustomIntentDict | None = None, custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = V1ListenPostParametersCustomTopicMode.EXTENDED, language: str | None = "en", body: ReadV1Request | ReadV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[ReadV1Response, AnalyzeErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -3102,19 +3124,19 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>callback</code> | <code>str \| None</code> | URL to which we'll make the callback request<br>**Default**: <code>None</code> |
-| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>None</code> |
+| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>V1ListenPostParametersCallbackMethod.POST</code> |
 | <code>sentiment</code> | <code>bool \| None</code> | Recognizes the sentiment throughout a transcript or text<br>**Default**: <code>False</code> |
 | <code>summarize</code> | <code>[V1ReadPostParametersSummarize](deepgram/models/unions/v1_read_post_parameters_summarize.py) \| [V1ReadPostParametersSummarizeDict](deepgram/models/unions/v1_read_post_parameters_summarize.py) \| None</code> | Summarize content. For Listen API, supports string version option. For Read API, accepts boolean only.<br>**Default**: <code>None</code> |
 | <code>tag</code> | <code>[V1ReadPostParametersTag](deepgram/models/unions/v1_read_post_parameters_tag.py) \| [V1ReadPostParametersTagDict](deepgram/models/unions/v1_read_post_parameters_tag.py) \| None</code> | Label your requests for the purpose of identification during usage reporting<br>**Default**: <code>None</code> |
 | <code>topics</code> | <code>bool \| None</code> | Detect topics throughout a transcript or text<br>**Default**: <code>False</code> |
 | <code>custom_topic</code> | <code>[V1ReadPostParametersCustomTopic](deepgram/models/unions/v1_read_post_parameters_custom_topic.py) \| [V1ReadPostParametersCustomTopicDict](deepgram/models/unions/v1_read_post_parameters_custom_topic.py) \| None</code> | Custom topics you want the model to detect within your input audio or text if present Submit up to `100`.<br>**Default**: <code>None</code> |
-| <code>custom_topic_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret strings submitted to the `custom_topic` param. When `strict`, the model will only return topics submitted using the `custom_topic` param. When `extended`, the model will return its own detected topics in addition to those submitted using the `custom_topic` param<br>**Default**: <code>None</code> |
+| <code>custom_topic_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret strings submitted to the `custom_topic` param. When `strict`, the model will only return topics submitted using the `custom_topic` param. When `extended`, the model will return its own detected topics in addition to those submitted using the `custom_topic` param<br>**Default**: <code>V1ListenPostParametersCustomTopicMode.EXTENDED</code> |
 | <code>intents</code> | <code>bool \| None</code> | Recognizes speaker intent throughout a transcript or text<br>**Default**: <code>False</code> |
 | <code>custom_intent</code> | <code>[V1ReadPostParametersCustomIntent](deepgram/models/unions/v1_read_post_parameters_custom_intent.py) \| [V1ReadPostParametersCustomIntentDict](deepgram/models/unions/v1_read_post_parameters_custom_intent.py) \| None</code> | Custom intents you want the model to detect within your input audio if present<br>**Default**: <code>None</code> |
-| <code>custom_intent_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret intents submitted to the `custom_intent` param. When `strict`, the model will only return intents submitted using the `custom_intent` param. When `extended`, the model will return its own detected intents in the `custom_intent` param.<br>**Default**: <code>None</code> |
+| <code>custom_intent_mode</code> | <code>[V1ListenPostParametersCustomTopicModeOrStr](deepgram/models/enums/v1_listen_post_parameters_custom_topic_mode.py) \| None</code> | Sets how the model will interpret intents submitted to the `custom_intent` param. When `strict`, the model will only return intents submitted using the `custom_intent` param. When `extended`, the model will return its own detected intents in the `custom_intent` param.<br>**Default**: <code>V1ListenPostParametersCustomTopicMode.EXTENDED</code> |
 | <code>language</code> | <code>str \| None</code> | The [BCP-47 language tag](https://tools.ietf.org/html/bcp47) that hints at the primary spoken language. Depending on the Model and API endpoint you choose only certain languages are available<br>**Default**: <code>"en"</code> |
 | <code>body</code> | <code>[ReadV1Request](deepgram/models/unions/read_v1_request.py) \| [ReadV1RequestDict](deepgram/models/unions/read_v1_request.py) \| None</code> | Analyze a text file<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3150,7 +3172,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 > Source: [SelfHostedV1DistributionCredentials](deepgram/apis/self_hosted_v1_distribution_credentials.py)
 
 <details>
-<summary><code>def create5(project_id: str, *, scopes: list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None = None, provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = None, body: CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CreateProjectDistributionCredentialsV1Response, Create5ErrorBody]</code></summary>
+<summary><code>def create5(project_id: str, *, scopes: list[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr] | None = None, provider: V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr | None = V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY, body: CreateProjectDistributionCredentialsV1Request | CreateProjectDistributionCredentialsV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[CreateProjectDistributionCredentialsV1Response, Create5ErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -3173,7 +3195,7 @@ Creates a set of distribution credentials for the specified project
 **Sync**
 
 ```python
-result = client.self_hosted_v1_distribution_credentials.with_raw_response.create5(project_id)
+result = client.self_hosted_v1_distribution_credentials.with_raw_response.create5("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateProjectDistributionCredentialsV1Response
@@ -3184,7 +3206,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.self_hosted_v1_distribution_credentials.with_raw_response.create5(project_id)
+result = await async_client.self_hosted_v1_distribution_credentials.with_raw_response.create5("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateProjectDistributionCredentialsV1Response
@@ -3204,9 +3226,9 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>scopes</code> | <code>list&#91;[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersScopesSchemaItemsOrStr](deepgram/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_scopes_schema_items.py)&#93; \| None</code> | List of permission scopes for the credentials<br>**Default**: <code>None</code> |
-| <code>provider</code> | <code>[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr](deepgram/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_provider.py) \| None</code> | The provider of the distribution service<br>**Default**: <code>None</code> |
+| <code>provider</code> | <code>[V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProviderOrStr](deepgram/models/enums/v1_projects_project_id_self_hosted_distribution_credentials_post_parameters_provider.py) \| None</code> | The provider of the distribution service<br>**Default**: <code>V1ProjectsProjectIdSelfHostedDistributionCredentialsPostParametersProvider.QUAY</code> |
 | <code>body</code> | <code>[CreateProjectDistributionCredentialsV1Request](deepgram/models/create_project_distribution_credentials_v1_request.py) \| [CreateProjectDistributionCredentialsV1RequestDict](deepgram/models/create_project_distribution_credentials_v1_request.py) \| None</code> | The set of distribution credentials to create<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3262,7 +3284,7 @@ Deletes a set of distribution credentials for the specified project
 
 ```python
 result = client.self_hosted_v1_distribution_credentials.with_raw_response.delete7(
-    project_id, distribution_credentials_id
+    "some example string", "some example string"
 )
 match result:
     case Success(payload=payload):
@@ -3275,7 +3297,7 @@ match result:
 
 ```python
 result = await async_client.self_hosted_v1_distribution_credentials.with_raw_response.delete7(
-    project_id, distribution_credentials_id
+    "some example string", "some example string"
 )
 match result:
     case Success(payload=payload):
@@ -3296,7 +3318,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>distribution_credentials_id</code> | <code>str</code> | The UUID of the distribution credentials |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3351,7 +3373,9 @@ Returns a set of distribution credentials for the specified project
 **Sync**
 
 ```python
-result = client.self_hosted_v1_distribution_credentials.with_raw_response.get11(project_id, distribution_credentials_id)
+result = client.self_hosted_v1_distribution_credentials.with_raw_response.get11(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type GetProjectDistributionCredentialsV1Response
@@ -3363,7 +3387,7 @@ match result:
 
 ```python
 result = await async_client.self_hosted_v1_distribution_credentials.with_raw_response.get11(
-    project_id, distribution_credentials_id
+    "some example string", "some example string"
 )
 match result:
     case Success(payload=payload):
@@ -3384,7 +3408,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>distribution_credentials_id</code> | <code>str</code> | The UUID of the distribution credentials |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3439,7 +3463,7 @@ Lists sets of distribution credentials for the specified project
 **Sync**
 
 ```python
-result = client.self_hosted_v1_distribution_credentials.with_raw_response.list17(project_id)
+result = client.self_hosted_v1_distribution_credentials.with_raw_response.list17("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectDistributionCredentialsV1Response
@@ -3450,7 +3474,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.self_hosted_v1_distribution_credentials.with_raw_response.list17(project_id)
+result = await async_client.self_hosted_v1_distribution_credentials.with_raw_response.list17("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListProjectDistributionCredentialsV1Response
@@ -3469,7 +3493,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3505,7 +3529,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 > Source: [SpeakV1Audio](deepgram/apis/speak_v1_audio.py)
 
 <details>
-<summary><code>def generate(*, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None, mip_opt_out: bool | None = False, tag: V1SpeakPostParametersTag | V1SpeakPostParametersTagDict | None = None, bit_rate: V1SpeakPostParametersBitRate | V1SpeakPostParametersBitRateDict | None = None, container: V1SpeakPostParametersContainer | V1SpeakPostParametersContainerDict | None = None, encoding: V1SpeakPostParametersEncoding | V1SpeakPostParametersEncodingDict | None = None, model: V1SpeakPostParametersModelOrStr | None = None, sample_rate: V1SpeakPostParametersSampleRate | V1SpeakPostParametersSampleRateDict | None = None, speed: float | None = 1.0, body: SpeakV1Request | SpeakV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[Any, GenerateErrorBody]</code></summary>
+<summary><code>def generate(*, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST, mip_opt_out: bool | None = False, tag: V1SpeakPostParametersTag | V1SpeakPostParametersTagDict | None = None, bit_rate: V1SpeakPostParametersBitRate | V1SpeakPostParametersBitRateDict | None = None, container: V1SpeakPostParametersContainer | V1SpeakPostParametersContainerDict | None = None, encoding: V1SpeakPostParametersEncoding | V1SpeakPostParametersEncodingDict | None = None, model: V1SpeakPostParametersModelOrStr | None = V1SpeakPostParametersModel.AURA_ASTERIA_EN, sample_rate: V1SpeakPostParametersSampleRate | V1SpeakPostParametersSampleRateDict | None = None, speed: float | None = 1.0, body: SpeakV1Request | SpeakV1RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[Any, GenerateErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -3558,17 +3582,17 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>callback</code> | <code>str \| None</code> | URL to which we'll make the callback request<br>**Default**: <code>None</code> |
-| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>None</code> |
+| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>V1ListenPostParametersCallbackMethod.POST</code> |
 | <code>mip_opt_out</code> | <code>bool \| None</code> | Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip<br>**Default**: <code>False</code> |
 | <code>tag</code> | <code>[V1SpeakPostParametersTag](deepgram/models/unions/v1_speak_post_parameters_tag.py) \| [V1SpeakPostParametersTagDict](deepgram/models/unions/v1_speak_post_parameters_tag.py) \| None</code> | Label your requests for the purpose of identification during usage reporting<br>**Default**: <code>None</code> |
 | <code>bit_rate</code> | <code>[V1SpeakPostParametersBitRate](deepgram/models/unions/v1_speak_post_parameters_bit_rate.py) \| [V1SpeakPostParametersBitRateDict](deepgram/models/unions/v1_speak_post_parameters_bit_rate.py) \| None</code> | The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.<br>**Default**: <code>None</code> |
 | <code>container</code> | <code>[V1SpeakPostParametersContainer](deepgram/models/unions/v1_speak_post_parameters_container.py) \| [V1SpeakPostParametersContainerDict](deepgram/models/unions/v1_speak_post_parameters_container.py) \| None</code> | Container specifies the file format wrapper for the output audio. The available options depend on the encoding type.<br>**Default**: <code>None</code> |
 | <code>encoding</code> | <code>[V1SpeakPostParametersEncoding](deepgram/models/unions/v1_speak_post_parameters_encoding.py) \| [V1SpeakPostParametersEncodingDict](deepgram/models/unions/v1_speak_post_parameters_encoding.py) \| None</code> | Encoding allows you to specify the expected encoding of your audio output<br>**Default**: <code>None</code> |
-| <code>model</code> | <code>[V1SpeakPostParametersModelOrStr](deepgram/models/enums/v1_speak_post_parameters_model.py) \| None</code> | AI model used to process submitted text<br>**Default**: <code>None</code> |
+| <code>model</code> | <code>[V1SpeakPostParametersModelOrStr](deepgram/models/enums/v1_speak_post_parameters_model.py) \| None</code> | AI model used to process submitted text<br>**Default**: <code>V1SpeakPostParametersModel.AURA_ASTERIA_EN</code> |
 | <code>sample_rate</code> | <code>[V1SpeakPostParametersSampleRate](deepgram/models/unions/v1_speak_post_parameters_sample_rate.py) \| [V1SpeakPostParametersSampleRateDict](deepgram/models/unions/v1_speak_post_parameters_sample_rate.py) \| None</code> | Sample Rate specifies the sample rate for the output audio. Based on the encoding, different sample rates are supported. For some encodings, the sample rate is not configurable<br>**Default**: <code>None</code> |
 | <code>speed</code> | <code>float \| None</code> | Speaking rate multiplier that adjusts the pace of generated speech while preserving natural prosody and voice quality. Not yet supported in all languages.<br>**Default**: <code>1.0</code> |
 | <code>body</code> | <code>[SpeakV1Request](deepgram/models/speak_v1_request.py) \| [SpeakV1RequestDict](deepgram/models/speak_v1_request.py) \| None</code> | Transform text to speech<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3604,7 +3628,7 @@ Mapped in first-match order -- an earlier row wins over a later range that also 
 > Source: [SpeakV2Audio](deepgram/apis/speak_v2_audio.py)
 
 <details>
-<summary><code>def generate2(model: str, *, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None, mip_opt_out: bool | None = False, tag: V2SpeakPostParametersTag | V2SpeakPostParametersTagDict | None = None, bit_rate: V2SpeakPostParametersBitRate | V2SpeakPostParametersBitRateDict | None = None, container: V2SpeakPostParametersContainer | V2SpeakPostParametersContainerDict | None = None, encoding: V2SpeakPostParametersEncoding | V2SpeakPostParametersEncodingDict | None = None, sample_rate: V2SpeakPostParametersSampleRate | V2SpeakPostParametersSampleRateDict | None = None, priority: V2SpeakPostParametersPriorityOrStr | None = None, body: SpeakV2Request | SpeakV2RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SpeakV2AcceptedResponse, Generate2ErrorBody]</code></summary>
+<summary><code>def generate2(model: str, *, callback: str | None = None, callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST, mip_opt_out: bool | None = False, tag: V2SpeakPostParametersTag | V2SpeakPostParametersTagDict | None = None, bit_rate: V2SpeakPostParametersBitRate | V2SpeakPostParametersBitRateDict | None = None, container: V2SpeakPostParametersContainer | V2SpeakPostParametersContainerDict | None = None, encoding: V2SpeakPostParametersEncoding | V2SpeakPostParametersEncodingDict | None = None, sample_rate: V2SpeakPostParametersSampleRate | V2SpeakPostParametersSampleRateDict | None = None, priority: V2SpeakPostParametersPriorityOrStr | None = None, body: SpeakV2Request | SpeakV2RequestDict | None = None, request_options: RequestOptionsOrDict | None = None) -> ApiResult[SpeakV2AcceptedResponse, Generate2ErrorBody]</code></summary>
 
 <dl>
 <dd>
@@ -3627,7 +3651,7 @@ Synthesize a complete block of text into a single audio response using Deepgram'
 **Sync**
 
 ```python
-result = client.speak_v2_audio.with_raw_response.generate2(model)
+result = client.speak_v2_audio.with_raw_response.generate2("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type SpeakV2AcceptedResponse
@@ -3638,7 +3662,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.speak_v2_audio.with_raw_response.generate2(model)
+result = await async_client.speak_v2_audio.with_raw_response.generate2("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type SpeakV2AcceptedResponse
@@ -3658,7 +3682,7 @@ match result:
 | --- | --- | --- |
 | <code>model</code> | <code>str</code> | Flux TTS model used to synthesize the submitted text, in the form `flux-{voice}-{language}` (for example, `flux-alexis-en`). Required; unlike the v1 (Aura) endpoint there is no default and only flux models are accepted. English-only at launch. |
 | <code>callback</code> | <code>str \| None</code> | URL to which we'll make the callback request<br>**Default**: <code>None</code> |
-| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>None</code> |
+| <code>callback_method</code> | <code>[V1ListenPostParametersCallbackMethodOrStr](deepgram/models/enums/v1_listen_post_parameters_callback_method.py) \| None</code> | HTTP method by which the callback request will be made<br>**Default**: <code>V1ListenPostParametersCallbackMethod.POST</code> |
 | <code>mip_opt_out</code> | <code>bool \| None</code> | Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip<br>**Default**: <code>False</code> |
 | <code>tag</code> | <code>[V2SpeakPostParametersTag](deepgram/models/unions/v2_speak_post_parameters_tag.py) \| [V2SpeakPostParametersTagDict](deepgram/models/unions/v2_speak_post_parameters_tag.py) \| None</code> | Label your requests for the purpose of identification during usage reporting<br>**Default**: <code>None</code> |
 | <code>bit_rate</code> | <code>[V2SpeakPostParametersBitRate](deepgram/models/unions/v2_speak_post_parameters_bit_rate.py) \| [V2SpeakPostParametersBitRateDict](deepgram/models/unions/v2_speak_post_parameters_bit_rate.py) \| None</code> | The bitrate of the audio in bits per second. Choose from predefined ranges or specific values based on the encoding type.<br>**Default**: <code>None</code> |
@@ -3667,7 +3691,7 @@ match result:
 | <code>sample_rate</code> | <code>[V2SpeakPostParametersSampleRate](deepgram/models/unions/v2_speak_post_parameters_sample_rate.py) \| [V2SpeakPostParametersSampleRateDict](deepgram/models/unions/v2_speak_post_parameters_sample_rate.py) \| None</code> | Sample Rate specifies the sample rate for the output audio. Based on the encoding, different sample rates are supported. For some encodings, the sample rate is not configurable<br>**Default**: <code>None</code> |
 | <code>priority</code> | <code>[V2SpeakPostParametersPriorityOrStr](deepgram/models/enums/v2_speak_post_parameters_priority.py) \| None</code> | Processing priority for asynchronous (callback) requests. The only supported value is low.<br>**Default**: <code>None</code> |
 | <code>body</code> | <code>[SpeakV2Request](deepgram/models/speak_v2_request.py) \| [SpeakV2RequestDict](deepgram/models/speak_v2_request.py) \| None</code> | Transform text to speech<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3726,7 +3750,7 @@ Creates a new reusable agent configuration. The `config` field must be a valid J
 **Sync**
 
 ```python
-result = client.voice_agent_configurations.with_raw_response.create(project_id)
+result = client.voice_agent_configurations.with_raw_response.create("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateAgentConfigurationV1Response
@@ -3737,7 +3761,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_configurations.with_raw_response.create(project_id)
+result = await async_client.voice_agent_configurations.with_raw_response.create("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type CreateAgentConfigurationV1Response
@@ -3757,7 +3781,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>body</code> | <code>[CreateAgentConfigurationV1Request](deepgram/models/create_agent_configuration_v1_request.py) \| [CreateAgentConfigurationV1RequestDict](deepgram/models/create_agent_configuration_v1_request.py) \| None</code> | Agent configuration details<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3812,7 +3836,7 @@ Deletes the specified agent configuration. Deleting an agent configuration can c
 **Sync**
 
 ```python
-result = client.voice_agent_configurations.with_raw_response.delete(project_id, agent_id)
+result = client.voice_agent_configurations.with_raw_response.delete("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type Any
@@ -3823,7 +3847,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_configurations.with_raw_response.delete(project_id, agent_id)
+result = await async_client.voice_agent_configurations.with_raw_response.delete(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type Any
@@ -3843,7 +3869,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>agent_id</code> | <code>str</code> | The unique identifier of the agent configuration |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3898,7 +3924,7 @@ Returns the specified agent configuration in its uninterpolated form
 **Sync**
 
 ```python
-result = client.voice_agent_configurations.with_raw_response.get(project_id, agent_id)
+result = client.voice_agent_configurations.with_raw_response.get("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentConfigurationV1
@@ -3909,7 +3935,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_configurations.with_raw_response.get(project_id, agent_id)
+result = await async_client.voice_agent_configurations.with_raw_response.get(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentConfigurationV1
@@ -3929,7 +3957,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>agent_id</code> | <code>str</code> | The unique identifier of the agent configuration |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -3984,7 +4012,7 @@ Returns all agent configurations for the specified project. Configurations are r
 **Sync**
 
 ```python
-result = client.voice_agent_configurations.with_raw_response.list2(project_id)
+result = client.voice_agent_configurations.with_raw_response.list2("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListAgentConfigurationsV1Response
@@ -3995,7 +4023,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_configurations.with_raw_response.list2(project_id)
+result = await async_client.voice_agent_configurations.with_raw_response.list2("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListAgentConfigurationsV1Response
@@ -4014,7 +4042,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4069,7 +4097,7 @@ Updates the metadata associated with an agent configuration. The config itself i
 **Sync**
 
 ```python
-result = client.voice_agent_configurations.with_raw_response.update(project_id, agent_id)
+result = client.voice_agent_configurations.with_raw_response.update("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentConfigurationV1
@@ -4080,7 +4108,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_configurations.with_raw_response.update(project_id, agent_id)
+result = await async_client.voice_agent_configurations.with_raw_response.update(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentConfigurationV1
@@ -4101,7 +4131,7 @@ match result:
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>agent_id</code> | <code>str</code> | The unique identifier of the agent configuration |
 | <code>body</code> | <code>[UpdateAgentMetadataV1Request](deepgram/models/update_agent_metadata_v1_request.py) \| [UpdateAgentMetadataV1RequestDict](deepgram/models/update_agent_metadata_v1_request.py) \| None</code> | Updated metadata for the agent configuration<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4160,7 +4190,7 @@ Creates a new template variable. Variables follow the `DG_<VARIABLE_NAME>` namin
 **Sync**
 
 ```python
-result = client.voice_agent_variables.with_raw_response.create2(project_id)
+result = client.voice_agent_variables.with_raw_response.create2("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentVariableV1
@@ -4171,7 +4201,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_variables.with_raw_response.create2(project_id)
+result = await async_client.voice_agent_variables.with_raw_response.create2("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentVariableV1
@@ -4191,7 +4221,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>body</code> | <code>[CreateAgentVariableV1Request](deepgram/models/create_agent_variable_v1_request.py) \| [CreateAgentVariableV1RequestDict](deepgram/models/create_agent_variable_v1_request.py) \| None</code> | Agent variable details<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4246,7 +4276,7 @@ Deletes the specified template variable
 **Sync**
 
 ```python
-result = client.voice_agent_variables.with_raw_response.delete2(project_id, variable_id)
+result = client.voice_agent_variables.with_raw_response.delete2("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type Any
@@ -4257,7 +4287,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_variables.with_raw_response.delete2(project_id, variable_id)
+result = await async_client.voice_agent_variables.with_raw_response.delete2(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type Any
@@ -4277,7 +4309,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>variable_id</code> | <code>str</code> | The unique identifier of the agent variable |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4332,7 +4364,7 @@ Returns the specified template variable
 **Sync**
 
 ```python
-result = client.voice_agent_variables.with_raw_response.get2(project_id, variable_id)
+result = client.voice_agent_variables.with_raw_response.get2("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentVariableV1
@@ -4343,7 +4375,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_variables.with_raw_response.get2(project_id, variable_id)
+result = await async_client.voice_agent_variables.with_raw_response.get2("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentVariableV1
@@ -4363,7 +4395,7 @@ match result:
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>variable_id</code> | <code>str</code> | The unique identifier of the agent variable |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4418,7 +4450,7 @@ Returns all template variables for the specified project
 **Sync**
 
 ```python
-result = client.voice_agent_variables.with_raw_response.list3(project_id)
+result = client.voice_agent_variables.with_raw_response.list3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListAgentVariablesV1Response
@@ -4429,7 +4461,7 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_variables.with_raw_response.list3(project_id)
+result = await async_client.voice_agent_variables.with_raw_response.list3("some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type ListAgentVariablesV1Response
@@ -4448,7 +4480,7 @@ match result:
 | Name | Type | Description |
 | --- | --- | --- |
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>
@@ -4503,7 +4535,7 @@ Updates the value of an existing template variable
 **Sync**
 
 ```python
-result = client.voice_agent_variables.with_raw_response.update2(project_id, variable_id)
+result = client.voice_agent_variables.with_raw_response.update2("some example string", "some example string")
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentVariableV1
@@ -4514,7 +4546,9 @@ match result:
 **Async**
 
 ```python
-result = await async_client.voice_agent_variables.with_raw_response.update2(project_id, variable_id)
+result = await async_client.voice_agent_variables.with_raw_response.update2(
+    "some example string", "some example string"
+)
 match result:
     case Success(payload=payload):
         ...  # TODO: Handle 'payload' of type AgentVariableV1
@@ -4535,7 +4569,7 @@ match result:
 | <code>project_id</code> | <code>str</code> | The unique identifier of the project |
 | <code>variable_id</code> | <code>str</code> | The unique identifier of the agent variable |
 | <code>body</code> | <code>[UpdateAgentVariableV1Request](deepgram/models/update_agent_variable_v1_request.py) \| [UpdateAgentVariableV1RequestDict](deepgram/models/update_agent_variable_v1_request.py) \| None</code> | Updated value for the agent variable<br>**Default**: <code>None</code> |
-| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout or extra headers. |
+| <code>request_options</code> | <code>[RequestOptionsOrDict](deepgram/core/request_options.py) \| None</code> | Per-call overrides for this one request, such as a timeout, extra headers, or its retry count and statuses. |
 
 </dd>
 </dl>

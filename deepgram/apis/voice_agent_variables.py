@@ -10,6 +10,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -43,7 +44,8 @@ class VoiceAgentVariables:
         Args:
             project_id: The unique identifier of the project
             body: Agent variable details
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Agent variable created successfully
@@ -58,7 +60,8 @@ class VoiceAgentVariables:
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Agent variable deleted
@@ -75,7 +78,8 @@ class VoiceAgentVariables:
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An agent variable
@@ -91,7 +95,8 @@ class VoiceAgentVariables:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of agent variables
@@ -114,7 +119,8 @@ class VoiceAgentVariables:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
             body: Updated value for the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Agent variable updated
@@ -147,7 +153,8 @@ class AsyncVoiceAgentVariables:
         Args:
             project_id: The unique identifier of the project
             body: Agent variable details
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Agent variable created successfully
@@ -164,7 +171,8 @@ class AsyncVoiceAgentVariables:
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Agent variable deleted
@@ -183,7 +191,8 @@ class AsyncVoiceAgentVariables:
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An agent variable
@@ -199,7 +208,8 @@ class AsyncVoiceAgentVariables:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of agent variables
@@ -222,7 +232,8 @@ class AsyncVoiceAgentVariables:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
             body: Updated value for the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Agent variable updated
@@ -252,7 +263,8 @@ class VoiceAgentVariablesWithRawResponse(SecuredRawResponse[RawClient, Server, A
         Args:
             project_id: The unique identifier of the project
             body: Agent variable details
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -276,7 +288,8 @@ class VoiceAgentVariablesWithRawResponse(SecuredRawResponse[RawClient, Server, A
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -299,7 +312,8 @@ class VoiceAgentVariablesWithRawResponse(SecuredRawResponse[RawClient, Server, A
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -320,7 +334,8 @@ class VoiceAgentVariablesWithRawResponse(SecuredRawResponse[RawClient, Server, A
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -348,7 +363,8 @@ class VoiceAgentVariablesWithRawResponse(SecuredRawResponse[RawClient, Server, A
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
             body: Updated value for the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -379,7 +395,8 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
         Args:
             project_id: The unique identifier of the project
             body: Agent variable details
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -390,7 +407,7 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CreateAgentVariableV1Request | CreateAgentVariableV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[AgentVariableV1],
+            decoder=async_json_decoder[AgentVariableV1],
             error_mapper=create2_error_mapper,
             request_options=request_options,
         )
@@ -403,7 +420,8 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -413,7 +431,7 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
             path_params=[param[str]("project_id", project_id), param[str]("variable_id", variable_id)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[Any],
+            decoder=async_json_decoder[Any],
             error_mapper=delete2_error_mapper,
             request_options=request_options,
         )
@@ -426,7 +444,8 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
         Args:
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -435,7 +454,7 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
             url_template=self._server.default("/v1/projects/{project_id}/agent-variables/{variable_id}"),
             path_params=[param[str]("project_id", project_id), param[str]("variable_id", variable_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[AgentVariableV1],
+            decoder=async_json_decoder[AgentVariableV1],
             error_mapper=get2_error_mapper,
             request_options=request_options,
         )
@@ -447,7 +466,8 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -456,7 +476,7 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
             url_template=self._server.default("/v1/projects/{project_id}/agent-variables"),
             path_params=[param[str]("project_id", project_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListAgentVariablesV1Response],
+            decoder=async_json_decoder[ListAgentVariablesV1Response],
             error_mapper=list3_error_mapper,
             request_options=request_options,
         )
@@ -475,7 +495,8 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
             project_id: The unique identifier of the project
             variable_id: The unique identifier of the agent variable
             body: Updated value for the agent variable
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -486,7 +507,7 @@ class AsyncVoiceAgentVariablesWithRawResponse(SecuredRawResponse[AsyncRawClient,
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[UpdateAgentVariableV1Request | UpdateAgentVariableV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[AgentVariableV1],
+            decoder=async_json_decoder[AgentVariableV1],
             error_mapper=update2_error_mapper,
             request_options=request_options,
         )

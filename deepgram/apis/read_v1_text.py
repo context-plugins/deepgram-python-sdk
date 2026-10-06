@@ -9,13 +9,20 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
 )
 from ..errors.analyze_error import AnalyzeErrorBody, analyze_error_mapper
-from ..models.enums.v1_listen_post_parameters_callback_method import V1ListenPostParametersCallbackMethodOrStr
-from ..models.enums.v1_listen_post_parameters_custom_topic_mode import V1ListenPostParametersCustomTopicModeOrStr
+from ..models.enums.v1_listen_post_parameters_callback_method import (
+    V1ListenPostParametersCallbackMethod,
+    V1ListenPostParametersCallbackMethodOrStr,
+)
+from ..models.enums.v1_listen_post_parameters_custom_topic_mode import (
+    V1ListenPostParametersCustomTopicMode,
+    V1ListenPostParametersCustomTopicModeOrStr,
+)
 from ..models.read_v1_response import ReadV1Response
 from ..models.unions.read_v1_request import ReadV1Request, ReadV1RequestDict
 from ..models.unions.v1_read_post_parameters_custom_intent import (
@@ -42,16 +49,20 @@ class ReadV1Text:
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         sentiment: bool | None = False,
         summarize: V1ReadPostParametersSummarize | V1ReadPostParametersSummarizeDict | None = None,
         tag: V1ReadPostParametersTag | V1ReadPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ReadPostParametersCustomTopic | V1ReadPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ReadPostParametersCustomIntent | V1ReadPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         language: str | None = "en",
         body: ReadV1Request | ReadV1RequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -80,7 +91,8 @@ class ReadV1Text:
             language: The `BCP-47 language tag <https://tools.ietf.org/html/bcp47>`__ that hints at the primary spoken
                 language. Depending on the Model and API endpoint you choose only certain languages are available
             body: Analyze a text file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Successful text analysis
@@ -117,16 +129,20 @@ class AsyncReadV1Text:
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         sentiment: bool | None = False,
         summarize: V1ReadPostParametersSummarize | V1ReadPostParametersSummarizeDict | None = None,
         tag: V1ReadPostParametersTag | V1ReadPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ReadPostParametersCustomTopic | V1ReadPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ReadPostParametersCustomIntent | V1ReadPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         language: str | None = "en",
         body: ReadV1Request | ReadV1RequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -155,7 +171,8 @@ class AsyncReadV1Text:
             language: The `BCP-47 language tag <https://tools.ietf.org/html/bcp47>`__ that hints at the primary spoken
                 language. Depending on the Model and API endpoint you choose only certain languages are available
             body: Analyze a text file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Successful text analysis
@@ -191,16 +208,20 @@ class ReadV1TextWithRawResponse(SecuredRawResponse[RawClient, Server, AuthScheme
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         sentiment: bool | None = False,
         summarize: V1ReadPostParametersSummarize | V1ReadPostParametersSummarizeDict | None = None,
         tag: V1ReadPostParametersTag | V1ReadPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ReadPostParametersCustomTopic | V1ReadPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ReadPostParametersCustomIntent | V1ReadPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         language: str | None = "en",
         body: ReadV1Request | ReadV1RequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -229,7 +250,8 @@ class ReadV1TextWithRawResponse(SecuredRawResponse[RawClient, Server, AuthScheme
             language: The `BCP-47 language tag <https://tools.ietf.org/html/bcp47>`__ that hints at the primary spoken
                 language. Depending on the Model and API endpoint you choose only certain languages are available
             body: Analyze a text file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -268,16 +290,20 @@ class AsyncReadV1TextWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, 
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         sentiment: bool | None = False,
         summarize: V1ReadPostParametersSummarize | V1ReadPostParametersSummarizeDict | None = None,
         tag: V1ReadPostParametersTag | V1ReadPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ReadPostParametersCustomTopic | V1ReadPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ReadPostParametersCustomIntent | V1ReadPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         language: str | None = "en",
         body: ReadV1Request | ReadV1RequestDict | None = None,
         request_options: RequestOptionsOrDict | None = None,
@@ -306,7 +332,8 @@ class AsyncReadV1TextWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, 
             language: The `BCP-47 language tag <https://tools.ietf.org/html/bcp47>`__ that hints at the primary spoken
                 language. Depending on the Model and API endpoint you choose only certain languages are available
             body: Analyze a text file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -334,7 +361,7 @@ class AsyncReadV1TextWithRawResponse(SecuredRawResponse[AsyncRawClient, Server, 
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[ReadV1Request | ReadV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ReadV1Response],
+            decoder=async_json_decoder[ReadV1Response],
             error_mapper=analyze_error_mapper,
             request_options=request_options,
         )

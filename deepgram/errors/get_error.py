@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Final, TypeAlias
 
-from ..core import ErrorMapper, HttpResponse, RawError, decode_json
+from ..core import ErrorMapper, RawError, decode_json
 from ..models.unions.error_response import ErrorResponse
 
 GetErrorBody: TypeAlias = ErrorResponse | RawError
@@ -11,12 +11,12 @@ GetErrorBody: TypeAlias = ErrorResponse | RawError
 
 @dataclass(frozen=True, slots=True)
 class _GetError:
-    def map(self, response: HttpResponse) -> GetErrorBody:
-        match response.status_code:
+    def map(self, status_code: int, content: bytes) -> GetErrorBody:
+        match status_code:
             case 400:
-                return decode_json[ErrorResponse](response)
+                return decode_json[ErrorResponse](content)
             case _:
-                return RawError(response)
+                return RawError(status_code, content)
 
 
 get_error_mapper: Final[ErrorMapper[GetErrorBody]] = _GetError()

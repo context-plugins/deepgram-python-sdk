@@ -25,7 +25,7 @@ from .listen_v1_response_metadata_topics_info import (
 
 
 class ListenV1ResponseMetadata(SdkBaseModel):
-    transaction_key: Optional[str] = UNSET
+    transaction_key: str = "deprecated"
     request_id: UUID
     sha256: str
     created: RFC3339DateTime
@@ -49,8 +49,8 @@ class ListenV1ResponseMetadataDict(TypedDict):
     channels: int
     models: list[str]
     model_info: Any
-    summary_info: NotRequired[ListenV1ResponseMetadataSummaryInfo | ListenV1ResponseMetadataSummaryInfoDict]
-    sentiment_info: NotRequired[ListenV1ResponseMetadataSentimentInfo | ListenV1ResponseMetadataSentimentInfoDict]
-    topics_info: NotRequired[ListenV1ResponseMetadataTopicsInfo | ListenV1ResponseMetadataTopicsInfoDict]
-    intents_info: NotRequired[ListenV1ResponseMetadataIntentsInfo | ListenV1ResponseMetadataIntentsInfoDict]
+    summary_info: NotRequired[ListenV1ResponseMetadataSummaryInfoDict]
+    sentiment_info: NotRequired[ListenV1ResponseMetadataSentimentInfoDict]
+    topics_info: NotRequired[ListenV1ResponseMetadataTopicsInfoDict]
+    intents_info: NotRequired[ListenV1ResponseMetadataIntentsInfoDict]
     tags: NotRequired[list[str]]

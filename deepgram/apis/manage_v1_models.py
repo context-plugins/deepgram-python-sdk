@@ -1,7 +1,16 @@
 from __future__ import annotations
 
 from ..auth import AsyncAuthSchemes, AuthSchemes
-from ..core import ApiResult, AsyncRawClient, RawClient, RequestOptionsOrDict, SecuredRawResponse, json_decoder, param
+from ..core import (
+    ApiResult,
+    AsyncRawClient,
+    RawClient,
+    RequestOptionsOrDict,
+    SecuredRawResponse,
+    async_json_decoder,
+    json_decoder,
+    param,
+)
 from ..errors.get5_error import Get5ErrorBody, get5_error_mapper
 from ..errors.list6_error import List6ErrorBody, list6_error_mapper
 from ..models.list_models_v1_response import ListModelsV1Response
@@ -18,7 +27,8 @@ class ManageV1Models:
 
         Args:
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A model object that can be either STT or TTS
@@ -34,7 +44,8 @@ class ManageV1Models:
 
         Args:
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of models
@@ -59,7 +70,8 @@ class AsyncManageV1Models:
 
         Args:
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A model object that can be either STT or TTS
@@ -75,7 +87,8 @@ class AsyncManageV1Models:
 
         Args:
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of models
@@ -99,7 +112,8 @@ class ManageV1ModelsWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSc
 
         Args:
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -120,7 +134,8 @@ class ManageV1ModelsWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSc
 
         Args:
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -143,7 +158,8 @@ class AsyncManageV1ModelsWithRawResponse(SecuredRawResponse[AsyncRawClient, Serv
 
         Args:
             model_id: The specific UUID of the model
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -152,7 +168,7 @@ class AsyncManageV1ModelsWithRawResponse(SecuredRawResponse[AsyncRawClient, Serv
             url_template=self._server.default("/v1/models/{model_id}"),
             path_params=[param[str]("model_id", model_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetModelV1Response],
+            decoder=async_json_decoder[GetModelV1Response],
             error_mapper=get5_error_mapper,
             request_options=request_options,
         )
@@ -164,7 +180,8 @@ class AsyncManageV1ModelsWithRawResponse(SecuredRawResponse[AsyncRawClient, Serv
 
         Args:
             include_outdated: returns non-latest versions of models
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -173,7 +190,7 @@ class AsyncManageV1ModelsWithRawResponse(SecuredRawResponse[AsyncRawClient, Serv
             url_template=self._server.default("/v1/models"),
             query_params=[param[bool | None]("include_outdated", include_outdated)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListModelsV1Response],
+            decoder=async_json_decoder[ListModelsV1Response],
             error_mapper=list6_error_mapper,
             request_options=request_options,
         )

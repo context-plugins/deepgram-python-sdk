@@ -14,4 +14,4 @@ class SharedTopicsResultsTopics(SdkBaseModel):
 
 
 class SharedTopicsResultsTopicsDict(TypedDict):
-    segments: NotRequired[list[SharedTopicsResultsTopicsSegmentsItems | SharedTopicsResultsTopicsSegmentsItemsDict]]
+    segments: NotRequired[list[SharedTopicsResultsTopicsSegmentsItemsDict]]

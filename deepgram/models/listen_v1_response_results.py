@@ -32,9 +32,9 @@ class ListenV1ResponseResults(SdkBaseModel):
 
 
 class ListenV1ResponseResultsDict(TypedDict):
-    channels: list[ListenV1ResponseResultsChannelsItems | ListenV1ResponseResultsChannelsItemsDict]
-    utterances: NotRequired[list[ListenV1ResponseResultsUtterancesItems | ListenV1ResponseResultsUtterancesItemsDict]]
-    summary: NotRequired[ListenV1ResponseResultsSummary | ListenV1ResponseResultsSummaryDict]
-    topics: NotRequired[SharedTopics | SharedTopicsDict]
-    intents: NotRequired[SharedIntents | SharedIntentsDict]
-    sentiments: NotRequired[SharedSentiments | SharedSentimentsDict]
+    channels: list[ListenV1ResponseResultsChannelsItemsDict]
+    utterances: NotRequired[list[ListenV1ResponseResultsUtterancesItemsDict]]
+    summary: NotRequired[ListenV1ResponseResultsSummaryDict]
+    topics: NotRequired[SharedTopicsDict]
+    intents: NotRequired[SharedIntentsDict]
+    sentiments: NotRequired[SharedSentimentsDict]

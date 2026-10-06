@@ -8,6 +8,7 @@ from ..core import (
     RequestOptionsOrDict,
     RFC3339DateTime,
     SecuredRawResponse,
+    async_json_decoder,
     json_decoder,
     param,
 )
@@ -42,7 +43,8 @@ class ManageV1ProjectsRequests:
         Args:
             project_id: The unique identifier of the project
             request_id: The unique identifier of the request
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific request for a specific project
@@ -83,7 +85,8 @@ class ManageV1ProjectsRequests:
             endpoint: Filter for requests where a specific endpoint was used
             method: Filter for requests where a specific method was used
             status: Filter for requests that succeeded (status code < 300) or failed (status code >=400)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of requests for a specific project
@@ -122,7 +125,8 @@ class AsyncManageV1ProjectsRequests:
         Args:
             project_id: The unique identifier of the project
             request_id: The unique identifier of the request
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific request for a specific project
@@ -163,7 +167,8 @@ class AsyncManageV1ProjectsRequests:
             endpoint: Filter for requests where a specific endpoint was used
             method: Filter for requests where a specific method was used
             status: Filter for requests that succeeded (status code < 300) or failed (status code >=400)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of requests for a specific project
@@ -201,7 +206,8 @@ class ManageV1ProjectsRequestsWithRawResponse(SecuredRawResponse[RawClient, Serv
         Args:
             project_id: The unique identifier of the project
             request_id: The unique identifier of the request
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -247,7 +253,8 @@ class ManageV1ProjectsRequestsWithRawResponse(SecuredRawResponse[RawClient, Serv
             endpoint: Filter for requests where a specific endpoint was used
             method: Filter for requests where a specific method was used
             status: Filter for requests that succeeded (status code < 300) or failed (status code >=400)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -283,7 +290,8 @@ class AsyncManageV1ProjectsRequestsWithRawResponse(SecuredRawResponse[AsyncRawCl
         Args:
             project_id: The unique identifier of the project
             request_id: The unique identifier of the request
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -292,7 +300,7 @@ class AsyncManageV1ProjectsRequestsWithRawResponse(SecuredRawResponse[AsyncRawCl
             url_template=self._server.default("/v1/projects/{project_id}/requests/{request_id}"),
             path_params=[param[str]("project_id", project_id), param[str]("request_id", request_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetProjectRequestV1Response],
+            decoder=async_json_decoder[GetProjectRequestV1Response],
             error_mapper=get7_error_mapper,
             request_options=request_options,
         )
@@ -329,7 +337,8 @@ class AsyncManageV1ProjectsRequestsWithRawResponse(SecuredRawResponse[AsyncRawCl
             endpoint: Filter for requests where a specific endpoint was used
             method: Filter for requests where a specific method was used
             status: Filter for requests that succeeded (status code < 300) or failed (status code >=400)
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -350,7 +359,7 @@ class AsyncManageV1ProjectsRequestsWithRawResponse(SecuredRawResponse[AsyncRawCl
                 param[V1ProjectsProjectIdRequestsGetParametersStatusOrStr | None]("status", status),
             ],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectRequestsV1Response],
+            decoder=async_json_decoder[ListProjectRequestsV1Response],
             error_mapper=list11_error_mapper,
             request_options=request_options,
         )

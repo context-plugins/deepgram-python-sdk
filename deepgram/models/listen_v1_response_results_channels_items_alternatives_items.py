@@ -38,41 +38,8 @@ class ListenV1ResponseResultsChannelsItemsAlternativesItems(SdkBaseModel):
 class ListenV1ResponseResultsChannelsItemsAlternativesItemsDict(TypedDict):
     transcript: NotRequired[str]
     confidence: NotRequired[float]
-    words: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItemsWordsItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsWordsItemsDict
-            )
-        ]
-    ]
-    paragraphs: NotRequired[
-        (
-            ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphs
-            | ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsDict
-        )
-    ]
-    entities: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItemsEntitiesItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsEntitiesItemsDict
-            )
-        ]
-    ]
-    summaries: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItemsSummariesItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsSummariesItemsDict
-            )
-        ]
-    ]
-    topics: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItemsTopicsItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsTopicsItemsDict
-            )
-        ]
-    ]
+    words: NotRequired[list[ListenV1ResponseResultsChannelsItemsAlternativesItemsWordsItemsDict]]
+    paragraphs: NotRequired[ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsDict]
+    entities: NotRequired[list[ListenV1ResponseResultsChannelsItemsAlternativesItemsEntitiesItemsDict]]
+    summaries: NotRequired[list[ListenV1ResponseResultsChannelsItemsAlternativesItemsSummariesItemsDict]]
+    topics: NotRequired[list[ListenV1ResponseResultsChannelsItemsAlternativesItemsTopicsItemsDict]]

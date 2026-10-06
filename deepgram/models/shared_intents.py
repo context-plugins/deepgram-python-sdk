@@ -13,4 +13,4 @@ class SharedIntents(SdkBaseModel):
 
 
 class SharedIntentsDict(TypedDict):
-    results: NotRequired[SharedIntentsResults | SharedIntentsResultsDict]
+    results: NotRequired[SharedIntentsResultsDict]

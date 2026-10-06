@@ -9,6 +9,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -39,7 +40,8 @@ class ManageV1ProjectsMembersInvites:
         Args:
             project_id: The unique identifier of the project
             body: email to invite to the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             The invite was successfully generated
@@ -56,7 +58,8 @@ class ManageV1ProjectsMembersInvites:
         Args:
             project_id: The unique identifier of the project
             email: The email address of the member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             The invite was successfully deleted
@@ -72,7 +75,8 @@ class ManageV1ProjectsMembersInvites:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of invites for a specific project
@@ -102,7 +106,8 @@ class AsyncManageV1ProjectsMembersInvites:
         Args:
             project_id: The unique identifier of the project
             body: email to invite to the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             The invite was successfully generated
@@ -119,7 +124,8 @@ class AsyncManageV1ProjectsMembersInvites:
         Args:
             project_id: The unique identifier of the project
             email: The email address of the member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             The invite was successfully deleted
@@ -135,7 +141,8 @@ class AsyncManageV1ProjectsMembersInvites:
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of invites for a specific project
@@ -162,7 +169,8 @@ class ManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[RawClient
         Args:
             project_id: The unique identifier of the project
             body: email to invite to the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -186,7 +194,8 @@ class ManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[RawClient
         Args:
             project_id: The unique identifier of the project
             email: The email address of the member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -208,7 +217,8 @@ class ManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[RawClient
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -236,7 +246,8 @@ class AsyncManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[Asyn
         Args:
             project_id: The unique identifier of the project
             body: email to invite to the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -247,7 +258,7 @@ class AsyncManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[Asyn
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[CreateProjectInviteV1Request | CreateProjectInviteV1RequestDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[CreateProjectInviteV1Response],
+            decoder=async_json_decoder[CreateProjectInviteV1Response],
             error_mapper=create4_error_mapper,
             request_options=request_options,
         )
@@ -260,7 +271,8 @@ class AsyncManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[Asyn
         Args:
             project_id: The unique identifier of the project
             email: The email address of the member
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -270,7 +282,7 @@ class AsyncManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[Asyn
             path_params=[param[str]("project_id", project_id), param[str]("email", email)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[DeleteProjectInviteV1Response],
+            decoder=async_json_decoder[DeleteProjectInviteV1Response],
             error_mapper=delete6_error_mapper,
             request_options=request_options,
         )
@@ -282,7 +294,8 @@ class AsyncManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[Asyn
 
         Args:
             project_id: The unique identifier of the project
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -291,7 +304,7 @@ class AsyncManageV1ProjectsMembersInvitesWithRawResponse(SecuredRawResponse[Asyn
             url_template=self._server.default("/v1/projects/{project_id}/invites"),
             path_params=[param[str]("project_id", project_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectInvitesV1Response],
+            decoder=async_json_decoder[ListProjectInvitesV1Response],
             error_mapper=list10_error_mapper,
             request_options=request_options,
         )

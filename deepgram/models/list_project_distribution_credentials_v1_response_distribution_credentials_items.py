@@ -21,11 +21,7 @@ class ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItems(S
 
 
 class ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDict(TypedDict):
-    member: (
-        ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMember
-        | ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMemberDict
-    )
+    member: ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsMemberDict
     distribution_credentials: (
-        ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentials
-        | ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentialsDict
+        ListProjectDistributionCredentialsV1ResponseDistributionCredentialsItemsDistributionCredentialsDict
     )

@@ -25,6 +25,6 @@ class UsageFieldsV1Response(SdkBaseModel):
 
 class UsageFieldsV1ResponseDict(TypedDict):
     tags: NotRequired[list[str]]
-    models: NotRequired[list[UsageFieldsV1ResponseModelsItems | UsageFieldsV1ResponseModelsItemsDict]]
+    models: NotRequired[list[UsageFieldsV1ResponseModelsItemsDict]]
     processing_methods: NotRequired[list[str]]
     features: NotRequired[list[str]]

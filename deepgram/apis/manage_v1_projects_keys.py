@@ -10,6 +10,7 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
@@ -40,7 +41,8 @@ class ManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             body: API key settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             API key created successfully
@@ -57,7 +59,8 @@ class ManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             API key deleted
@@ -74,7 +77,8 @@ class ManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific API key
@@ -95,7 +99,8 @@ class ManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             status: Only return keys with a specific status
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of API keys
@@ -121,7 +126,8 @@ class AsyncManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             body: API key settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             API key created successfully
@@ -138,7 +144,8 @@ class AsyncManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             API key deleted
@@ -155,7 +162,8 @@ class AsyncManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A specific API key
@@ -176,7 +184,8 @@ class AsyncManageV1ProjectsKeys:
         Args:
             project_id: The unique identifier of the project
             status: Only return keys with a specific status
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             A list of API keys
@@ -201,7 +210,8 @@ class ManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[RawClient, Server, 
         Args:
             project_id: The unique identifier of the project
             body: API key settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -225,7 +235,8 @@ class ManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[RawClient, Server, 
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -248,7 +259,8 @@ class ManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[RawClient, Server, 
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -274,7 +286,8 @@ class ManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[RawClient, Server, 
         Args:
             project_id: The unique identifier of the project
             status: Only return keys with a specific status
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -299,7 +312,8 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
         Args:
             project_id: The unique identifier of the project
             body: API key settings
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -310,7 +324,7 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[Any | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[CreateKeyV1Response],
+            decoder=async_json_decoder[CreateKeyV1Response],
             error_mapper=create3_error_mapper,
             request_options=request_options,
         )
@@ -323,7 +337,8 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -333,7 +348,7 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
             path_params=[param[str]("project_id", project_id), param[str]("key_id", key_id)],
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[DeleteProjectKeyV1Response],
+            decoder=async_json_decoder[DeleteProjectKeyV1Response],
             error_mapper=delete4_error_mapper,
             request_options=request_options,
         )
@@ -346,7 +361,8 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
         Args:
             project_id: The unique identifier of the project
             key_id: The unique identifier of the API key
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -355,7 +371,7 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
             url_template=self._server.default("/v1/projects/{project_id}/keys/{key_id}"),
             path_params=[param[str]("project_id", project_id), param[str]("key_id", key_id)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[GetProjectKeyV1Response],
+            decoder=async_json_decoder[GetProjectKeyV1Response],
             error_mapper=get6_error_mapper,
             request_options=request_options,
         )
@@ -372,7 +388,8 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
         Args:
             project_id: The unique identifier of the project
             status: Only return keys with a specific status
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -382,7 +399,7 @@ class AsyncManageV1ProjectsKeysWithRawResponse(SecuredRawResponse[AsyncRawClient
             path_params=[param[str]("project_id", project_id)],
             query_params=[param[V1ProjectsProjectIdKeysGetParametersStatusOrStr | None]("status", status)],
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListProjectKeysV1Response],
+            decoder=async_json_decoder[ListProjectKeysV1Response],
             error_mapper=list7_error_mapper,
             request_options=request_options,
         )

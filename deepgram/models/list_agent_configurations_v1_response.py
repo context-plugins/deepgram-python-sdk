@@ -12,4 +12,4 @@ class ListAgentConfigurationsV1Response(SdkBaseModel):
 
 
 class ListAgentConfigurationsV1ResponseDict(TypedDict):
-    agents: NotRequired[list[AgentConfigurationV1 | AgentConfigurationV1Dict]]
+    agents: NotRequired[list[AgentConfigurationV1Dict]]

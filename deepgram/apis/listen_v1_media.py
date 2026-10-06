@@ -9,13 +9,20 @@ from ..core import (
     RawClient,
     RequestOptionsOrDict,
     SecuredRawResponse,
+    async_json_decoder,
     json_body,
     json_decoder,
     param,
 )
 from ..errors.transcribe_error import TranscribeErrorBody, transcribe_error_mapper
-from ..models.enums.v1_listen_post_parameters_callback_method import V1ListenPostParametersCallbackMethodOrStr
-from ..models.enums.v1_listen_post_parameters_custom_topic_mode import V1ListenPostParametersCustomTopicModeOrStr
+from ..models.enums.v1_listen_post_parameters_callback_method import (
+    V1ListenPostParametersCallbackMethod,
+    V1ListenPostParametersCallbackMethodOrStr,
+)
+from ..models.enums.v1_listen_post_parameters_custom_topic_mode import (
+    V1ListenPostParametersCustomTopicMode,
+    V1ListenPostParametersCustomTopicModeOrStr,
+)
 from ..models.enums.v1_listen_post_parameters_diarize_model import V1ListenPostParametersDiarizeModelOrStr
 from ..models.enums.v1_listen_post_parameters_encoding import V1ListenPostParametersEncodingOrStr
 from ..models.listen_v1_request_url import ListenV1RequestUrl, ListenV1RequestUrlDict
@@ -70,17 +77,21 @@ class ListenV1Media:
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         extra: V1ListenPostParametersExtra | V1ListenPostParametersExtraDict | None = None,
         sentiment: bool | None = False,
         summarize: V1ListenPostParametersSummarize | V1ListenPostParametersSummarizeDict | None = None,
         tag: V1ListenPostParametersTag | V1ListenPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ListenPostParametersCustomTopic | V1ListenPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ListenPostParametersCustomIntent | V1ListenPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         detect_entities: bool | None = False,
         detect_language: V1ListenPostParametersDetectLanguage | V1ListenPostParametersDetectLanguageDict | None = None,
         diarize: bool | None = False,
@@ -172,7 +183,8 @@ class ListenV1Media:
             mip_opt_out: Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing
                 impacts before setting this to true. https://dpgr.am/deepgram-mip
             body: Transcribe an audio or video file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Returns either transcription results, or a request_id when using a callback.
@@ -234,17 +246,21 @@ class AsyncListenV1Media:
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         extra: V1ListenPostParametersExtra | V1ListenPostParametersExtraDict | None = None,
         sentiment: bool | None = False,
         summarize: V1ListenPostParametersSummarize | V1ListenPostParametersSummarizeDict | None = None,
         tag: V1ListenPostParametersTag | V1ListenPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ListenPostParametersCustomTopic | V1ListenPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ListenPostParametersCustomIntent | V1ListenPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         detect_entities: bool | None = False,
         detect_language: V1ListenPostParametersDetectLanguage | V1ListenPostParametersDetectLanguageDict | None = None,
         diarize: bool | None = False,
@@ -336,7 +352,8 @@ class AsyncListenV1Media:
             mip_opt_out: Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing
                 impacts before setting this to true. https://dpgr.am/deepgram-mip
             body: Transcribe an audio or video file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             Returns either transcription results, or a request_id when using a callback.
@@ -397,17 +414,21 @@ class ListenV1MediaWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSch
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         extra: V1ListenPostParametersExtra | V1ListenPostParametersExtraDict | None = None,
         sentiment: bool | None = False,
         summarize: V1ListenPostParametersSummarize | V1ListenPostParametersSummarizeDict | None = None,
         tag: V1ListenPostParametersTag | V1ListenPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ListenPostParametersCustomTopic | V1ListenPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ListenPostParametersCustomIntent | V1ListenPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         detect_entities: bool | None = False,
         detect_language: V1ListenPostParametersDetectLanguage | V1ListenPostParametersDetectLanguageDict | None = None,
         diarize: bool | None = False,
@@ -499,7 +520,8 @@ class ListenV1MediaWithRawResponse(SecuredRawResponse[RawClient, Server, AuthSch
             mip_opt_out: Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing
                 impacts before setting this to true. https://dpgr.am/deepgram-mip
             body: Transcribe an audio or video file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -567,17 +589,21 @@ class AsyncListenV1MediaWithRawResponse(SecuredRawResponse[AsyncRawClient, Serve
         self,
         *,
         callback: str | None = None,
-        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = None,
+        callback_method: V1ListenPostParametersCallbackMethodOrStr | None = V1ListenPostParametersCallbackMethod.POST,
         extra: V1ListenPostParametersExtra | V1ListenPostParametersExtraDict | None = None,
         sentiment: bool | None = False,
         summarize: V1ListenPostParametersSummarize | V1ListenPostParametersSummarizeDict | None = None,
         tag: V1ListenPostParametersTag | V1ListenPostParametersTagDict | None = None,
         topics: bool | None = False,
         custom_topic: V1ListenPostParametersCustomTopic | V1ListenPostParametersCustomTopicDict | None = None,
-        custom_topic_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_topic_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         intents: bool | None = False,
         custom_intent: V1ListenPostParametersCustomIntent | V1ListenPostParametersCustomIntentDict | None = None,
-        custom_intent_mode: V1ListenPostParametersCustomTopicModeOrStr | None = None,
+        custom_intent_mode: (
+            V1ListenPostParametersCustomTopicModeOrStr | None
+        ) = V1ListenPostParametersCustomTopicMode.EXTENDED,
         detect_entities: bool | None = False,
         detect_language: V1ListenPostParametersDetectLanguage | V1ListenPostParametersDetectLanguageDict | None = None,
         diarize: bool | None = False,
@@ -669,7 +695,8 @@ class AsyncListenV1MediaWithRawResponse(SecuredRawResponse[AsyncRawClient, Serve
             mip_opt_out: Opts out requests from the Deepgram Model Improvement Program. Refer to our Docs for pricing
                 impacts before setting this to true. https://dpgr.am/deepgram-mip
             body: Transcribe an audio or video file
-            request_options: Per-call overrides for this one request, such as a timeout or extra headers.
+            request_options: Per-call overrides for this one request, such as a timeout, extra headers, or its retry
+                count and statuses.
 
         Returns:
             An ``ApiResult`` holding the deserialized response or the error body."""
@@ -726,7 +753,7 @@ class AsyncListenV1MediaWithRawResponse(SecuredRawResponse[AsyncRawClient, Serve
             headers=[param[UUID]("Idempotency-Key", uuid4())],
             body=json_body[ListenV1RequestUrl | ListenV1RequestUrlDict | None](body),
             auth_scheme=self._auth.api_key_auth,
-            decoder=json_decoder[ListenV1MediaTranscribeResponse200],
+            decoder=async_json_decoder[ListenV1MediaTranscribeResponse200],
             error_mapper=transcribe_error_mapper,
             request_options=request_options,
         )

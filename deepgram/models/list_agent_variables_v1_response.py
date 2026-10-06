@@ -12,4 +12,4 @@ class ListAgentVariablesV1Response(SdkBaseModel):
 
 
 class ListAgentVariablesV1ResponseDict(TypedDict):
-    variables: NotRequired[list[AgentVariableV1 | AgentVariableV1Dict]]
+    variables: NotRequired[list[AgentVariableV1Dict]]

@@ -21,7 +21,7 @@ class BillingBreakdownV1ResponseResultsItemsGrouping(SdkBaseModel):
     line_item: OptionalNullable[str] = UNSET
     """Optional line item identifier, null unless grouped by line item."""
 
-    tags: Optional[list[str | None]] = UNSET
+    tags: OptionalNullable[list[str]] = UNSET
     """Optional list of tags, null unless grouped by tags."""
 
 
@@ -31,4 +31,4 @@ class BillingBreakdownV1ResponseResultsItemsGroupingDict(TypedDict):
     accessor: NotRequired[str | None]
     deployment: NotRequired[str | None]
     line_item: NotRequired[str | None]
-    tags: NotRequired[list[str | None]]
+    tags: NotRequired[list[str] | None]

@@ -21,12 +21,7 @@ class ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsI
 
 class ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItemsDict(TypedDict):
     sentences: NotRequired[
-        list[
-            (
-                ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItemsSentencesItems
-                | ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItemsSentencesItemsDict
-            )
-        ]
+        list[ListenV1ResponseResultsChannelsItemsAlternativesItemsParagraphsParagraphsItemsSentencesItemsDict]
     ]
     speaker: NotRequired[int]
     num_words: NotRequired[int]

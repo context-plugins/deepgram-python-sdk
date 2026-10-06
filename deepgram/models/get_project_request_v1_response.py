@@ -12,4 +12,4 @@ class GetProjectRequestV1Response(SdkBaseModel):
 
 
 class GetProjectRequestV1ResponseDict(TypedDict):
-    request: NotRequired[ProjectRequestResponse | ProjectRequestResponseDict]
+    request: NotRequired[ProjectRequestResponseDict]

@@ -14,6 +14,4 @@ class ListProjectBalancesV1Response(SdkBaseModel):
 
 
 class ListProjectBalancesV1ResponseDict(TypedDict):
-    balances: NotRequired[
-        list[ListProjectBalancesV1ResponseBalancesItems | ListProjectBalancesV1ResponseBalancesItemsDict]
-    ]
+    balances: NotRequired[list[ListProjectBalancesV1ResponseBalancesItemsDict]]
